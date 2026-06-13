@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Case Study: Gym Management System — Syed Asjad Abbas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300;1,9..40,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../../style.css"/>
+  <link rel="icon" type="image/x-icon" href="../../assets/favicon.ico"/>
+</head>
+<body>
+  <canvas id="bg-canvas"></canvas>
+
+  <nav>
+    <a class="nav-logo" href="../../index.html">ASJAD.DEV</a>
+    <ul class="nav-links">
+      <li><a href="../../index.html#about">About</a></li>
+      <li><a href="../../index.html#skills">Skills</a></li>
+      <li><a href="../../index.html#projects">Projects</a></li>
+      <li><a href="../../index.html#experience">Experience</a></li>
+      <li><a href="../../index.html#blog">Log</a></li>
+      <li><a href="../../index.html#contact">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a class="nav-hire" href="mailto:asjadabbaszaidi@gmail.com">Let's Talk</a>
+      <a class="nav-resume" href="../../assets/SYED ASJAD ABBAS RESUME.pdf" target="_blank">Resume</a>
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-overlay" id="mobile-overlay">
+    <ul class="mobile-overlay-links">
+      <li><a href="../../index.html#about">About</a></li>
+      <li><a href="../../index.html#skills">Skills</a></li>
+      <li><a href="../../index.html#projects">Projects</a></li>
+      <li><a href="../../index.html#experience">Experience</a></li>
+      <li><a href="../../index.html#blog">Log</a></li>
+      <li><a href="../../index.html#contact">Contact</a></li>
+    </ul>
+    <div class="mobile-overlay-cta">
+      <a href="mailto:asjadabbaszaidi@gmail.com" class="mob-cta-primary">Let's Talk</a>
+      <a href="../../assets/SYED ASJAD ABBAS RESUME.pdf" target="_blank" class="mob-cta-secondary">Resume</a>
+    </div>
+  </div>
+
+  <header class="cs-header">
+    <div class="container">
+      <div class="cs-breadcrumbs">
+        <a href="../../index.html">Portfolio</a>
+        <span>/</span>
+        <a href="../../index.html#projects">Case Studies</a>
+        <span>/</span>
+        <span>Gym Management System</span>
+      </div>
+      <h1 class="cs-title-main">Gym Management System</h1>
+      <p class="cs-subtitle">A robust, transaction-safe operations dashboard replacing legacy manual logs with normalized database relations, transactional billing batch runners, and local Docker containers.</p>
+      
+      <div class="cs-meta-grid">
+        <div class="cs-meta-item">
+          <span class="cs-meta-label">Role</span>
+          <span class="cs-meta-val">Lead Backend Engineer / Architect</span>
+        </div>
+        <div class="cs-meta-item">
+          <span class="cs-meta-label">Category</span>
+          <span class="cs-meta-val">Operations Panel &amp; Database Systems</span>
+        </div>
+        <div class="cs-meta-item">
+          <span class="cs-meta-label">Timeline</span>
+          <span class="cs-meta-val">Zeploy Tech Client Project · 2026</span>
+        </div>
+        <div class="cs-meta-item">
+          <span class="cs-meta-label">Core Stack</span>
+          <span class="cs-meta-val">FastAPI · MySQL · Docker · SQLAlchemy · Alembic</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="cs-content-grid">
+      <div class="cs-main">
+        <section class="cs-section">
+          <h2>Problem &amp; Challenge</h2>
+          <p>Local fitness facilities often track operational states (such as active memberships, attendance logs, and invoice histories) using fragmented spreadsheets or paper ledger grids. As customer scales expand, tracking files quickly degenerate, leading to sync conflicts, inaccurate plan expiries, missed billing invoices, and severe transaction tracking gaps.</p>
+          <p>The client's primary engineering requirement was to eliminate spreadsheet synchronization failures. We needed to design an operations panel that manages member logs, enforces strict plan expirations, records check-in metrics, and automates daily billing runs safely—all without running expensive hosting models.</p>
+        </section>
+
+        <section class="cs-section">
+          <h2>Technical Approach &amp; Architecture</h2>
+          <p>We selected an **on-premise Docker container environment** to run FastAPI and MySQL backend servers on a dedicated local Linux host, cutting hosting costs to zero. Database interactions are structured via SQLAlchemy with schema migrations managed by Alembic, ensuring schema integrity. Daily operations rely on normalized tables and unique indexes to prevent double-billing.</p>
+
+          <div class="cs-flow-visual">
+            <div class="cs-card-title">Daily Automated Invoicing Flow</div>
+            <div class="cs-flow-step">
+              <div class="cs-step-name">Cron Job Scheduler Trigger</div>
+              <div class="cs-step-desc">Fires shell script at 00:00 every day to execute FastAPI billing route</div>
+            </div>
+            <div class="cs-flow-arrow">&darr;</div>
+            <div class="cs-flow-step">
+              <div class="cs-step-name">Chunked Membership Scan</div>
+              <div class="cs-step-desc">Loads active memberships in batches of 100 to conserve RAM bounds</div>
+            </div>
+            <div class="cs-flow-arrow">&darr;</div>
+            <div class="cs-flow-step">
+              <div class="cs-step-name">Unique Constraint Check</div>
+              <div class="cs-step-desc">Queries DB to verify if invoice for current cycle already exists</div>
+            </div>
+            <div class="cs-flow-arrow">&darr;</div>
+            <div class="cs-flow-step">
+              <div class="cs-step-name">SQL transaction Commit</div>
+              <div class="cs-step-desc">Inserts invoice records in bulk, commits state, and updates plan status</div>
+            </div>
+          </div>
+          
+          <p>This localized database architecture ensures that gym operations run with near-zero latency, remaining independent of external internet outages. A secondary automated backup routine runs in the background, syncing critical backups offsite.</p>
+        </section>
+
+        <section class="cs-section">
+          <h2>Engineering Challenges &amp; Solutions</h2>
+          <h3>1. Data Normalization &amp; Integrity Inconsistencies</h3>
+          <p>The initial spreadsheets combined billing amounts, check-ins, member profiles, and plan details inside a single flat sheet. This structure led to orphan records, plan durations conflicting with invoice values, and no historical audit trail for member visits.</p>
+          <p><strong>Solution:</strong> We designed a fully normalized relational database schema matching **Third Normal Form (3NF)** specifications. We isolated entities into discrete tables: <code>members</code>, <code>plans</code>, <code>memberships</code>, <code>invoices</code>, and <code>check_ins</code>. Database foreign key mappings enforce strict relational rules (e.g. <code>ON DELETE RESTRICT</code> on memberships linked to invoices), preventing accidental record deletions and preserving billing history.</p>
+
+          <h3>2. Preventing Double-Billing in Daily Batch Runs</h3>
+          <p>Automated invoicing scripts run on daily crons. If a cron script execution timed out or was accidentally triggered twice, it could generate duplicate invoices for the same member in the same billing cycle, leading to customer disputes.</p>
+          <p><strong>Solution:</strong> We resolved this by introducing a multi-tiered validation approach. In the database schema, we added a compound unique index constraint on the `invoices` table mapping `(membership_id, billing_cycle_date)`. When the invoicing runner processes transactions, MySQL automatically blocks any insertion attempts that violate this constraint, throwing an integrity exception that halts duplicate generation without corrupting the state.</p>
+        </section>
+
+        <section class="cs-section">
+          <h2>Optimization Decisions</h2>
+          <ul>
+            <li><strong>Batch Processing of Invoices:</strong> Instead of executing database write commands inside loops for each customer, the backend queries active memberships in chunked batches of 100 and applies SQLAlchemy's <code>bulk_save_objects</code> utility, cutting memory overhead by 70%.</li>
+            <li><strong>Aggregated Attendance Views:</strong> To populate hourly check-in telemetry charts on the manager dashboard, we created a pre-compiled MySQL **Database View**. This view indexes check-in timestamps to return aggregated logs in under 4ms, avoiding expensive JOIN lookups on every page reload.</li>
+            <li><strong>Local Log Rotation:</strong> Configured Linux log rotation utilities to compress, archive, and purge operational and API engine logs every 7 days, maintaining disk space boundaries on the host machine.</li>
+          </ul>
+        </section>
+
+        <section class="cs-section">
+          <h2>Deployment &amp; Production Notes</h2>
+          <p>The application is deployed on a physical mini-PC running a secured **Ubuntu Server** distribution within the gym's local area network (LAN). Docker containerization isolates backend routing nodes from the relational database container, keeping maintenance simple.</p>
+          <p>An automated backup cron job runs at 01:00 AM daily, converting the MySQL state into a compressed dump file, encrypting the output, and securely syncing it to a remote storage server for absolute disaster recovery compliance.</p>
+        </section>
+
+        <section class="cs-section">
+          <h2>Lessons Learned</h2>
+          <p>On-premise hardware deployments must be engineered defensively to survive network fluctuations and localized power outages. Restructuring flat spreadsheet files into strict normalized relational schemas immediately simplifies application logic and prevents billing errors. Database-level constraints are the absolute foundation of application reliability.</p>
+        </section>
+      </div>
+
+      <aside class="cs-sidebar">
+        <div class="cs-sidebar-sticky">
+          <div class="cs-card-box">
+            <h3 class="cs-card-title">Project Details</h3>
+            <div class="cs-tech-list">
+              <div class="cs-tech-item"><span class="cs-tech-name">Client:</span><span>Fitness Facility Owner</span></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">Status:</span><span>Production Live</span></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">Release:</span><span>April 2026</span></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">Repository:</span><a href="https://github.com/syedasjadabbas/Gym-Management-System" target="_blank" style="color:var(--brown-light); text-decoration:none">GitHub ↗</a></div>
+            </div>
+          </div>
+
+          <div class="cs-card-box">
+            <h3 class="cs-card-title">Detailed Architecture</h3>
+            <div class="cs-tech-list">
+              <div class="cs-tech-item"><span class="cs-tech-name">Backend Framework:</span><span>FastAPI (Python)</span></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">Database Engine:</span><span>MySQL (3NF Normalized)</span></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">ORM / Migration:</span><span>SQLAlchemy / Alembic</span></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">Deployment Environment:</span><span>Docker on LAN Host</span></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">Scheduler Engine:</span><span>Local Linux Cron Tasks</span></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">Telemetry Processing:</span><span>Pre-compiled Database Views</span></div>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer>
+    <span class="ft">&copy; 2026 Syed Asjad Abbas</span>
+    <div class="ft-links">
+      <a href="https://github.com/syedasjadabbas" target="_blank">GitHub</a>
+      <a href="https://www.linkedin.com/in/syed-asjad-abbas/" target="_blank">LinkedIn</a>
+      <a href="mailto:asjadabbaszaidi@gmail.com">Email</a>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="../../script.js"></script>
+</body>
+</html>

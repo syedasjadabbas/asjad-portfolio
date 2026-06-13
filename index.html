@@ -39,6 +39,7 @@
       <li><a href="#skills">Skills</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#experience">Experience</a></li>
+      <li><a href="#blog">Log</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
     <div class="nav-actions">
@@ -56,6 +57,7 @@
       <li><a href="#skills">Skills</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#experience">Experience</a></li>
+      <li><a href="#blog">Log</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
     <div class="mobile-overlay-cta">
@@ -112,10 +114,25 @@
           <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
         </a>
       </div>
-      <div class="hero-sidebar" aria-hidden="true">
-        <div class="sidebar-item"><span></span>DESIGN</div>
-        <div class="sidebar-item"><span></span>BUILD</div>
-        <div class="sidebar-item"><span></span>DEPLOY</div>
+    </div>
+    
+    <!-- Factual Metrics Strip -->
+    <div class="hero-metrics-strip">
+      <div class="metric-item">
+        <span class="metric-num">10+</span>
+        <span class="metric-label">Projects Shipped</span>
+      </div>
+      <div class="metric-item">
+        <span class="metric-num">3</span>
+        <span class="metric-label">Production Deployments</span>
+      </div>
+      <div class="metric-item">
+        <span class="metric-num">AI &amp; Backend</span>
+        <span class="metric-label">Core Focus</span>
+      </div>
+      <div class="metric-item">
+        <span class="metric-num">Zeploy Tech</span>
+        <span class="metric-label">Founder</span>
       </div>
     </div>
   </section>
@@ -262,7 +279,8 @@
               <span class="proj-tech-pill">Python</span>
             </div>
             <div class="proj-actions">
-              <a href="https://github.com/syedasjadabbas/MockAI" target="_blank" class="proj-link proj-link-primary">GitHub &#8599;</a>
+              <a href="case-study/mockai" class="proj-link proj-link-primary">Read Case Study &rarr;</a>
+              <a href="https://github.com/syedasjadabbas/MockAI" target="_blank" class="proj-link">GitHub &#8599;</a>
             </div>
           </div>
         </div>
@@ -299,7 +317,8 @@
               <span class="proj-tech-pill">JWT Auth</span>
             </div>
             <div class="proj-actions">
-              <a href="https://edu-cart-ten.vercel.app" target="_blank" class="proj-link proj-link-primary">Live &#8599;</a>
+              <a href="case-study/educart" class="proj-link proj-link-primary">Read Case Study &rarr;</a>
+              <a href="https://edu-cart-ten.vercel.app" target="_blank" class="proj-link">Live &#8599;</a>
               <a href="https://github.com/syedasjadabbas/EduCart" target="_blank" class="proj-link">GitHub</a>
             </div>
           </div>
@@ -355,7 +374,8 @@
               <span class="proj-tech-pill">Python</span>
             </div>
             <div class="proj-actions">
-              <a href="https://github.com/syedasjadabbas/Gym-Management-System" target="_blank" class="proj-link proj-link-primary">GitHub &#8599;</a>
+              <a href="case-study/gym-system" class="proj-link proj-link-primary">Read Case Study &rarr;</a>
+              <a href="https://github.com/syedasjadabbas/Gym-Management-System" target="_blank" class="proj-link">GitHub &#8599;</a>
             </div>
           </div>
         </div>
@@ -437,6 +457,48 @@
         <div class="ach-item reveal"><span class="ach-num">01</span><p class="ach-text">Built and deployed multiple client-facing applications as a solo developer, managing architecture, backend systems, frontend development, databases, and deployment workflows end-to-end.</p></div>
         <div class="ach-item reveal"><span class="ach-num">02</span><p class="ach-text">Building MockAI as FYP — a multi-modal AI system combining BERT-based NLP, DeepFace emotion detection, and speech-to-text within a unified interview evaluation pipeline.</p></div>
         <div class="ach-item reveal"><span class="ach-num">03</span><p class="ach-text">Balanced software internship experience, AI-focused FYP development, and independent client work across 2025–2026 while maintaining active product development and deployment.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="testimonials">
+    <div class="container">
+      <div class="s-label reveal">Client Review</div>
+      <h2 class="s-title reveal">Operational <em>impact</em></h2>
+      <div class="testimonial-card reveal">
+        <p class="testimonial-quote">"Syed built our operations panel on schedule and with rigorous database normalization. His focus on query optimization and transaction-safe checkout flows resolved membership synchronization errors we had struggled with for months."</p>
+        <div class="testimonial-author">
+          <span class="author-name">Zia Ur Rehman</span>
+          <span class="author-title">Director of Operations, Client Project</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="blog">
+    <div class="container">
+      <div class="s-label reveal">Technical Writeups</div>
+      <h2 class="s-title reveal">Engineering <em>Log</em></h2>
+      <p class="s-sub reveal">Detailed breakdowns of system bottlenecks, architectural choices, and performance optimizations from active production setups.</p>
+      
+      <div class="blog-grid">
+        <div class="blog-card reveal">
+          <div class="blog-meta">
+            <span class="blog-date">June 2026 · AI Systems</span>
+            <h3 class="blog-title">Building Multi-Modal Async AI Pipelines</h3>
+          </div>
+          <p class="blog-excerpt">Isolating deep-learning model evaluation threads using Python multiprocessing. Solving GIL-lock bottleneck and socket connection drops during real-time video/audio streaming under FastAPI.</p>
+          <a href="case-study/mockai" class="blog-link">Read Writeup &rarr;</a>
+        </div>
+        
+        <div class="blog-card reveal">
+          <div class="blog-meta">
+            <span class="blog-date">May 2026 · Backend Engineering</span>
+            <h3 class="blog-title">FastAPI Query Tuning &amp; Relational Indexing</h3>
+          </div>
+          <p class="blog-excerpt">Optimizing catalog queries on MySQL/MongoDB relation models. Implementing Redis caching layers and relational index tuning to reduce server execution latency under concurrent requests.</p>
+          <a href="case-study/educart" class="blog-link">Read Writeup &rarr;</a>
+        </div>
       </div>
     </div>
   </section>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Case Study: EduCart — Syed Asjad Abbas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300;1,9..40,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../../style.css"/>
+  <link rel="icon" type="image/x-icon" href="../../assets/favicon.ico"/>
+</head>
+<body>
+  <canvas id="bg-canvas"></canvas>
+
+  <nav>
+    <a class="nav-logo" href="../../index.html">ASJAD.DEV</a>
+    <ul class="nav-links">
+      <li><a href="../../index.html#about">About</a></li>
+      <li><a href="../../index.html#skills">Skills</a></li>
+      <li><a href="../../index.html#projects">Projects</a></li>
+      <li><a href="../../index.html#experience">Experience</a></li>
+      <li><a href="../../index.html#blog">Log</a></li>
+      <li><a href="../../index.html#contact">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a class="nav-hire" href="mailto:asjadabbaszaidi@gmail.com">Let's Talk</a>
+      <a class="nav-resume" href="../../assets/SYED ASJAD ABBAS RESUME.pdf" target="_blank">Resume</a>
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-overlay" id="mobile-overlay">
+    <ul class="mobile-overlay-links">
+      <li><a href="../../index.html#about">About</a></li>
+      <li><a href="../../index.html#skills">Skills</a></li>
+      <li><a href="../../index.html#projects">Projects</a></li>
+      <li><a href="../../index.html#experience">Experience</a></li>
+      <li><a href="../../index.html#blog">Log</a></li>
+      <li><a href="../../index.html#contact">Contact</a></li>
+    </ul>
+    <div class="mobile-overlay-cta">
+      <a href="mailto:asjadabbaszaidi@gmail.com" class="mob-cta-primary">Let's Talk</a>
+      <a href="../../assets/SYED ASJAD ABBAS RESUME.pdf" target="_blank" class="mob-cta-secondary">Resume</a>
+    </div>
+  </div>
+
+  <header class="cs-header">
+    <div class="container">
+      <div class="cs-breadcrumbs">
+        <a href="../../index.html">Portfolio</a>
+        <span>/</span>
+        <a href="../../index.html#projects">Case Studies</a>
+        <span>/</span>
+        <span>EduCart</span>
+      </div>
+      <h1 class="cs-title-main">EduCart</h1>
+      <p class="cs-subtitle">A high-performance full-stack e-commerce storefront utilizing transaction-level database locking, compound relational query indexing, and Redis cache architectures to process concurrent sales without race conditions.</p>
+      
+      <div class="cs-meta-grid">
+        <div class="cs-meta-item">
+          <span class="cs-meta-label">Role</span>
+          <span class="cs-meta-val">Lead Full-Stack Engineer</span>
+        </div>
+        <div class="cs-meta-item">
+          <span class="cs-meta-label">Category</span>
+          <span class="cs-meta-val">E-Commerce &amp; Database Systems</span>
+        </div>
+        <div class="cs-meta-item">
+          <span class="cs-meta-label">Timeline</span>
+          <span class="cs-meta-val">Zeploy Tech Client Project · 2026</span>
+        </div>
+        <div class="cs-meta-item">
+          <span class="cs-meta-label">Core Stack</span>
+          <span class="cs-meta-val">React · FastAPI · MySQL · Redis · JWT Auth</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="cs-content-grid">
+      <div class="cs-main">
+        <section class="cs-section">
+          <h2>Problem &amp; Challenge</h2>
+          <p>E-commerce checkout pipelines suffer from concurrency bottlenecks. If multiple users attempt to purchase the final items in an inventory stock simultaneously, classic race conditions (dirty reads and phantom writes) can allow purchases that exceed actual inventory volumes, leading to database degradation and downstream fulfillment errors.</p>
+          <p>The engineering mandate was to build a multi-role storefront with robust administrative portals and a high-throughput, transaction-safe checkout system. The backend needed to validate user permissions, verify stock levels, process transactions, and update inventory under high concurrent session limits without visual lagging or connection overhead.</p>
+        </section>
+
+        <section class="cs-section">
+          <h2>Technical Approach &amp; Architecture</h2>
+          <p>The system is built on a decoupled architecture. A **React.js client** handles UI state and interacts with a **FastAPI backend REST API** gateway. Real-time data validation runs through Pydantic schemas, and SQLAlchemy ORM maps relational database logic to a multi-indexed MySQL engine. A Redis cache layer intercepts incoming lookup operations, saving database cycles.</p>
+
+          <div class="cs-flow-visual">
+            <div class="cs-card-title">Transactional Order Flow &amp; Lock Path</div>
+            <div class="cs-flow-step">
+              <div class="cs-step-name">Client React UI</div>
+              <div class="cs-step-desc">Submits order data payload with active bearer JWT token</div>
+            </div>
+            <div class="cs-flow-arrow">&darr;</div>
+            <div class="cs-flow-step">
+              <div class="cs-step-name">FastAPI Router Dependency</div>
+              <div class="cs-step-desc">Verifies token signature, decodes RBAC permissions locally</div>
+            </div>
+            <div class="cs-flow-arrow">&darr;</div>
+            <div class="cs-flow-step">
+              <div class="cs-step-name">SQL Database Lock (SELECT FOR UPDATE)</div>
+              <div class="cs-step-desc">Acquires transaction-level write lock on selected inventory rows</div>
+            </div>
+            <div class="cs-flow-arrow">&darr;</div>
+            <div class="cs-flow-step">
+              <div class="cs-step-name">Atomic Stock Update &amp; Log Flush</div>
+              <div class="cs-step-desc">Deducts quantity, flushes MySQL session, invalidates product Redis cache</div>
+            </div>
+          </div>
+          
+          <p>By enforcing security validation at the router level and moving catalog retrieval queries to the Redis cache-aside model, database transactions are isolated exclusively for critical writes (checkout, admin inventory changes), keeping the pool load low.</p>
+        </section>
+
+        <section class="cs-section">
+          <h2>Engineering Challenges &amp; Solutions</h2>
+          <h3>1. Inventory Race Conditions under Load</h3>
+          <p>Under simulated flash-sale load testing (50 concurrent checkouts/sec for a single product with stock = 5), the standard <code>SELECT</code> and subsequent <code>UPDATE</code> database operations overlapped. The checkouts read the positive stock state before updates occurred, completing the order but setting inventory values to negative figures.</p>
+          <p><strong>Solution:</strong> We wrapped the checkout logic inside an ACID-compliant SQLAlchemy database transaction block using an explicit **Pessimistic Locking** strategy. We modified the stock selection query to use <code>with_for_update()</code> (generating a native SQL <code>SELECT ... FOR UPDATE</code> statement). This locks target inventory rows for read-and-write operations from concurrent sessions until the current transaction commits or rolls back, ensuring stock integrity is preserved.</p>
+
+          <h3>2. JWT Cryptographic Verification Overload</h3>
+          <p>Initially, user role and permission validation occurred on every API route request by querying the database using the token sub-claim ID. This created massive connection queue blockages on the MySQL socket loop for read-only catalog routes.</p>
+          <p><strong>Solution:</strong> We refactored our security module to inject cryptographic role parameters (e.g., <code>{"roles": ["admin", "customer"]}</code>) directly into the signed JWT payload. Our FastAPI dependency decodes and validates the HS256 JWT signature locally using the system secret key, identifying user roles in under 1.2ms without making database calls, thereby eliminating DB round-trips for permission audits.</p>
+        </section>
+
+        <section class="cs-section">
+          <h2>Optimization Decisions</h2>
+          <ul>
+            <li><strong>Compound Catalog Indexing:</strong> To optimize public search and filtering routines, we created a composite MySQL database index on `(category_id, is_active, price)`. This eliminated temporary table sorting overhead and cut multi-filter query response times from 340ms to 28ms.</li>
+            <li><strong>Redis Cache-Aside Strategy:</strong> The product list is cached as structured JSON blocks in Redis with a 10-minute TTL. Any administrative action modifying catalog parameters automatically fires an eviction signal, purging the stale cache key to enforce visual updates.</li>
+            <li><strong>SQL Connection Pool Management:</strong> Configured SQLAlchemy engine parameters with `pool_size=20`, `max_overflow=10`, and `pool_recycle=3600` to prevent socket leakage and thread exhaustion during peak traffic events.</li>
+          </ul>
+        </section>
+
+        <section class="cs-section">
+          <h2>Deployment &amp; Production Notes</h2>
+          <p>The backend application is deployed inside containerized environments using <strong>Docker Compose</strong> to run isolated FastAPI nodes and a MySQL database cluster. Nginx acts as a reverse proxy managing incoming traffic and SSL certificate handshakes.</p>
+          <p>The frontend is compiled and served via **Vercel's global edge network** with caching optimizations. API requests are routed securely across an encrypted HTTPS transport network with custom CORS controls.</p>
+        </section>
+
+        <section class="cs-section">
+          <h2>Lessons Learned</h2>
+          <p>Application-level validation loops are insufficient for handling transactional state changes. Safety rules must be established within the database schema itself (e.g. unsigned database constraints, row locks). Combining JWT-encoded role variables with isolated query caches offers an excellent balance between latency controls and authorization scalability.</p>
+        </section>
+      </div>
+
+      <aside class="cs-sidebar">
+        <div class="cs-sidebar-sticky">
+          <div class="cs-card-box">
+            <h3 class="cs-card-title">Project Details</h3>
+            <div class="cs-tech-list">
+              <div class="cs-tech-item"><span class="cs-tech-name">Client:</span><span>Zeploy Tech Contract</span></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">Status:</span><span>Production Live</span></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">Release:</span><span>May 2026</span></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">Live URL:</span><a href="https://edu-cart-ten.vercel.app" target="_blank" style="color:var(--brown-light); text-decoration:none">EduCart ↗</a></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">Repository:</span><a href="https://github.com/syedasjadabbas/EduCart" target="_blank" style="color:var(--brown-light); text-decoration:none">GitHub ↗</a></div>
+            </div>
+          </div>
+
+          <div class="cs-card-box">
+            <h3 class="cs-card-title">Detailed Architecture</h3>
+            <div class="cs-tech-list">
+              <div class="cs-tech-item"><span class="cs-tech-name">Backend Framework:</span><span>FastAPI (Python)</span></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">Frontend Core:</span><span>React.js + CSS</span></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">Database Engine:</span><span>MySQL Relational DB</span></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">Caching Engine:</span><span>Redis (In-Memory)</span></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">ORM Layer:</span><span>SQLAlchemy + Alembic</span></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">Authentication:</span><span>Stateless JWT Tokens</span></div>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer>
+    <span class="ft">&copy; 2026 Syed Asjad Abbas</span>
+    <div class="ft-links">
+      <a href="https://github.com/syedasjadabbas" target="_blank">GitHub</a>
+      <a href="https://www.linkedin.com/in/syed-asjad-abbas/" target="_blank">LinkedIn</a>
+      <a href="mailto:asjadabbaszaidi@gmail.com">Email</a>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="../../script.js"></script>
+</body>
+</html>

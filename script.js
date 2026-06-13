@@ -1,7 +1,7 @@
 /* THREE.JS WIREFRAME BACKGROUND — matching reference image */
 (function(){
   const canvas = document.getElementById('bg-canvas');
-  if(!canvas) return;
+  if(!canvas || typeof THREE === 'undefined') return;
   const renderer = new THREE.WebGLRenderer({canvas, alpha:true, antialias:true});
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
   renderer.setClearColor(0x000000, 0);

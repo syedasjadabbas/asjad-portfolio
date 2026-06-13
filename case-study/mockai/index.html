@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Case Study: MockAI — Syed Asjad Abbas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300;1,9..40,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../../style.css"/>
+  <link rel="icon" type="image/x-icon" href="../../assets/favicon.ico"/>
+</head>
+<body>
+  <canvas id="bg-canvas"></canvas>
+
+  <nav>
+    <a class="nav-logo" href="../../index.html">ASJAD.DEV</a>
+    <ul class="nav-links">
+      <li><a href="../../index.html#about">About</a></li>
+      <li><a href="../../index.html#skills">Skills</a></li>
+      <li><a href="../../index.html#projects">Projects</a></li>
+      <li><a href="../../index.html#experience">Experience</a></li>
+      <li><a href="../../index.html#blog">Log</a></li>
+      <li><a href="../../index.html#contact">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a class="nav-hire" href="mailto:asjadabbaszaidi@gmail.com">Let's Talk</a>
+      <a class="nav-resume" href="../../assets/SYED ASJAD ABBAS RESUME.pdf" target="_blank">Resume</a>
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-overlay" id="mobile-overlay">
+    <ul class="mobile-overlay-links">
+      <li><a href="../../index.html#about">About</a></li>
+      <li><a href="../../index.html#skills">Skills</a></li>
+      <li><a href="../../index.html#projects">Projects</a></li>
+      <li><a href="../../index.html#experience">Experience</a></li>
+      <li><a href="../../index.html#blog">Log</a></li>
+      <li><a href="../../index.html#contact">Contact</a></li>
+    </ul>
+    <div class="mobile-overlay-cta">
+      <a href="mailto:asjadabbaszaidi@gmail.com" class="mob-cta-primary">Let's Talk</a>
+      <a href="../../assets/SYED ASJAD ABBAS RESUME.pdf" target="_blank" class="mob-cta-secondary">Resume</a>
+    </div>
+  </div>
+
+  <header class="cs-header">
+    <div class="container">
+      <div class="cs-breadcrumbs">
+        <a href="../../index.html">Portfolio</a>
+        <span>/</span>
+        <a href="../../index.html#projects">Case Studies</a>
+        <span>/</span>
+        <span>MockAI</span>
+      </div>
+      <h1 class="cs-title-main">MockAI</h1>
+      <p class="cs-subtitle">A multi-modal AI interview evaluation system integrating audio transcription, emotional cue analysis, and semantic answer grading into a unified async processing pipeline.</p>
+      
+      <div class="cs-meta-grid">
+        <div class="cs-meta-item">
+          <span class="cs-meta-label">Role</span>
+          <span class="cs-meta-val">Lead AI Engineer / Architect</span>
+        </div>
+        <div class="cs-meta-item">
+          <span class="cs-meta-label">Category</span>
+          <span class="cs-meta-val">AI Systems &amp; Backend Pipelines</span>
+        </div>
+        <div class="cs-meta-item">
+          <span class="cs-meta-label">Timeline</span>
+          <span class="cs-meta-val">FYP Project · 2026–Present</span>
+        </div>
+        <div class="cs-meta-item">
+          <span class="cs-meta-label">Core Stack</span>
+          <span class="cs-meta-val">FastAPI · PyTorch · BERT · DeepFace · React</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="cs-content-grid">
+      <div class="cs-main">
+        <section class="cs-section">
+          <h2>Problem &amp; Challenge</h2>
+          <p>Traditional candidate interview preparations are bottlenecked by manual reviewer latency, subjective assessment biases, and the inability to track non-verbal physiological traits (such as structural emotional fluctuations and vocal rhythms) in real-time. Automated grading systems typically evaluate only the semantic text of a candidate's answer, missing vital cues like confidence levels, eye contact drift, and structural answer relevance.</p>
+          <p>The core engineering challenge was to build a system that concurrently processes <strong>live WebRTC camera streams</strong>, extracts and transcript-transcribes vocal signals, monitors emotional attributes from video frames, and semantic-grades textual responses—without introducing execution lags or socket connection timeouts on the client interface.</p>
+        </section>
+
+        <section class="cs-section">
+          <h2>Technical Approach &amp; Architecture</h2>
+          <p>We designed an asynchronous micro-pipeline utilizing a <strong>FastAPI WebSockets backend</strong> acting as a central coordinator, routing raw client media feeds to isolated processing loops. This decoupled structure ensures that heavy computer vision calculations do not interfere with WebRTC frame capture or audio processing threads.</p>
+
+          <div class="cs-flow-visual">
+            <div class="cs-card-title">Live Pipeline Stream Routing</div>
+            <div class="cs-flow-step">
+              <div class="cs-step-name">Client browser (React WebRTC)</div>
+              <div class="cs-step-desc">Streams video/audio frames via WebSocket links</div>
+            </div>
+            <div class="cs-flow-arrow">&darr;</div>
+            <div class="cs-flow-step">
+              <div class="cs-step-name">FastAPI Core Gateway</div>
+              <div class="cs-step-desc">Ingests sockets, chunks buffer streams, routes asynchronously</div>
+            </div>
+            <div class="cs-flow-arrow">&darr;</div>
+            <div class="cs-flow-step">
+              <div class="cs-step-name">isolated Worker Process Thread Pools</div>
+              <div class="cs-step-desc">Queue 1: DeepFace CV (Emotions) · Queue 2: Whisper API (Transcription)</div>
+            </div>
+            <div class="cs-flow-arrow">&darr;</div>
+            <div class="cs-flow-step">
+              <div class="cs-step-name">BERT Scoring &amp; DB Flush</div>
+              <div class="cs-step-desc">Semantic comparison against response schemas &amp; save to MongoDB</div>
+            </div>
+          </div>
+          
+          <p>Rather than running multi-threaded loops inside a single process, the system offloads heavy computational nodes to independent workers. Frame analysis is managed via dynamic sampling, while language translation tasks run in an asynchronous consumer queue.</p>
+        </section>
+
+        <section class="cs-section">
+          <h2>Engineering Challenges &amp; Solutions</h2>
+          <h3>1. The GIL Bottleneck &amp; Socket Dropouts</h3>
+          <p>During initial testing, executing DeepFace frame evaluations on incoming WebSocket buffers blocked the main asyncio event loop due to Python's Global Interpreter Lock (GIL). This blockage stalled socket handshakes, causing the client connection to drop within 10–12 seconds of streaming.</p>
+          <p><strong>Solution:</strong> We resolved this by isolating the computer vision pipeline into a native subprocess using Python's <code>multiprocessing.Process</code> class and utilizing memory-mapped queues (<code>multiprocessing.Queue</code>) for inter-process communication. Frame capture runs continuously on the asyncio event loop, writing data to a shared memory buffer, while the CV worker process pulls and processes frames independently at its own pace.</p>
+
+          <h3>2. Audio-Video Synchronization Drift</h3>
+          <p>Network latency jitter during live WebRTC streaming created drift between the timestamp of candidate emotional changes and their corresponding verbal responses, leading to skewed evaluation charts.</p>
+          <p><strong>Solution:</strong> We implemented a timestamp synchronization protocol where each video frame and audio packet are indexed with a client-generated epoch timestamp. Upon backend collection, evaluations are matched and aligned on these markers, ensuring final report charts accurately represent what candidates were saying at the exact moment they showed key emotional markers.</p>
+        </section>
+
+        <section class="cs-section">
+          <h2>Optimization Decisions</h2>
+          <ul>
+            <li><strong>Dynamic Frame Skipping:</strong> Rather than processing all 30 frames per second (which caused server CPU utilization to spike to 100%), the system processes only every 4th frame (7.5 FPS). Emotion state tracking metrics remain highly accurate while reducing server load by 75%.</li>
+            <li><strong>Model Cache Warmup:</strong> Model weights for the BERT NLP semantic evaluator and face detectors are preloaded into CPU cache memory upon server initialization. This cuts the evaluation starting delay of the first candidate answer from 8.2 seconds down to less than 0.4 seconds.</li>
+            <li><strong>Optimized Database Writing:</strong> Metric data point flushes to MongoDB Atlas are batched into a buffer memory cache and written in single bulk write transactions every 5 seconds, rather than single data writes on every frame. This preserves DB socket connections.</li>
+          </ul>
+        </section>
+
+        <section class="cs-section">
+          <h2>Deployment &amp; Production Notes</h2>
+          <p>The system is deployed on a Linux VPS infrastructure using <strong>Gunicorn with Uvicorn workers</strong> running behind an Nginx reverse proxy. Static frontend directories are compiled and served via Vercel to optimize assets delivery speed, and media assets are routed securely through an authenticated SSL WebSocket connection.</p>
+          <p>For scale management, a Docker compose structure isolates FastAPI backend nodes and handles automatic worker instance pooling, providing clean modular upgrades.</p>
+        </section>
+      </div>
+
+      <aside class="cs-sidebar">
+        <div class="cs-sidebar-sticky">
+          <div class="cs-card-box">
+            <h3 class="cs-card-title">Project Details</h3>
+            <div class="cs-tech-list">
+              <div class="cs-tech-item"><span class="cs-tech-name">Client:</span><span>Academic FYP Research</span></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">Status:</span><span>In Development</span></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">Release:</span><span>June 2026</span></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">Repository:</span><a href="https://github.com/syedasjadabbas/MockAI" target="_blank" style="color:var(--brown-light); text-decoration:none">GitHub ↗</a></div>
+            </div>
+          </div>
+
+          <div class="cs-card-box">
+            <h3 class="cs-card-title">Detailed Architecture</h3>
+            <div class="cs-tech-list">
+              <div class="cs-tech-item"><span class="cs-tech-name">Backend Framework:</span><span>FastAPI (Python)</span></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">Frontend Core:</span><span>React.js + Tailwind CSS</span></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">CV Framework:</span><span>DeepFace · OpenCV</span></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">NLP Transformer:</span><span>HuggingFace BERT</span></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">Database Engine:</span><span>MongoDB Atlas</span></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">Socket Transport:</span><span>Asynchronous WebSockets</span></div>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer>
+    <span class="ft">&copy; 2026 Syed Asjad Abbas</span>
+    <div class="ft-links">
+      <a href="https://github.com/syedasjadabbas" target="_blank">GitHub</a>
+      <a href="https://www.linkedin.com/in/syed-asjad-abbas/" target="_blank">LinkedIn</a>
+      <a href="mailto:asjadabbaszaidi@gmail.com">Email</a>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="../../script.js"></script>
+</body>
+</html>
