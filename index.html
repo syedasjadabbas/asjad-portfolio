@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Syed Asjad Abbas — AI &amp; Full-Stack Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300;1,9..40,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <canvas id="bg-canvas"></canvas>
+
+  <nav>
+    <a class="nav-logo" href="#">ASJAD.DEV</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a class="nav-hire" href="mailto:asjadabbaszaidi@gmail.com">Let's Talk</a>
+      <a class="nav-resume" href="assets/SYED ASJAD ABBAS RESUME.pdf" target="_blank">Resume</a>
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-overlay" id="mobile-overlay">
+    <ul class="mobile-overlay-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="mobile-overlay-cta">
+      <a href="mailto:asjadabbaszaidi@gmail.com" class="mob-cta-primary">Let's Talk</a>
+      <a href="assets/SYED ASJAD ABBAS RESUME.pdf" target="_blank" class="mob-cta-secondary">Resume</a>
+    </div>
+  </div>
+
+  <section id="hero">
+    <div class="hero-radial-l"></div>
+    <div class="hero-radial-r"></div>
+    <div class="hero-ghost" id="hero-ghost" aria-hidden="true">ENGINEER</div>
+
+    <div class="hero-l">
+      <div>
+        <div class="hero-greeting">&#128075; Hi, my name is</div>
+        <span class="hero-name-first">SYED ASJAD</span>
+        <span class="hero-name-last">ABBAS</span>
+      </div>
+      <div>
+        <div class="hero-avail-label">Organization</div>
+        <div class="hero-avail-pill"><span class="avail-dot" style="background:var(--powder)"></span>Founder @ Zeploy Tech</div>
+        <div class="hero-socials" style="margin-top: 1.25rem">
+          <a href="https://www.linkedin.com/in/syed-asjad-abbas/" target="_blank" class="hero-soc-link">LinkedIn</a>
+          <a href="https://github.com/syedasjadabbas" target="_blank" class="hero-soc-link">GitHub</a>
+          <a href="https://www.linkedin.com/company/zeploy-tech/" target="_blank" class="hero-soc-link">Zeploy Tech</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-c">
+      <div class="photo-frame" id="photo-frame">
+        <div class="photo-color-ring"></div>
+        <div class="photo-glow"></div>
+        <div class="photo-scanlines"></div>
+        <img src="assets/profile_nobg.png" alt="Syed Asjad Abbas" draggable="false" />
+      </div>
+    </div>
+
+    <div class="hero-r" style="position:relative">
+      <div>
+        <span class="hero-big">AI</span>
+        <span class="hero-big">ENGINEER</span>
+        <div class="hero-gold-line">&amp; Full-Stack Developer</div>
+        <div class="hero-typed" id="typed-out" style="margin-top:1.5rem; margin-bottom:1rem"></div>
+        <p class="hero-desc">Focused on backend systems, AI workflows, and production-focused applications that need to handle real users, real data, and real operational constraints.</p>
+      </div>
+      <div class="hero-r-bottom">
+        <div>
+          <div class="hero-talk-label">Portfolio</div>
+          <a href="#projects" class="hero-talk-link">EXPLORE WORK</a>
+        </div>
+        <a href="#projects" class="hero-arrow-btn" title="View Projects">
+          <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+      <div class="hero-sidebar" aria-hidden="true">
+        <div class="sidebar-item"><span></span>DESIGN</div>
+        <div class="sidebar-item"><span></span>BUILD</div>
+        <div class="sidebar-item"><span></span>DEPLOY</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container">
+      <div class="s-label reveal">About</div>
+      <h2 class="s-title reveal">Engineering at the edge of <em>AI</em></h2>
+      <div class="about-grid">
+        <div class="about-body">
+          <p class="reveal reveal-d1">Final-year <strong>Computer Science student</strong> at COMSATS University Islamabad. I work primarily at the intersection of AI systems and backend engineering — building things that need to handle real data, real users, and real edge cases.</p>
+          <p class="reveal reveal-d2">I founded <strong>Zeploy Tech</strong> in 2026 to formalize the client work I was already doing. The company ships production software — e-commerce platforms, management systems, and custom tools — with a focus on clean architecture and reliable deployment.</p>
+          <p class="reveal reveal-d3">My FYP, <strong>MockAI</strong>, is a multi-modal interview evaluation system that combines BERT-based NLP, DeepFace computer vision, and speech-to-text into a single analytics pipeline. It's the most technically complex system I've built so far.</p>
+          <p class="reveal reveal-d4">I care about <strong>writing defensible APIs, designing database schemas that don't break under load, and shipping code that works in production</strong> — not just in demo environments.</p>
+        </div>
+        <div class="about-facts reveal">
+          <div class="fact-row"><span class="fact-key">Education</span><span class="fact-val">BS Computer Science — COMSATS University Islamabad, 2023–2027</span></div>
+          <div class="fact-row"><span class="fact-key">Location</span><span class="fact-val">Lahore, Pakistan</span></div>
+          <div class="fact-row"><span class="fact-key">Company</span><span class="fact-val">Founder &amp; Developer — Zeploy Tech</span></div>
+          <div class="fact-row"><span class="fact-key">FYP</span><span class="fact-val">MockAI — AI Interview Evaluation System</span></div>
+          <div class="fact-row"><span class="fact-key">Seeking</span><span class="fact-val">Backend / AI Engineering roles</span></div>
+          <div class="fact-row"><span class="fact-key">Languages</span><span class="fact-val">English (Fluent) · Urdu (Native)</span></div>
+          <div class="fact-row"><span class="fact-key">Coursework</span><span class="fact-val">Machine Learning · Computer Vision · NLP · Database Systems</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div id="skills-grid-bg"></div>
+    <div class="container" style="position:relative;z-index:1">
+      <div class="s-label reveal">Technical Stack</div>
+      <h2 class="s-title reveal">Engineering <em>Stack</em></h2>
+      <p class="s-sub reveal">Technologies used across production applications and AI-focused systems.</p>
+      <div class="skills-grid">
+        <div class="skill-block reveal">
+          <div class="skill-name">AI Systems</div>
+          <div class="skill-list">
+            <span class="skill-tag">Machine Learning</span>
+            <span class="skill-tag">NLP</span>
+            <span class="skill-tag">Deep Learning</span>
+            <span class="skill-tag">BERT</span>
+            <span class="skill-tag">DeepFace</span>
+            <span class="skill-tag">OpenCV</span>
+            <span class="skill-tag">scikit-learn</span>
+            <span class="skill-tag">Pandas</span>
+            <span class="skill-tag">NumPy</span>
+          </div>
+        </div>
+        <div class="skill-block reveal">
+          <div class="skill-name">Backend</div>
+          <div class="skill-list">
+            <span class="skill-tag">FastAPI</span>
+            <span class="skill-tag">REST API Design</span>
+            <span class="skill-tag">JWT Auth</span>
+            <span class="skill-tag">API Integration</span>
+          </div>
+        </div>
+        <div class="skill-block reveal">
+          <div class="skill-name">Frontend</div>
+          <div class="skill-list">
+            <span class="skill-tag">React.js</span>
+            <span class="skill-tag">Flutter</span>
+            <span class="skill-tag">Tailwind CSS</span>
+            <span class="skill-tag">HTML5</span>
+            <span class="skill-tag">CSS3</span>
+            <span class="skill-tag">JavaScript</span>
+          </div>
+        </div>
+        <div class="skill-block reveal">
+          <div class="skill-name">Databases</div>
+          <div class="skill-list">
+            <span class="skill-tag">MongoDB Atlas</span>
+            <span class="skill-tag">MySQL</span>
+            <span class="skill-tag">Firebase</span>
+          </div>
+        </div>
+        <div class="skill-block reveal">
+          <div class="skill-name">Tools</div>
+          <div class="skill-list">
+            <span class="skill-tag">Git</span>
+            <span class="skill-tag">GitHub</span>
+            <span class="skill-tag">Postman</span>
+            <span class="skill-tag">Jupyter</span>
+            <span class="skill-tag">VS Code</span>
+            <span class="skill-tag">Linux</span>
+            <span class="skill-tag">Docker</span>
+          </div>
+        </div>
+        <div class="skill-block reveal">
+          <div class="skill-name">Languages</div>
+          <div class="skill-list">
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">JavaScript</span>
+            <span class="skill-tag">Dart</span>
+            <span class="skill-tag">Java</span>
+            <span class="skill-tag">C#</span>
+            <span class="skill-tag">SQL</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="container">
+      <div class="s-label reveal">Projects</div>
+      <h2 class="s-title reveal">Systems I've <em>built</em></h2>
+      <p class="s-sub reveal">Production applications shipped for real clients and academic research.</p>
+      <div class="proj-list">
+        <!-- Project 1: MockAI -->
+        <div class="proj-item reveal">
+          <div class="proj-visual-col">
+            <div class="proj-visual-glow"></div>
+            <img src="assets/mock ai.png" alt="MockAI — AI Interview Evaluation Dashboard" draggable="false" loading="lazy" />
+          </div>
+          <div class="proj-content-col">
+            <div style="display:flex;align-items:center;gap:1rem;flex-wrap:wrap">
+              <span class="proj-meta-label">01 / AI System</span>
+              <span class="proj-status proj-status--dev"><span class="proj-status-dot"></span>In Development</span>
+            </div>
+            <h3 class="proj-title">MockAI</h3>
+            <div class="proj-case">
+              <div class="proj-case-row"><span class="proj-case-key">Challenge</span><span class="proj-case-val">Evaluate interview performance across speech, facial expression, and answer quality simultaneously — without manual review.</span></div>
+              <div class="proj-case-row"><span class="proj-case-key">Solution</span><span class="proj-case-val">Multi-modal pipeline combining BERT NLP semantic grading, DeepFace emotion tracking, and speech-to-text transcription into a unified analytics dashboard.</span></div>
+            </div>
+            <div class="proj-arch">
+              <span class="arch-node">React.js</span>
+              <span class="arch-arrow">→</span>
+              <span class="arch-node">FastAPI</span>
+              <span class="arch-arrow">→</span>
+              <span class="arch-node">BERT NLP</span>
+              <span class="arch-arrow">→</span>
+              <span class="arch-node">DeepFace</span>
+              <span class="arch-arrow">→</span>
+              <span class="arch-node">MongoDB</span>
+            </div>
+            <div class="proj-tech-stack">
+              <span class="proj-tech-pill">FastAPI</span>
+              <span class="proj-tech-pill">React.js</span>
+              <span class="proj-tech-pill">BERT NLP</span>
+              <span class="proj-tech-pill">DeepFace</span>
+              <span class="proj-tech-pill">MongoDB Atlas</span>
+              <span class="proj-tech-pill">Python</span>
+            </div>
+            <div class="proj-actions">
+              <a href="https://github.com/syedasjadabbas/MockAI" target="_blank" class="proj-link proj-link-primary">GitHub &#8599;</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2: EduCart -->
+        <div class="proj-item reverse reveal">
+          <div class="proj-visual-col">
+            <div class="proj-visual-glow"></div>
+            <img src="assets/educart.png" alt="EduCart — E-Commerce Storefront" draggable="false" loading="lazy" />
+          </div>
+          <div class="proj-content-col">
+            <div style="display:flex;align-items:center;gap:1rem;flex-wrap:wrap">
+              <span class="proj-meta-label">02 / E-Commerce</span>
+              <span class="proj-status proj-status--live"><span class="proj-status-dot"></span>Live</span>
+            </div>
+            <h3 class="proj-title">EduCart</h3>
+            <div class="proj-case">
+              <div class="proj-case-row"><span class="proj-case-key">Challenge</span><span class="proj-case-val">Build a storefront with role-based admin controls and checkout flow that handles concurrent user sessions without data conflicts.</span></div>
+              <div class="proj-case-row"><span class="proj-case-key">Solution</span><span class="proj-case-val">Full-stack platform with JWT session management, indexed SQL queries for catalog search, and transactional checkout logic with inventory locks.</span></div>
+            </div>
+            <div class="proj-arch">
+              <span class="arch-node">React.js</span>
+              <span class="arch-arrow">→</span>
+              <span class="arch-node">FastAPI</span>
+              <span class="arch-arrow">→</span>
+              <span class="arch-node">JWT Auth</span>
+              <span class="arch-arrow">→</span>
+              <span class="arch-node">MySQL</span>
+            </div>
+            <div class="proj-tech-stack">
+              <span class="proj-tech-pill">React.js</span>
+              <span class="proj-tech-pill">FastAPI</span>
+              <span class="proj-tech-pill">MySQL</span>
+              <span class="proj-tech-pill">JWT Auth</span>
+            </div>
+            <div class="proj-actions">
+              <a href="https://edu-cart-ten.vercel.app" target="_blank" class="proj-link proj-link-primary">Live &#8599;</a>
+              <a href="https://github.com/syedasjadabbas/EduCart" target="_blank" class="proj-link">GitHub</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3: TuneBox -->
+        <div class="proj-item reveal">
+          <div class="proj-visual-col">
+            <div class="proj-visual-glow"></div>
+            <img src="assets/tunebox.png" alt="TuneBox — Mobile Music Streaming App" draggable="false" loading="lazy" />
+          </div>
+          <div class="proj-content-col">
+            <div style="display:flex;align-items:center;gap:1rem;flex-wrap:wrap">
+              <span class="proj-meta-label">03 / Mobile App</span>
+              <span class="proj-status proj-status--intern"><span class="proj-status-dot"></span>Internship Project</span>
+            </div>
+            <h3 class="proj-title">TuneBox</h3>
+            <div class="proj-case">
+              <div class="proj-case-row"><span class="proj-case-key">Challenge</span><span class="proj-case-val">Handle offline playback, audio buffer management, and seamless cloud/local source switching in a cross-platform mobile client.</span></div>
+              <div class="proj-case-row"><span class="proj-case-key">Solution</span><span class="proj-case-val">Reusable audio control library with Provider state management, local-first playlist caching, and async stream buffer handling. Reduced UI logic from ~1,200 to ~720 lines.</span></div>
+            </div>
+            <div class="proj-tech-stack">
+              <span class="proj-tech-pill">Flutter</span>
+              <span class="proj-tech-pill">Dart</span>
+              <span class="proj-tech-pill">REST APIs</span>
+              <span class="proj-tech-pill">Provider</span>
+            </div>
+            <div class="proj-actions">
+              <a href="https://github.com/syedasjadabbas/TuneBox" target="_blank" class="proj-link proj-link-primary">GitHub &#8599;</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4: Gym Management System -->
+        <div class="proj-item reverse reveal">
+          <div class="proj-visual-col">
+            <div class="proj-visual-glow"></div>
+            <img class="proj-gym-img" src="assets/gym management system.png" alt="Gym Management System — Operations Dashboard" draggable="false" loading="lazy" />
+          </div>
+          <div class="proj-content-col">
+            <div style="display:flex;align-items:center;gap:1rem;flex-wrap:wrap">
+              <span class="proj-meta-label">04 / Client System</span>
+              <span class="proj-status proj-status--client"><span class="proj-status-dot"></span>Client Deployment</span>
+            </div>
+            <h3 class="proj-title">Gym Management System</h3>
+            <div class="proj-case">
+              <div class="proj-case-row"><span class="proj-case-key">Challenge</span><span class="proj-case-val">Replace manual spreadsheet tracking for a gym facility — member enrollment, attendance logs, and subscription billing were error-prone.</span></div>
+              <div class="proj-case-row"><span class="proj-case-key">Solution</span><span class="proj-case-val">Operations dashboard with transaction-safe enrollment workflows, automated attendance logging, and payment verification tracking.</span></div>
+            </div>
+            <div class="proj-tech-stack">
+              <span class="proj-tech-pill">FastAPI</span>
+              <span class="proj-tech-pill">MySQL</span>
+              <span class="proj-tech-pill">Python</span>
+            </div>
+            <div class="proj-actions">
+              <a href="https://github.com/syedasjadabbas/Gym-Management-System" target="_blank" class="proj-link proj-link-primary">GitHub &#8599;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="container">
+      <div class="s-label reveal">Experience</div>
+      <h2 class="s-title reveal">Where I've <em>worked</em></h2>
+      <div class="exp-table">
+        <div class="exp-row reveal">
+          <div class="exp-left"><span class="exp-date">Apr 2026 — Present</span><div class="exp-co"><a href="https://www.linkedin.com/company/zeploy-tech/" target="_blank">Zeploy Tech</a></div><div class="exp-type">Lahore, Pakistan</div></div>
+          <div class="exp-right"><div class="exp-role">Founder &amp; Full-Stack Developer</div><ul class="exp-bullets"><li>Architected, built, and shipped multiple production applications (including an e-commerce platform and gym management system) as a solo developer for real clients.</li><li>Led the entire product lifecycle from requirements gathering and system architecture design to database management, frontend creation, and cloud deployment.</li><li>Optimized database schemas and API endpoints, significantly reducing latency and eliminating redundant calls through query tuning and caching.</li></ul></div>
+        </div>
+        <div class="exp-row reveal">
+          <div class="exp-left"><span class="exp-date">Sep 2025 — Apr 2026</span><div class="exp-co">Svype</div><div class="exp-type">Lahore, Pakistan</div></div>
+          <div class="exp-right"><div class="exp-role">Software Development Intern</div><ul class="exp-bullets"><li>Developed major user interface flows and integrated RESTful API contracts for TuneBox, a Flutter-based music streaming app, using Provider state management.</li><li>Built a reusable audio control and playlist component library, optimizing performance and reducing frontend UI logic from ~1,200 to ~720 lines of code.</li><li>Partnered with cross-functional developers to design robust API contracts, resolve rendering inconsistencies, and run integration tests using Postman.</li></ul></div>
+        </div>
+        <div class="exp-row reveal">
+          <div class="exp-left"><span class="exp-date">2024 — Present</span><div class="exp-co">Freelance</div><div class="exp-type">Remote</div></div>
+          <div class="exp-right"><div class="exp-role">Backend &amp; Full-Stack Developer</div><ul class="exp-bullets"><li>Designed and deployed custom web solutions for local clients integrating secure JWT authentication, FastAPI backends, and React.js interfaces.</li><li>Architected scalable RESTful APIs and optimized MySQL relational database schemas to handle high transaction volumes efficiently.</li><li>Implemented robust deployment pipelines and testing workflows to accelerate shipping frequency for client products.</li></ul></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="certifications">
+    <div class="container">
+      <div class="s-label reveal">Certifications</div>
+      <h2 class="s-title reveal">Credentials</h2>
+      <div class="certs-list">
+        <div class="cert-card reveal">
+          <div class="cert-logo-container">
+            <svg class="cert-logo-svg" viewBox="0 0 24 24" width="26" height="26">
+              <path fill="var(--brown)" d="M12.24 10.285V13.4h6.887c-.275 1.565-1.88 4.604-6.887 4.604-4.33 0-7.859-3.578-7.859-8s3.53-8 7.859-8c2.46 0 4.105 1.025 5.047 1.926l2.427-2.334C17.955 2.192 15.34 1 12.24 1 5.92 1 12 5.92 1 12s4.92 11 11.24 11c6.6 0 11-4.65 11-11.2 0-.756-.08-1.333-.178-1.515H12.24z"/>
+            </svg>
+          </div>
+          <div class="cert-details">
+            <div class="cert-info-left">
+              <h3 class="cert-name">Google AI Essentials</h3>
+              <div class="cert-issuer">Google &amp; Coursera</div>
+            </div>
+            <div class="cert-info-right">
+              <span class="cert-type">Professional Certificate</span>
+              <span class="cert-yr">2026</span>
+            </div>
+          </div>
+        </div>
+        <div class="cert-card reveal">
+          <div class="cert-logo-container">
+            <svg class="cert-logo-svg" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="var(--brown)" stroke-width="1.8">
+              <path d="M12 2L2 7l10 5 10-5-10-5z" />
+              <path d="M2 12l10 5 10-5" />
+              <path d="M2 17l10 5 10-5" />
+            </svg>
+          </div>
+          <div class="cert-details">
+            <div class="cert-info-left">
+              <h3 class="cert-name">Deep Learning Specialization</h3>
+              <div class="cert-issuer">DeepLearning.AI &amp; Coursera</div>
+            </div>
+            <div class="cert-info-right">
+              <span class="cert-type">Specialization Certificate</span>
+              <span class="cert-yr">2026</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="achievements">
+    <div class="container">
+      <div class="s-label reveal">Achievements</div>
+      <h2 class="s-title reveal">Engineering <em>Highlights</em></h2>
+      <div class="ach-grid">
+        <div class="ach-item reveal"><span class="ach-num">01</span><p class="ach-text">Built and deployed multiple client-facing applications as a solo developer, managing architecture, backend systems, frontend development, databases, and deployment workflows end-to-end.</p></div>
+        <div class="ach-item reveal"><span class="ach-num">02</span><p class="ach-text">Building MockAI as FYP — a multi-modal AI system combining BERT-based NLP, DeepFace emotion detection, and speech-to-text within a unified interview evaluation pipeline.</p></div>
+        <div class="ach-item reveal"><span class="ach-num">03</span><p class="ach-text">Balanced software internship experience, AI-focused FYP development, and independent client work across 2025–2026 while maintaining active product development and deployment.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <div class="s-label reveal">Contact</div>
+      <h2 class="s-title reveal">Let's build something <em>real.</em></h2>
+      <div class="contact-grid" style="margin-top:3.5rem">
+        <div class="contact-left reveal">
+          <p class="contact-note">Open to backend engineering, AI systems, and full-stack roles at product-focused companies. Currently building through Zeploy Tech.</p>
+          <a href="mailto:asjadabbaszaidi@gmail.com" class="contact-email">asjadabbaszaidi@gmail.com</a>
+          <div class="contact-soc-links">
+            <a href="https://www.linkedin.com/in/syed-asjad-abbas/" target="_blank" class="c-soc">LinkedIn</a>
+            <a href="https://github.com/syedasjadabbas" target="_blank" class="c-soc">GitHub</a>
+            <a href="https://www.linkedin.com/company/zeploy-tech/" target="_blank" class="c-soc">Zeploy Tech</a>
+          </div>
+        </div>
+        <div class="contact-right reveal">
+          <form id="contact-form" action="https://formspree.io/f/mvznvybl" method="POST">
+            <div class="form-field"><label class="form-lbl">Name</label><input class="form-inp" type="text" name="name" placeholder="Your name" required/></div>
+            <div class="form-field"><label class="form-lbl">Email</label><input class="form-inp" type="email" name="email" placeholder="your@email.com" required/></div>
+            <div class="form-field"><label class="form-lbl">Message</label><textarea class="form-ta" name="message" placeholder="What are you working on?" required></textarea></div>
+            <button class="form-submit" type="submit" id="form-submit-btn">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span class="ft">&copy; 2026 Syed Asjad Abbas</span>
+    <div class="ft-links">
+      <a href="https://github.com/syedasjadabbas" target="_blank">GitHub</a>
+      <a href="https://www.linkedin.com/in/syed-asjad-abbas/" target="_blank">LinkedIn</a>
+      <a href="mailto:asjadabbaszaidi@gmail.com">Email</a>
+    </div>
+  </footer>
+
+  <button class="scroll-top" id="scroll-top-btn" aria-label="Scroll to top" title="Back to top">
+    <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
