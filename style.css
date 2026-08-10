@@ -116,6 +116,13 @@ section{padding:8rem 4rem;position:relative;z-index:1;background:transparent !im
 .s-sub{font-size:0.9rem;color:var(--text-secondary);line-height:1.8;max-width:520px;margin-bottom:4rem}
 .reveal{opacity:0;transform:translateY(20px);transition:opacity 0.7s cubic-bezier(0.16,1,0.3,1),transform 0.7s cubic-bezier(0.16,1,0.3,1)}
 .reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
 .reveal-d1{transition-delay:0.08s}
 .reveal-d2{transition-delay:0.16s}
 .reveal-d3{transition-delay:0.24s}
