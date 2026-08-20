@@ -3,8 +3,8 @@
   try {
     const canvas = document.getElementById('bg-canvas');
     if(!canvas || typeof THREE === 'undefined') return;
-    const renderer = new THREE.WebGLRenderer({canvas, alpha:true, antialias:true});
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    const renderer = new THREE.WebGLRenderer({canvas, alpha:true, antialias:true, powerPreference: 'high-performance'});
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
     renderer.setClearColor(0x000000, 0);
 
     const scene = new THREE.Scene();
@@ -20,11 +20,20 @@
     }
     resize();
     window.addEventListener('resize', resize, { passive: true });
-    let scrollY = 0;
+
+    let targetScrollY = window.scrollY || 0;
+    let scrollY = targetScrollY;
     window.addEventListener('scroll', () => {
-      scrollY = window.scrollY;
-      canvas.style.opacity = Math.max(0.32, 1 - (scrollY / (window.innerHeight * 0.6)));
+      targetScrollY = window.scrollY || 0;
     }, { passive: true });
+
+    /* Visibility and motion preferences */
+    let isTabVisible = !document.hidden;
+    document.addEventListener('visibilitychange', () => {
+      isTabVisible = !document.hidden;
+    }, { passive: true });
+
+    const prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     /* Color palette from reference */
     const C = {
@@ -183,20 +192,28 @@
     let t = 0;
     function animate(){
       requestAnimationFrame(animate);
+      if(!isTabVisible) return; // Pause rendering when tab is hidden to save GPU/CPU
+
       try {
-        t += isMobile ? 0.006 : 0.012;
-        shapes.forEach(s => {
-          s.rotation.x += s.userData.rx * (isMobile ? 0.6 : 1.25);
-          s.rotation.y += s.userData.ry * (isMobile ? 0.6 : 1.25);
-          s.position.y = s.userData.initY + Math.sin(t + s.userData.t) * (isMobile ? 0.05 : 0.12);
-          s.position.x += Math.cos(t + s.userData.t) * (isMobile ? 0.0003 : 0.001);
-        });
-        scene.rotation.y = t * 0.025;
+        if(!prefersReducedMotion){
+          t += isMobile ? 0.006 : 0.012;
+          shapes.forEach(s => {
+            s.rotation.x += s.userData.rx * (isMobile ? 0.6 : 1.25);
+            s.rotation.y += s.userData.ry * (isMobile ? 0.6 : 1.25);
+            s.position.y = s.userData.initY + Math.sin(t + s.userData.t) * (isMobile ? 0.05 : 0.12);
+            s.position.x += Math.cos(t + s.userData.t) * (isMobile ? 0.0003 : 0.001);
+          });
+          scene.rotation.y = t * 0.025;
+        }
+
+        // Smooth scroll interpolation
+        scrollY += (targetScrollY - scrollY) * 0.08;
         const targetZ = 10 + (scrollY * 0.0045);
         camera.position.z += (targetZ - camera.position.z) * 0.03;
         camera.position.x += ((isMobile ? 0 : mouseX * 0.8) - camera.position.x) * 0.03;
         camera.position.y += ((isMobile ? 0 : mouseY * 0.5) - (scrollY * (isMobile ? 0.0008 : 0.0018)) - camera.position.y) * 0.03;
         camera.lookAt(scene.position);
+
         renderer.render(scene, camera);
       } catch(err) {
         // Silently catch render error on context loss or invalid state
@@ -242,13 +259,13 @@
       els.forEach(el => el.classList.add('in'));
     }
 
-    // Viewport check helper
+    // Immediate viewport check helper
     function checkViewport(){
       const vh = window.innerHeight || document.documentElement.clientHeight;
       els.forEach(el => {
         if(!el.classList.contains('in')){
           const rect = el.getBoundingClientRect();
-          if(rect.top < vh + 100 && rect.bottom > -100){
+          if(rect.top < vh + 120 && rect.bottom > -100){
             el.classList.add('in');
           }
         }
@@ -261,25 +278,24 @@
     }
 
     const io = new IntersectionObserver((entries) => {
-      entries.forEach((e, i) => {
+      entries.forEach((e) => {
         if(e.isIntersecting){
-          setTimeout(() => e.target.classList.add('in'), i * 35);
+          e.target.classList.add('in');
           io.unobserve(e.target);
         }
       });
-    }, { threshold: 0.01, rootMargin: '60px 0px 60px 0px' });
+    }, { threshold: 0.01, rootMargin: '80px 0px 80px 0px' });
 
     els.forEach(el => io.observe(el));
 
     // Immediate initial check
     checkViewport();
-    window.addEventListener('scroll', checkViewport, { passive: true });
+    window.addEventListener('load', checkViewport, { passive: true, once: true });
     window.addEventListener('resize', checkViewport, { passive: true });
-    window.addEventListener('load', checkViewport, { passive: true });
 
     // Safety fallback timer: Ensure all sections are revealed even if observer or scroll events fail
-    setTimeout(checkViewport, 500);
-    setTimeout(revealAll, 1200);
+    setTimeout(checkViewport, 400);
+    setTimeout(revealAll, 1000);
 
   } catch(e) {
     console.warn('Scroll reveal error:', e);

@@ -3,18 +3,65 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Case Study: EduCart — Syed Asjad Abbas</title>
+  <title>EduCart Case Study — Syed Asjad Abbas | Full-Stack Engineer</title>
+  <meta name="description" content="In-depth case study of EduCart, a transactional e-commerce platform built by Syed Asjad Abbas using React.js, FastAPI, JWT Auth, and MySQL."/>
+  <meta name="author" content="Syed Asjad Abbas"/>
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"/>
+  <link rel="canonical" href="https://www.syedasjadabbas.dev/case-study/educart/"/>
+
+  <!-- Open Graph -->
+  <meta property="og:site_name" content="Syed Asjad Abbas Portfolio"/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:url" content="https://www.syedasjadabbas.dev/case-study/educart/"/>
+  <meta property="og:title" content="EduCart Case Study — Syed Asjad Abbas | Full-Stack Engineer"/>
+  <meta property="og:description" content="Technical architecture and database concurrency breakdown of the EduCart platform by Syed Asjad Abbas."/>
+  <meta property="og:image" content="https://www.syedasjadabbas.dev/assets/educart.webp"/>
+  <meta property="og:image:alt" content="EduCart E-Commerce Platform by Syed Asjad Abbas"/>
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="EduCart Case Study — Syed Asjad Abbas | Full-Stack Engineer"/>
+  <meta name="twitter:description" content="Technical architecture and database concurrency breakdown of the EduCart platform by Syed Asjad Abbas."/>
+  <meta name="twitter:image" content="https://www.syedasjadabbas.dev/assets/educart.webp"/>
+  <meta name="twitter:image:alt" content="EduCart E-Commerce Platform by Syed Asjad Abbas"/>
+
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300;1,9..40,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="../../style.css"/>
   <link rel="icon" type="image/x-icon" href="../../assets/favicon.ico"/>
+  <link rel="apple-touch-icon" sizes="192x192" href="../../assets/apple-touch-icon.png"/>
+
+  <!-- Structured Data (TechArticle) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "EduCart: High-Concurrency E-Commerce Platform Architecture",
+    "description": "Technical case study of EduCart, a role-based e-commerce platform built with FastAPI, React, and MySQL database concurrency locks.",
+    "author": {
+      "@type": "Person",
+      "name": "Syed Asjad Abbas",
+      "jobTitle": "Full-Stack Engineer",
+      "url": "https://www.syedasjadabbas.dev/"
+    },
+    "publisher": {
+      "@type": "Person",
+      "name": "Syed Asjad Abbas",
+      "url": "https://www.syedasjadabbas.dev/"
+    },
+    "mainEntityOfPage": "https://www.syedasjadabbas.dev/case-study/educart/",
+    "image": "https://www.syedasjadabbas.dev/assets/educart.webp",
+    "inLanguage": "en-US"
+  }
+  </script>
 </head>
 <body>
-  <canvas id="bg-canvas"></canvas>
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
 
   <nav>
     <a class="nav-logo" href="../../index.html">
-      <img src="../../assets/apple-touch-icon.png" alt="" class="nav-logo-img" />
+      <img src="../../assets/apple-touch-icon.png" alt="Syed Asjad Abbas Logo" class="nav-logo-img" width="20" height="20" />
       <span>SYEDASJADABBAS.DEV</span>
     </a>
     <ul class="nav-links">
