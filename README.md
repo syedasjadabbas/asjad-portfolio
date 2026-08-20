@@ -162,8 +162,8 @@ Operations dashboard replacing error-prone spreadsheet workflows for a gym facil
 ## 💼 Experience
 
 ```
+Aug 2026 – Present   │  Junior AI/ML Engineer           │  Svype        │  Lahore, PK
 Apr 2026 – Present   │  Founder & Full-Stack Developer  │  Zeploy Tech  │  Lahore, PK
-Sep 2025 – Apr 2026  │  Software Development Intern     │  Svype        │  Lahore, PK
 2024 – Present       │  Backend & Full-Stack Developer  │  Freelance    │  Remote
 ```
 
