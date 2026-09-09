@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Travel Agency Case Study — Syed Asjad Abbas | Creative Frontend Engineer</title>
+  <meta name="description" content="Technical deep-dive into Travel Agency, a luxury travel platform built by Syed Asjad Abbas using Next.js, TypeScript, GSAP, and Lenis for immersive destination storytelling."/>
+  <meta name="author" content="Syed Asjad Abbas"/>
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"/>
+  <link rel="canonical" href="https://www.syedasjadabbas.dev/case-study/travel-agency/"/>
+
+  <!-- Open Graph -->
+  <meta property="og:site_name" content="Syed Asjad Abbas Portfolio"/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:url" content="https://www.syedasjadabbas.dev/case-study/travel-agency/"/>
+  <meta property="og:title" content="Travel Agency Case Study — Syed Asjad Abbas | Creative Frontend Engineer"/>
+  <meta property="og:description" content="Cinematic video hero integration, scroll-driven GSAP timelines, and responsive travel booking architecture breakdown by Syed Asjad Abbas."/>
+  <meta property="og:image" content="https://www.syedasjadabbas.dev/assets/flightone.webp"/>
+  <meta property="og:image:alt" content="Travel Agency Web Platform by Syed Asjad Abbas"/>
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Travel Agency Case Study — Syed Asjad Abbas | Creative Frontend Engineer"/>
+  <meta name="twitter:description" content="Cinematic video hero integration, scroll-driven GSAP timelines, and responsive travel booking architecture breakdown by Syed Asjad Abbas."/>
+  <meta name="twitter:image" content="https://www.syedasjadabbas.dev/assets/flightone.webp"/>
+  <meta property="twitter:image:alt" content="Travel Agency Web Platform by Syed Asjad Abbas"/>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300;1,9..40,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../../style.css"/>
+  <link rel="icon" type="image/x-icon" href="../../assets/favicon.ico"/>
+  <link rel="icon" type="image/png" sizes="48x48" href="../../assets/favicon-48x48.png"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="../../assets/favicon-32x32.png"/>
+  <link rel="apple-touch-icon" sizes="192x192" href="../../assets/apple-touch-icon.png"/>
+
+  <!-- Structured Data (TechArticle) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Travel Agency: Immersive Destination Discovery & Booking Platform",
+    "description": "Technical case study of Travel Agency, a premium travel booking platform combining Next.js performance, GSAP scroll storytelling, and Lenis smooth scrolling.",
+    "author": {
+      "@type": "Person",
+      "name": "Syed Asjad Abbas",
+      "jobTitle": "Junior AI/ML Engineer",
+      "url": "https://www.syedasjadabbas.dev/"
+    },
+    "publisher": {
+      "@type": "Person",
+      "name": "Syed Asjad Abbas",
+      "url": "https://www.syedasjadabbas.dev/"
+    },
+    "mainEntityOfPage": "https://www.syedasjadabbas.dev/case-study/travel-agency/",
+    "image": "https://www.syedasjadabbas.dev/assets/flightone.webp",
+    "inLanguage": "en-US"
+  }
+  </script>
+</head>
+<body>
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
+
+  <nav>
+    <a class="nav-logo" href="../../index.html">
+      <img src="../../assets/apple-touch-icon.png" alt="Syed Asjad Abbas Logo" class="nav-logo-img" width="20" height="20" />
+      <span>SYEDASJADABBAS.DEV</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="../../index.html#about">About</a></li>
+      <li><a href="../../index.html#skills">Skills</a></li>
+      <li><a href="../../index.html#projects">Projects</a></li>
+      <li><a href="../../index.html#experience">Experience</a></li>
+      <li><a href="../../index.html#blog">Log</a></li>
+      <li><a href="../../index.html#contact">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a class="nav-hire" href="mailto:asjadabbaszaidi@gmail.com">Let's Talk</a>
+      <a class="nav-resume" href="../../assets/syed-asjad-abbas-resume.pdf" target="_blank">Resume</a>
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-overlay" id="mobile-overlay">
+    <ul class="mobile-overlay-links">
+      <li><a href="../../index.html#about">About</a></li>
+      <li><a href="../../index.html#skills">Skills</a></li>
+      <li><a href="../../index.html#projects">Projects</a></li>
+      <li><a href="../../index.html#experience">Experience</a></li>
+      <li><a href="../../index.html#blog">Log</a></li>
+      <li><a href="../../index.html#contact">Contact</a></li>
+    </ul>
+    <div class="mobile-overlay-cta">
+      <a href="mailto:asjadabbaszaidi@gmail.com" class="mob-cta-primary">Let's Talk</a>
+      <a href="../../assets/syed-asjad-abbas-resume.pdf" target="_blank" class="mob-cta-secondary">Resume</a>
+    </div>
+  </div>
+
+  <header class="cs-header">
+    <div class="container">
+      <div class="cs-breadcrumbs">
+        <a href="../../index.html">Portfolio</a>
+        <span>/</span>
+        <a href="../../index.html#projects">Case Studies</a>
+        <span>/</span>
+        <span>Travel Agency</span>
+      </div>
+      <h1 class="cs-title-main">Travel Agency</h1>
+      <p class="cs-subtitle">A luxury travel agency web experience built with Next.js, TypeScript, GSAP, and Lenis, focused on immersive storytelling, responsive design, and conversion-oriented travel exploration.</p>
+      
+      <div class="cs-meta-grid">
+        <div class="cs-meta-item">
+          <span class="cs-meta-label">Role</span>
+          <span class="cs-meta-val">Lead Frontend Engineer</span>
+        </div>
+        <div class="cs-meta-item">
+          <span class="cs-meta-label">Category</span>
+          <span class="cs-meta-val">Creative Web Platforms &amp; Motion Design</span>
+        </div>
+        <div class="cs-meta-item">
+          <span class="cs-meta-label">Timeline</span>
+          <span class="cs-meta-val">Production Release · 2026</span>
+        </div>
+        <div class="cs-meta-item">
+          <span class="cs-meta-label">Core Stack</span>
+          <span class="cs-meta-val">Next.js · TypeScript · GSAP · Lenis · SCSS Modules</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="cs-content-grid">
+      <div class="cs-main">
+        <section class="cs-section">
+          <h2>Problem &amp; Challenge</h2>
+          <p>Online travel discovery is often characterized by transactional, visually congested interfaces that fail to inspire wanderlust. Users are confronted with aggressive discount popups, static tables, and disjointed flight and hotel searches that dilute the emotional anticipation of international journeys.</p>
+          <p>The goal of Travel Agency was to build an <strong>inspirational destination discovery portal</strong>. The platform needed to integrate high-definition cinematic visual sections, scroll-driven destination storytelling (Turkey, Maldives, Dubai, Singapore), and structured custom itinerary builders—while keeping initial asset load times under 2 seconds on mobile networks.</p>
+        </section>
+
+        <section class="cs-section">
+          <h2>Technical Approach &amp; Architecture</h2>
+          <p>We engineered a modern Next.js platform prioritizing motion smoothness and visual hierarchy:</p>
+          <ul>
+            <li><strong>Kinetic Scroll Architecture:</strong> Combined Lenis smooth scrolling with GSAP ScrollTrigger timelines to choreograph fluid layer parallax, pin sections during interactive reviews, and reveal custom travel package cards.</li>
+            <li><strong>Destination Explorer Module:</strong> Interactive destination selector enabling travelers to preview day-by-day itineraries, flight durations, and visa requirements with sub-second transitions.</li>
+            <li><strong>Component-Scoped SCSS Modules:</strong> Zero style collision architecture utilizing localized CSS modules for clean maintenance, responsive breakpoint clamps, and dark theme consistency.</li>
+            <li><strong>Optimized Asset Pipelines:</strong> Next.js automatic image optimization and WebP delivery pipelines ensuring crisp imagery with minimal bandwidth consumption.</li>
+          </ul>
+
+          <div class="cs-flow-visual">
+            <div class="cs-card-title">Travel Agency Interactive Journey Flow</div>
+            <div class="cs-flow-step">
+              <div class="cs-step-name">Cinematic Hero &amp; Brand Philosophy</div>
+              <div class="cs-step-desc">Full-screen visual introduction with ambient motion and custom itinerary CTA</div>
+            </div>
+            <div class="cs-flow-arrow">&darr;</div>
+            <div class="cs-flow-step">
+              <div class="cs-step-name">Destination Showcase &amp; Multi-Tier Packages</div>
+              <div class="cs-step-desc">Interactive tabs detailing accommodations across 3-star, 4-star, and 5-star tiers</div>
+            </div>
+            <div class="cs-flow-arrow">&darr;</div>
+            <div class="cs-flow-step">
+              <div class="cs-step-name">Visa Assistance &amp; Curated Travel Guides</div>
+              <div class="cs-step-desc">Step-by-step visa requirements, documentation checklists, and flight advisories</div>
+            </div>
+            <div class="cs-flow-arrow">&darr;</div>
+            <div class="cs-flow-step">
+              <div class="cs-step-name">24-Hour Custom Itinerary Request</div>
+              <div class="cs-step-desc">Direct inquiry flow connecting traveler constraints directly with travel specialists</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="cs-section">
+          <h2>Engineering Challenges &amp; Solutions</h2>
+          <h3>1. Sticky Viewport Scroll Syncing</h3>
+          <p>Pinning complex multi-element package cards during vertical scroll often caused visual shuddering and incorrect scroll offset calculations on mobile Safari and Chrome.</p>
+          <p><strong>Solution:</strong> We synchronized Lenis scroll ticks with the GSAP ticker via <code>gsap.ticker.add((time) => lenis.raf(time * 1000))</code>, completely unifying scroll interpolation and layout render passes. This guarantees zero micro-stuttering across all device refresh rates (60Hz to 120Hz ProMotion displays).</p>
+
+          <h3>2. Responsive Visual Scaling Across Breakpoints</h3>
+          <p>Layered visual compositions containing aircraft, skylines, and cloud layers required consistent optical proportions from narrow 375px screens up to ultra-wide displays.</p>
+          <p><strong>Solution:</strong> Implemented fluid viewport units and proportional aspect-ratio wrappers. Foreground and background layers scale dynamically along predefined visual anchors, maintaining cinematic depth without clipping text content.</p>
+        </section>
+
+        <section class="cs-section">
+          <h2>Key Features &amp; Capabilities</h2>
+          <ul>
+            <li><strong>Cinematic Destination Exploration:</strong> Immersive destination portfolios with interactive day-by-day breakdowns.</li>
+            <li><strong>60 FPS Scroll Fluidity:</strong> Unified Lenis and GSAP motion pipeline with zero layout thrashing.</li>
+            <li><strong>Custom Package Configurator:</strong> Instant comparison between solo, honeymoon, family, and corporate travel tiers.</li>
+            <li><strong>Mobile-First Ergonomics:</strong> Touch-tuned navigation with accessible drawer controls and quick-inquiry actions.</li>
+          </ul>
+        </section>
+      </div>
+
+      <aside class="cs-sidebar">
+        <div class="cs-sidebar-sticky">
+          <div class="cs-card-box">
+            <h3 class="cs-card-title">Project Details</h3>
+            <div class="cs-tech-list">
+              <div class="cs-tech-item"><span class="cs-tech-name">Client:</span><span>Travel Agency Platform</span></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">Status:</span><span>Production Live</span></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">Release:</span><span>August 2026</span></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">Repository:</span><a href="https://github.com/syedasjadabbas/travel-agency" target="_blank" style="color:var(--brown-light); text-decoration:none">GitHub ↗</a></div>
+            </div>
+          </div>
+
+          <div class="cs-card-box">
+            <h3 class="cs-card-title">Detailed Architecture</h3>
+            <div class="cs-tech-list">
+              <div class="cs-tech-item"><span class="cs-tech-name">Framework:</span><span>Next.js 14 · React 18</span></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">Language:</span><span>TypeScript 5</span></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">Motion Engine:</span><span>GSAP 3 · ScrollTrigger</span></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">Smooth Scroll:</span><span>Lenis Inertia</span></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">Styling:</span><span>SCSS Modules · PostCSS</span></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">Deployment:</span><span>Vercel Global Edge</span></div>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer>
+    <span class="ft">&copy; 2026 Syed Asjad Abbas</span>
+    <div class="ft-links">
+      <a href="https://github.com/syedasjadabbas" target="_blank">GitHub</a>
+      <a href="https://www.linkedin.com/in/syed-asjad-abbas/" target="_blank">LinkedIn</a>
+      <a href="mailto:asjadabbaszaidi@gmail.com">Email</a>
+    </div>
+  </footer>
+
+  <script src="../../assets/three.min.js" onerror="this.remove();var s=document.createElement('script');s.src='https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js';document.body.appendChild(s);"></script>
+  <script src="../../script.js"></script>
+</body>
+</html>

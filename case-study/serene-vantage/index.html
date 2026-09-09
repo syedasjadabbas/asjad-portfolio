@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Serene Vantage Case Study — Syed Asjad Abbas | Enterprise Frontend Engineer</title>
+  <meta name="description" content="In-depth technical case study of Serene Vantage, a next-generation corporate platform built by Syed Asjad Abbas using Next.js 15, React 19, TypeScript, Tailwind CSS v4, and Framer Motion."/>
+  <meta name="author" content="Syed Asjad Abbas"/>
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"/>
+  <link rel="canonical" href="https://www.syedasjadabbas.dev/case-study/serene-vantage/"/>
+
+  <!-- Open Graph -->
+  <meta property="og:site_name" content="Syed Asjad Abbas Portfolio"/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:url" content="https://www.syedasjadabbas.dev/case-study/serene-vantage/"/>
+  <meta property="og:title" content="Serene Vantage Case Study — Syed Asjad Abbas | Enterprise Frontend Engineer"/>
+  <meta property="og:description" content="Technical architecture, design tokens, and Framer Motion choreography breakdown of Serene Vantage by Syed Asjad Abbas."/>
+  <meta property="og:image" content="https://www.syedasjadabbas.dev/assets/asjad-profile.webp"/>
+  <meta property="og:image:alt" content="Serene Vantage Corporate Platform by Syed Asjad Abbas"/>
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Serene Vantage Case Study — Syed Asjad Abbas | Enterprise Frontend Engineer"/>
+  <meta name="twitter:description" content="Technical architecture, design tokens, and Framer Motion choreography breakdown of Serene Vantage by Syed Asjad Abbas."/>
+  <meta name="twitter:image" content="https://www.syedasjadabbas.dev/assets/asjad-profile.webp"/>
+  <meta name="twitter:image:alt" content="Serene Vantage Corporate Platform by Syed Asjad Abbas"/>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300;1,9..40,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../../style.css"/>
+  <link rel="icon" type="image/x-icon" href="../../assets/favicon.ico"/>
+  <link rel="icon" type="image/png" sizes="48x48" href="../../assets/favicon-48x48.png"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="../../assets/favicon-32x32.png"/>
+  <link rel="apple-touch-icon" sizes="192x192" href="../../assets/apple-touch-icon.png"/>
+
+  <!-- Structured Data (TechArticle) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Serene Vantage: Next-Generation Enterprise Corporate Platform",
+    "description": "Technical case study of Serene Vantage, an architectural digital platform uniting Technology, Energy, and Property verticals with Next.js 15, React 19, and Framer Motion.",
+    "author": {
+      "@type": "Person",
+      "name": "Syed Asjad Abbas",
+      "jobTitle": "Junior AI/ML Engineer",
+      "url": "https://www.syedasjadabbas.dev/"
+    },
+    "publisher": {
+      "@type": "Person",
+      "name": "Syed Asjad Abbas",
+      "url": "https://www.syedasjadabbas.dev/"
+    },
+    "mainEntityOfPage": "https://www.syedasjadabbas.dev/case-study/serene-vantage/",
+    "image": "https://www.syedasjadabbas.dev/assets/asjad-profile.webp",
+    "inLanguage": "en-US"
+  }
+  </script>
+</head>
+<body>
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
+
+  <nav>
+    <a class="nav-logo" href="../../index.html">
+      <img src="../../assets/apple-touch-icon.png" alt="Syed Asjad Abbas Logo" class="nav-logo-img" width="20" height="20" />
+      <span>SYEDASJADABBAS.DEV</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="../../index.html#about">About</a></li>
+      <li><a href="../../index.html#skills">Skills</a></li>
+      <li><a href="../../index.html#projects">Projects</a></li>
+      <li><a href="../../index.html#experience">Experience</a></li>
+      <li><a href="../../index.html#blog">Log</a></li>
+      <li><a href="../../index.html#contact">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a class="nav-hire" href="mailto:asjadabbaszaidi@gmail.com">Let's Talk</a>
+      <a class="nav-resume" href="../../assets/syed-asjad-abbas-resume.pdf" target="_blank">Resume</a>
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-overlay" id="mobile-overlay">
+    <ul class="mobile-overlay-links">
+      <li><a href="../../index.html#about">About</a></li>
+      <li><a href="../../index.html#skills">Skills</a></li>
+      <li><a href="../../index.html#projects">Projects</a></li>
+      <li><a href="../../index.html#experience">Experience</a></li>
+      <li><a href="../../index.html#blog">Log</a></li>
+      <li><a href="../../index.html#contact">Contact</a></li>
+    </ul>
+    <div class="mobile-overlay-cta">
+      <a href="mailto:asjadabbaszaidi@gmail.com" class="mob-cta-primary">Let's Talk</a>
+      <a href="../../assets/syed-asjad-abbas-resume.pdf" target="_blank" class="mob-cta-secondary">Resume</a>
+    </div>
+  </div>
+
+  <header class="cs-header">
+    <div class="container">
+      <div class="cs-breadcrumbs">
+        <a href="../../index.html">Portfolio</a>
+        <span>/</span>
+        <a href="../../index.html#projects">Case Studies</a>
+        <span>/</span>
+        <span>Serene Vantage</span>
+      </div>
+      <h1 class="cs-title-main">Serene Vantage</h1>
+      <p class="cs-subtitle">A next-generation corporate platform for a diversified development group operating across Technology, Energy, and Property with editorial aesthetics and choreographed motion.</p>
+      
+      <div class="cs-meta-grid">
+        <div class="cs-meta-item">
+          <span class="cs-meta-label">Role</span>
+          <span class="cs-meta-val">Lead Frontend Architect</span>
+        </div>
+        <div class="cs-meta-item">
+          <span class="cs-meta-label">Category</span>
+          <span class="cs-meta-val">Enterprise Platforms &amp; Motion Design</span>
+        </div>
+        <div class="cs-meta-item">
+          <span class="cs-meta-label">Timeline</span>
+          <span class="cs-meta-val">Corporate Framework · 2026</span>
+        </div>
+        <div class="cs-meta-item">
+          <span class="cs-meta-label">Core Stack</span>
+          <span class="cs-meta-val">Next.js 15 · React 19 · TypeScript · Tailwind CSS v4 · Framer Motion</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="cs-content-grid">
+      <div class="cs-main">
+        <section class="cs-section">
+          <h2>Problem &amp; Challenge</h2>
+          <p>Institutional conglomerates with multifaceted operations across high-impact verticals—such as cloud data campuses, clean utility energy grids, and master-planned luxury properties—frequently suffer from disjointed corporate websites. Communicating multi-billion-dollar scale, institutional governance, and technical precision requires an authoritative digital presence that instills immediate trust in investors and municipal partners.</p>
+          <p>The mandate for Serene Vantage was to construct a <strong>high-fidelity corporate flagship platform</strong>. The application needed to support dynamic multi-sector project showcases, interactive financial statistics, thought-leadership publications, and multi-channel partner inquiries while maintaining sub-second navigation times across the entire route tree.</p>
+        </section>
+
+        <section class="cs-section">
+          <h2>Technical Approach &amp; Architecture</h2>
+          <p>The platform is architected on the modern React 19 and Next.js 15 App Router foundation:</p>
+          <ul>
+            <li><strong>Hybrid Rendering Paradigm:</strong> Leveraged React Server Components (RSC) to pre-render corporate timelines, platform overviews, and project catalogs statically at build time, eliminating client-side bundle bloat.</li>
+            <li><strong>Choreographed Motion System:</strong> Integrated Framer Motion primitives to orchestrate line-masking headline reveals, smooth sticky timeline progressions, and interactive platform vertical switchers.</li>
+            <li><strong>Tailwind CSS v4 Utility Tokens:</strong> Implemented a high-contrast, dark-mode design system utilizing CSS variable tokens for refined architectural spacing, atmospheric borders, and glassmorphic overlays.</li>
+            <li><strong>Headless Accessibility:</strong> Built interactive modals, menus, and accordions on headless Radix UI primitives, ensuring strict WCAG 2.1 AA compliance and full keyboard navigation.</li>
+          </ul>
+
+          <div class="cs-flow-visual">
+            <div class="cs-card-title">Serene Vantage Route &amp; Rendering Hierarchy</div>
+            <div class="cs-flow-step">
+              <div class="cs-step-name">Next.js 15 App Router (Root Layout)</div>
+              <div class="cs-step-desc">Injects global font tokens, theme variables, and persistent navigation headers</div>
+            </div>
+            <div class="cs-flow-arrow">&darr;</div>
+            <div class="cs-flow-step">
+              <div class="cs-step-name">Commercial Vertical Pages (Tech / Energy / Property)</div>
+              <div class="cs-step-desc">Server-rendered architectural overviews with dynamic Framer Motion viewport triggers</div>
+            </div>
+            <div class="cs-flow-arrow">&darr;</div>
+            <div class="cs-flow-step">
+              <div class="cs-step-name">Filterable Projects Showcase (/projects/[slug])</div>
+              <div class="cs-step-desc">Statically generated project profiles with full specifications, galleries, and amenities</div>
+            </div>
+            <div class="cs-flow-arrow">&darr;</div>
+            <div class="cs-flow-step">
+              <div class="cs-step-name">Partner Inquiry Engine (Sonner Feedback)</div>
+              <div class="cs-step-desc">Accessible form handling with real-time field validation and toast notifications</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="cs-section">
+          <h2>Engineering Challenges &amp; Solutions</h2>
+          <h3>1. Motion Choreography without Layout Shift</h3>
+          <p>Complex line-masking headline animations and scroll-triggered cards often cause cumulative layout shift (CLS) as content elements transition into the viewport.</p>
+          <p><strong>Solution:</strong> We utilized hardware-accelerated CSS transforms (<code>translate3d</code>, <code>opacity</code>) wrapped in fixed-dimension container masks. By enforcing strict bounding boxes and using Framer Motion's layout animations, visual elements animate with extreme physical fluidness while keeping CLS strictly at 0.00.</p>
+
+          <h3>2. Rapid Data Filtering Across Verticals</h3>
+          <p>Managing instantaneous category filtering across dozens of development projects (Technology, Sustainable Energy, Property) without triggering full page re-renders or server roundtrips.</p>
+          <p><strong>Solution:</strong> Implemented URL-synced shallow routing using React state transitions. Filter states update the browser search parameters instantaneously, allowing deep linking and bookmarking while client-side memoized filters animate the grid with spring physics.</p>
+        </section>
+
+        <section class="cs-section">
+          <h2>Key Features &amp; Capabilities</h2>
+          <ul>
+            <li><strong>Three Commercial Verticals:</strong> Dedicated high-impact portals for Technology Campuses, Clean Energy, and Master Property.</li>
+            <li><strong>Filterable Development Showcase:</strong> Dynamic categorized portfolio with individual specification briefs.</li>
+            <li><strong>Editorial Insight Publication Hub:</strong> Content platform for white papers, quarterly initiatives, and market perspectives.</li>
+            <li><strong>Fully Accessible Architecture:</strong> Built on accessible Radix primitives with complete screen reader and keyboard compatibility.</li>
+          </ul>
+        </section>
+      </div>
+
+      <aside class="cs-sidebar">
+        <div class="cs-sidebar-sticky">
+          <div class="cs-card-box">
+            <h3 class="cs-card-title">Project Details</h3>
+            <div class="cs-tech-list">
+              <div class="cs-tech-item"><span class="cs-tech-name">Client:</span><span>Serene Vantage Group</span></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">Status:</span><span>Production Ready</span></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">Release:</span><span>August 2026</span></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">Repository:</span><a href="https://github.com/syedasjadabbas/Serene-Vantage" target="_blank" style="color:var(--brown-light); text-decoration:none">GitHub ↗</a></div>
+            </div>
+          </div>
+
+          <div class="cs-card-box">
+            <h3 class="cs-card-title">Detailed Architecture</h3>
+            <div class="cs-tech-list">
+              <div class="cs-tech-item"><span class="cs-tech-name">Framework:</span><span>Next.js 15 (App Router)</span></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">UI Core:</span><span>React 19 · TypeScript 5.8</span></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">Styling Engine:</span><span>Tailwind CSS v4</span></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">Motion:</span><span>Framer Motion 12.0</span></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">Primitives:</span><span>Radix UI Headless</span></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">Notifications:</span><span>Sonner Toast Engine</span></div>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer>
+    <span class="ft">&copy; 2026 Syed Asjad Abbas</span>
+    <div class="ft-links">
+      <a href="https://github.com/syedasjadabbas" target="_blank">GitHub</a>
+      <a href="https://www.linkedin.com/in/syed-asjad-abbas/" target="_blank">LinkedIn</a>
+      <a href="mailto:asjadabbaszaidi@gmail.com">Email</a>
+    </div>
+  </footer>
+
+  <script src="../../assets/three.min.js" onerror="this.remove();var s=document.createElement('script');s.src='https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js';document.body.appendChild(s);"></script>
+  <script src="../../script.js"></script>
+</body>
+</html>

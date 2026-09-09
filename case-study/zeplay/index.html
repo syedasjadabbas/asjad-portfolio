@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ZePlay Case Study — Syed Asjad Abbas | Backend &amp; Streaming Engineer</title>
+  <meta name="description" content="In-depth technical case study of ZePlay, a production video streaming platform built by Syed Asjad Abbas using FastAPI, HLS.js, FFmpeg transcoding, Redis, and PostgreSQL."/>
+  <meta name="author" content="Syed Asjad Abbas"/>
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"/>
+  <link rel="canonical" href="https://www.syedasjadabbas.dev/case-study/zeplay/"/>
+
+  <!-- Open Graph -->
+  <meta property="og:site_name" content="Syed Asjad Abbas Portfolio"/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:url" content="https://www.syedasjadabbas.dev/case-study/zeplay/"/>
+  <meta property="og:title" content="ZePlay Case Study — Syed Asjad Abbas | Backend &amp; Streaming Engineer"/>
+  <meta property="og:description" content="Adaptive bitrate streaming, FFmpeg transcoding pipelines, and caching architecture breakdown of ZePlay by Syed Asjad Abbas."/>
+  <meta property="og:image" content="https://www.syedasjadabbas.dev/assets/zeplay.webp"/>
+  <meta property="og:image:alt" content="ZePlay Adaptive Video Streaming Platform by Syed Asjad Abbas"/>
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="ZePlay Case Study — Syed Asjad Abbas | Backend &amp; Streaming Engineer"/>
+  <meta name="twitter:description" content="Adaptive bitrate streaming, FFmpeg transcoding pipelines, and caching architecture breakdown of ZePlay by Syed Asjad Abbas."/>
+  <meta name="twitter:image" content="https://www.syedasjadabbas.dev/assets/zeplay.webp"/>
+  <meta name="twitter:image:alt" content="ZePlay Adaptive Video Streaming Platform by Syed Asjad Abbas"/>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300;1,9..40,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../../style.css"/>
+  <link rel="icon" type="image/x-icon" href="../../assets/favicon.ico"/>
+  <link rel="icon" type="image/png" sizes="48x48" href="../../assets/favicon-48x48.png"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="../../assets/favicon-32x32.png"/>
+  <link rel="apple-touch-icon" sizes="192x192" href="../../assets/apple-touch-icon.png"/>
+
+  <!-- Structured Data (TechArticle) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "ZePlay: High-Throughput Adaptive Video Streaming Platform",
+    "description": "Technical case study of ZePlay, an adaptive HLS video streaming platform featuring asynchronous FFmpeg transcoding, Redis playback state caching, and PostgreSQL data persistence.",
+    "author": {
+      "@type": "Person",
+      "name": "Syed Asjad Abbas",
+      "jobTitle": "Junior AI/ML Engineer",
+      "url": "https://www.syedasjadabbas.dev/"
+    },
+    "publisher": {
+      "@type": "Person",
+      "name": "Syed Asjad Abbas",
+      "url": "https://www.syedasjadabbas.dev/"
+    },
+    "mainEntityOfPage": "https://www.syedasjadabbas.dev/case-study/zeplay/",
+    "image": "https://www.syedasjadabbas.dev/assets/zeplay.webp",
+    "inLanguage": "en-US"
+  }
+  </script>
+</head>
+<body>
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
+
+  <nav>
+    <a class="nav-logo" href="../../index.html">
+      <img src="../../assets/apple-touch-icon.png" alt="Syed Asjad Abbas Logo" class="nav-logo-img" width="20" height="20" />
+      <span>SYEDASJADABBAS.DEV</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="../../index.html#about">About</a></li>
+      <li><a href="../../index.html#skills">Skills</a></li>
+      <li><a href="../../index.html#projects">Projects</a></li>
+      <li><a href="../../index.html#experience">Experience</a></li>
+      <li><a href="../../index.html#blog">Log</a></li>
+      <li><a href="../../index.html#contact">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a class="nav-hire" href="mailto:asjadabbaszaidi@gmail.com">Let's Talk</a>
+      <a class="nav-resume" href="../../assets/syed-asjad-abbas-resume.pdf" target="_blank">Resume</a>
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-overlay" id="mobile-overlay">
+    <ul class="mobile-overlay-links">
+      <li><a href="../../index.html#about">About</a></li>
+      <li><a href="../../index.html#skills">Skills</a></li>
+      <li><a href="../../index.html#projects">Projects</a></li>
+      <li><a href="../../index.html#experience">Experience</a></li>
+      <li><a href="../../index.html#blog">Log</a></li>
+      <li><a href="../../index.html#contact">Contact</a></li>
+    </ul>
+    <div class="mobile-overlay-cta">
+      <a href="mailto:asjadabbaszaidi@gmail.com" class="mob-cta-primary">Let's Talk</a>
+      <a href="../../assets/syed-asjad-abbas-resume.pdf" target="_blank" class="mob-cta-secondary">Resume</a>
+    </div>
+  </div>
+
+  <header class="cs-header">
+    <div class="container">
+      <div class="cs-breadcrumbs">
+        <a href="../../index.html">Portfolio</a>
+        <span>/</span>
+        <a href="../../index.html#projects">Case Studies</a>
+        <span>/</span>
+        <span>ZePlay</span>
+      </div>
+      <h1 class="cs-title-main">ZePlay</h1>
+      <p class="cs-subtitle">A production-focused video streaming platform built around adaptive HLS delivery, automated FFmpeg multi-bitrate transcoding, Redis playback caching, and resilient profile security.</p>
+      
+      <div class="cs-meta-grid">
+        <div class="cs-meta-item">
+          <span class="cs-meta-label">Role</span>
+          <span class="cs-meta-val">Lead Systems Architect &amp; Developer</span>
+        </div>
+        <div class="cs-meta-item">
+          <span class="cs-meta-label">Category</span>
+          <span class="cs-meta-val">Streaming Systems &amp; Media Ingestion</span>
+        </div>
+        <div class="cs-meta-item">
+          <span class="cs-meta-label">Timeline</span>
+          <span class="cs-meta-val">Zeploy Tech Flagship · 2026</span>
+        </div>
+        <div class="cs-meta-item">
+          <span class="cs-meta-label">Core Stack</span>
+          <span class="cs-meta-val">React · TypeScript · FastAPI · FFmpeg · Redis · PostgreSQL</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="cs-content-grid">
+      <div class="cs-main">
+        <section class="cs-section">
+          <h2>Problem &amp; Challenge</h2>
+          <p>Delivering high-definition video across varied regional broadband and mobile cellular networks presents steep challenges: network bandwidth is volatile, monolithic video formats (such as raw MP4) cause intolerable start-up latency, and unoptimized seek operations consume massive unnecessary bandwidth.</p>
+          <p>ZePlay was engineered to solve these bottlenecks by implementing a <strong>Netflix-caliber streaming pipeline</strong>. The platform needed to transcode raw video uploads asynchronously into multi-quality HLS streams (1080p, 720p, 480p), dynamically adjust playback resolutions in real-time based on client buffer health, and synchronize watch positions reliably across multi-user profiles secured by custom PIN locks.</p>
+        </section>
+
+        <section class="cs-section">
+          <h2>Technical Approach &amp; Architecture</h2>
+          <p>The system is architected around an asynchronous ingestion pipeline paired with an event-driven playback state machine:</p>
+          <ul>
+            <li><strong>Frontend Player Engine:</strong> Built with React and TypeScript using custom HLS.js controllers. Features adaptive quality switching without playback interruption, custom gesture controls, and low-latency buffer management.</li>
+            <li><strong>Asynchronous Ingestion Service:</strong> An automated FFmpeg worker queue that splits incoming master videos into segmented <code>.ts</code> media files, generates synchronized multi-bitrate <code>.m3u8</code> manifest playlists, and extracts automated poster thumbnails.</li>
+            <li><strong>FastAPI Core &amp; Redis Caching:</strong> Handles high-throughput playback session heartbeats, caches manifest lookups in-memory, and provides low-latency user watch history lookups.</li>
+            <li><strong>PostgreSQL Database:</strong> Stores relational catalog data, user profiles, PIN credentials, and historical telemetry.</li>
+          </ul>
+
+          <div class="cs-flow-visual">
+            <div class="cs-card-title">ZePlay Transcoding &amp; Playback Architecture</div>
+            <div class="cs-flow-step">
+              <div class="cs-step-name">Video Ingestion Queue (FastAPI Backend)</div>
+              <div class="cs-step-desc">Accepts raw media upload and registers transcoding task</div>
+            </div>
+            <div class="cs-flow-arrow">&darr;</div>
+            <div class="cs-flow-step">
+              <div class="cs-step-name">FFmpeg Background Processing Engine</div>
+              <div class="cs-step-desc">Transcodes multi-rendition stream (1080p / 720p / 480p) and builds master HLS playlist</div>
+            </div>
+            <div class="cs-flow-arrow">&darr;</div>
+            <div class="cs-flow-step">
+              <div class="cs-step-name">Segmented Static Storage &amp; Redis Manifest Cache</div>
+              <div class="cs-step-desc">Distributes HLS chunks and caches authorization keys for sub-second retrieval</div>
+            </div>
+            <div class="cs-flow-arrow">&darr;</div>
+            <div class="cs-flow-step">
+              <div class="cs-step-name">Client React Player (HLS.js Adaptive Engine)</div>
+              <div class="cs-step-desc">Streams chunks adaptively, monitors buffer health, dispatches playback heartbeats</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="cs-section">
+          <h2>Engineering Challenges &amp; Solutions</h2>
+          <h3>1. Zero-Stall Bitrate Adaptation &amp; Seeking</h3>
+          <p>Switching quality tiers during video playback often introduces jarring pauses or audio/video desynchronization when clients discard existing buffer segments.</p>
+          <p><strong>Solution:</strong> We implemented seamless ABR (Adaptive Bitrate) algorithms using HLS.js custom configuration. By aligning keyframe intervals (GOP size = 48 at 24fps) across all resolutions during FFmpeg transcoding, the player transitions between 1080p, 720p, and 480p at identical segment boundaries without clearing active playback buffers, preserving continuous audio-visual flow.</p>
+
+          <h3>2. High-Frequency Playback Telemetry Load</h3>
+          <p>Tracking watch positions every 5 seconds across hundreds of concurrent streams would flood the primary relational database with continuous row updates, degrading catalog search query performance.</p>
+          <p><strong>Solution:</strong> Designed a <strong>Write-Behind Caching Pattern</strong> powered by Redis. Playback timestamps and resume positions are updated atomically in Redis keys with high-speed in-memory operations. A periodic Celery worker flushes consolidated progress states to PostgreSQL in batch writes, reducing database write IOPS by over 88%.</p>
+        </section>
+
+        <section class="cs-section">
+          <h2>Key Features &amp; Capabilities</h2>
+          <ul>
+            <li><strong>Adaptive Multi-Quality Streaming:</strong> Dynamic playback selection across 1080p Full HD, 720p HD, and 480p SD tiers.</li>
+            <li><strong>Multi-Profile Architecture:</strong> Independent watch histories, continue-watching carousels, and PIN-protected profile security.</li>
+            <li><strong>Automated Ingestion Pipeline:</strong> Automated playlist verification, repair scripts, and real segment detection avoiding corrupted streams.</li>
+            <li><strong>Production-Frozen UI:</strong> Netflix-inspired sleek dark styling with complete keyboard shortcut navigation and fullscreen mobile gestures.</li>
+          </ul>
+        </section>
+      </div>
+
+      <aside class="cs-sidebar">
+        <div class="cs-sidebar-sticky">
+          <div class="cs-card-box">
+            <h3 class="cs-card-title">Project Details</h3>
+            <div class="cs-tech-list">
+              <div class="cs-tech-item"><span class="cs-tech-name">Client:</span><span>Zeploy Tech Flagship</span></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">Status:</span><span>Production Ready</span></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">Release:</span><span>May 2026</span></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">Repository:</span><a href="https://github.com/syedasjadabbas/ZePlay" target="_blank" style="color:var(--brown-light); text-decoration:none">GitHub ↗</a></div>
+            </div>
+          </div>
+
+          <div class="cs-card-box">
+            <h3 class="cs-card-title">Detailed Architecture</h3>
+            <div class="cs-tech-list">
+              <div class="cs-tech-item"><span class="cs-tech-name">Frontend Core:</span><span>React 18 · TypeScript · HLS.js</span></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">Backend API:</span><span>FastAPI (Python)</span></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">Transcoder:</span><span>FFmpeg Asynchronous Pipeline</span></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">Database:</span><span>PostgreSQL (Relational Schema)</span></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">Cache Layer:</span><span>Redis (In-Memory Progress Sync)</span></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">Containerization:</span><span>Docker · Docker Compose</span></div>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer>
+    <span class="ft">&copy; 2026 Syed Asjad Abbas</span>
+    <div class="ft-links">
+      <a href="https://github.com/syedasjadabbas" target="_blank">GitHub</a>
+      <a href="https://www.linkedin.com/in/syed-asjad-abbas/" target="_blank">LinkedIn</a>
+      <a href="mailto:asjadabbaszaidi@gmail.com">Email</a>
+    </div>
+  </footer>
+
+  <script src="../../assets/three.min.js" onerror="this.remove();var s=document.createElement('script');s.src='https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js';document.body.appendChild(s);"></script>
+  <script src="../../script.js"></script>
+</body>
+</html>

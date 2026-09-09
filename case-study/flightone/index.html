@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FlightOne Case Study — Syed Asjad Abbas | AI &amp; Full-Stack Engineer</title>
+  <meta name="description" content="Technical deep-dive into FlightOne, an AI-powered travel ecosystem integrating an immersive web agency portal, a conversational AI travel assistant (Ava), and a modular Express/Prisma server backend."/>
+  <meta name="author" content="Syed Asjad Abbas"/>
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"/>
+  <link rel="canonical" href="https://www.syedasjadabbas.dev/case-study/flightone/"/>
+
+  <!-- Open Graph -->
+  <meta property="og:site_name" content="Syed Asjad Abbas Portfolio"/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:url" content="https://www.syedasjadabbas.dev/case-study/flightone/"/>
+  <meta property="og:title" content="FlightOne Case Study — Syed Asjad Abbas | AI &amp; Full-Stack Engineer"/>
+  <meta property="og:description" content="Architecture and implementation breakdown of the FlightOne AI travel platform, client assistant, and server API by Syed Asjad Abbas."/>
+  <meta property="og:image" content="https://www.syedasjadabbas.dev/assets/flightone.webp"/>
+  <meta property="og:image:alt" content="FlightOne Travel Platform and AI Assistant by Syed Asjad Abbas"/>
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="FlightOne Case Study — Syed Asjad Abbas | AI &amp; Full-Stack Engineer"/>
+  <meta name="twitter:description" content="Architecture and implementation breakdown of the FlightOne AI travel platform, client assistant, and server API by Syed Asjad Abbas."/>
+  <meta name="twitter:image" content="https://www.syedasjadabbas.dev/assets/flightone.webp"/>
+  <meta name="twitter:image:alt" content="FlightOne Travel Platform and AI Assistant by Syed Asjad Abbas"/>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300;1,9..40,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../../style.css"/>
+  <link rel="icon" type="image/x-icon" href="../../assets/favicon.ico"/>
+  <link rel="icon" type="image/png" sizes="48x48" href="../../assets/favicon-48x48.png"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="../../assets/favicon-32x32.png"/>
+  <link rel="apple-touch-icon" sizes="192x192" href="../../assets/apple-touch-icon.png"/>
+
+  <!-- Structured Data (TechArticle) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "FlightOne: AI Travel Platform & Full-Stack Architecture",
+    "description": "Technical case study of FlightOne, a unified travel ecosystem combining a web travel agency, an AI travel consultant client, and a modular Express/Prisma server backend.",
+    "author": {
+      "@type": "Person",
+      "name": "Syed Asjad Abbas",
+      "jobTitle": "Junior AI/ML Engineer",
+      "url": "https://www.syedasjadabbas.dev/"
+    },
+    "publisher": {
+      "@type": "Person",
+      "name": "Syed Asjad Abbas",
+      "url": "https://www.syedasjadabbas.dev/"
+    },
+    "mainEntityOfPage": "https://www.syedasjadabbas.dev/case-study/flightone/",
+    "image": "https://www.syedasjadabbas.dev/assets/flightone.webp",
+    "inLanguage": "en-US"
+  }
+  </script>
+</head>
+<body>
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
+
+  <nav>
+    <a class="nav-logo" href="../../index.html">
+      <img src="../../assets/apple-touch-icon.png" alt="Syed Asjad Abbas Logo" class="nav-logo-img" width="20" height="20" />
+      <span>SYEDASJADABBAS.DEV</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="../../index.html#about">About</a></li>
+      <li><a href="../../index.html#skills">Skills</a></li>
+      <li><a href="../../index.html#projects">Projects</a></li>
+      <li><a href="../../index.html#experience">Experience</a></li>
+      <li><a href="../../index.html#blog">Log</a></li>
+      <li><a href="../../index.html#contact">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a class="nav-hire" href="mailto:asjadabbaszaidi@gmail.com">Let's Talk</a>
+      <a class="nav-resume" href="../../assets/syed-asjad-abbas-resume.pdf" target="_blank">Resume</a>
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-overlay" id="mobile-overlay">
+    <ul class="mobile-overlay-links">
+      <li><a href="../../index.html#about">About</a></li>
+      <li><a href="../../index.html#skills">Skills</a></li>
+      <li><a href="../../index.html#projects">Projects</a></li>
+      <li><a href="../../index.html#experience">Experience</a></li>
+      <li><a href="../../index.html#blog">Log</a></li>
+      <li><a href="../../index.html#contact">Contact</a></li>
+    </ul>
+    <div class="mobile-overlay-cta">
+      <a href="mailto:asjadabbaszaidi@gmail.com" class="mob-cta-primary">Let's Talk</a>
+      <a href="../../assets/syed-asjad-abbas-resume.pdf" target="_blank" class="mob-cta-secondary">Resume</a>
+    </div>
+  </div>
+
+  <header class="cs-header">
+    <div class="container">
+      <div class="cs-breadcrumbs">
+        <a href="../../index.html">Portfolio</a>
+        <span>/</span>
+        <a href="../../index.html#projects">Case Studies</a>
+        <span>/</span>
+        <span>FlightOne</span>
+      </div>
+      <h1 class="cs-title-main">FlightOne</h1>
+      <p class="cs-subtitle">A comprehensive AI travel ecosystem combining a high-fidelity commercial travel agency portal, an interactive conversational AI travel assistant (Ava), and a modular Express/Prisma server backend.</p>
+      
+      <div class="cs-meta-grid">
+        <div class="cs-meta-item">
+          <span class="cs-meta-label">Role</span>
+          <span class="cs-meta-val">Full-Stack Architect &amp; AI Engineer</span>
+        </div>
+        <div class="cs-meta-item">
+          <span class="cs-meta-label">Category</span>
+          <span class="cs-meta-val">AI Travel Systems &amp; Platform Architecture</span>
+        </div>
+        <div class="cs-meta-item">
+          <span class="cs-meta-label">Timeline</span>
+          <span class="cs-meta-val">Production Platform · 2026</span>
+        </div>
+        <div class="cs-meta-item">
+          <span class="cs-meta-label">Core Stack</span>
+          <span class="cs-meta-val">Next.js · React · Node.js · Express · Prisma · PostgreSQL</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="cs-content-grid">
+      <div class="cs-main">
+        <section class="cs-section">
+          <h2>Problem &amp; Challenge</h2>
+          <p>Traditional travel agencies in South Asia operate through highly fragmented communication channels: customer discovery occurs through manual WhatsApp chats, tour pricing relies on unstructured spreadsheets, and package curation requires days of back-and-forth consultation with airline and hotel supplier portals.</p>
+          <p>FlightOne was conceptualized as an <strong>AI Travel Operating System (AI-TOS)</strong> designed to automate this lifecycle. The platform needed to fulfill two critical mandates simultaneously: deliver a cinematic, high-conversion commercial web agency that showcases bespoke international tours (Maldives, Dubai, Turkey, Thailand), while providing a dedicated conversational AI consultant (Ava) capable of real-time flight search, hotel tier pricing (3★, 4★, 5★), and booking orchestration.</p>
+        </section>
+
+        <section class="cs-section">
+          <h2>Technical Approach &amp; Architecture</h2>
+          <p>FlightOne is engineered as three tightly decoupled yet unified systems:</p>
+          <ul>
+            <li><strong>Commercial Web Agency:</strong> A high-performance Next.js web application built with responsive SCSS modules, Lenis smooth scrolling, and dynamic destination visualizers.</li>
+            <li><strong>Conversational Assistant Client:</strong> A lightweight React application where travelers converse with Ava, explore structured recommendations, refine dates, and review flight fares.</li>
+            <li><strong>Modular API Server:</strong> An Express.js backend using Prisma ORM on PostgreSQL that enforces deterministic pricing rules, manages itinerary drafts, handles token authentication, and coordinates GDS fare audits.</li>
+          </ul>
+
+          <div class="cs-flow-visual">
+            <div class="cs-card-title">FlightOne Multi-Tier System Pipeline</div>
+            <div class="cs-flow-step">
+              <div class="cs-step-name">Traveler Web Front Door (Next.js)</div>
+              <div class="cs-step-desc">Explores destinations, comfort tiers (3★/4★/5★), and launches travel consultation</div>
+            </div>
+            <div class="cs-flow-arrow">&darr;</div>
+            <div class="cs-flow-step">
+              <div class="cs-step-name">Conversational AI Client (Ava Interface)</div>
+              <div class="cs-step-desc">Collects origin, dates, pax, and travel preferences via guided conversational turns</div>
+            </div>
+            <div class="cs-flow-arrow">&darr;</div>
+            <div class="cs-flow-step">
+              <div class="cs-step-name">FlightOne API Gateway (Express + Prisma)</div>
+              <div class="cs-step-desc">Validates trip schema, coordinates fare cache, manages booking state machines</div>
+            </div>
+            <div class="cs-flow-arrow">&darr;</div>
+            <div class="cs-flow-step">
+              <div class="cs-step-name">PostgreSQL Database &amp; Supplier Connectors</div>
+              <div class="cs-step-desc">Stores user profiles, itinerary histories, transaction logs, and partner integrations</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="cs-section">
+          <h2>Engineering Challenges &amp; Solutions</h2>
+          <h3>1. Deterministic Pricing vs. Generative LLM Variance</h3>
+          <p>Large language models are inherently probabilistic, making them prone to hallucinations when calculating flight fares, currency conversions, and seasonal surcharges. Allowing an LLM to invent pricing would result in severe financial discrepancies.</p>
+          <p><strong>Solution:</strong> We separated semantic understanding from business calculations. Ava handles natural language intent extraction and structures parameters into typed JSON payloads. The Express/Prisma server evaluates live fare metadata, applies tiered markup formulas, and returns verified pricing tables to the client, guaranteeing zero pricing hallucinations.</p>
+
+          <h3>2. Cross-Device Consultation Continuity</h3>
+          <p>Travelers frequently initiate trip consultations on mobile devices but complete itinerary reviews on desktop computers. Maintaining active session state without requiring mandatory upfront registration was essential for user retention.</p>
+          <p><strong>Solution:</strong> Implemented guest UUID tokens stored in encrypted client cookies that bind conversation threads to ephemeral PostgreSQL session records. When travelers choose to register or authenticate via JWT, the server merges the guest consultation history into their permanent profile seamlessly.</p>
+        </section>
+
+        <section class="cs-section">
+          <h2>Key Features &amp; Capabilities</h2>
+          <ul>
+            <li><strong>Bespoke 24-Hour Itinerary Pipeline:</strong> Automated day-by-day travel plan generation tailored to honeymooners, families, and corporate groups.</li>
+            <li><strong>3-Tier Accommodation Benchmarks:</strong> Instant comparison matrices between 3-star budget, 4-star boutique, and 5-star luxury options.</li>
+            <li><strong>Multi-Repo Architecture:</strong> Clean domain isolation across agency storefront, client chat UI, and server backend.</li>
+            <li><strong>Human Escalation Fail-Safe:</strong> Seamless handoff from AI consultant to human travel agents for visa-sensitive approvals.</li>
+          </ul>
+        </section>
+      </div>
+
+      <aside class="cs-sidebar">
+        <div class="cs-sidebar-sticky">
+          <div class="cs-card-box">
+            <h3 class="cs-card-title">Project Details</h3>
+            <div class="cs-tech-list">
+              <div class="cs-tech-item"><span class="cs-tech-name">Client:</span><span>FlightOne Travel (Lahore)</span></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">Status:</span><span>Active Production</span></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">Release:</span><span>August 2026</span></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">Web Agency:</span><a href="https://github.com/syedasjadabbas/FlightOne-Web-Travel-Agency" target="_blank" style="color:var(--brown-light); text-decoration:none">GitHub ↗</a></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">Client App:</span><a href="https://github.com/syedasjadabbas/FlightOne-Client" target="_blank" style="color:var(--brown-light); text-decoration:none">GitHub ↗</a></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">Server API:</span><a href="https://github.com/syedasjadabbas/FlightOne-Server" target="_blank" style="color:var(--brown-light); text-decoration:none">GitHub ↗</a></div>
+            </div>
+          </div>
+
+          <div class="cs-card-box">
+            <h3 class="cs-card-title">Detailed Architecture</h3>
+            <div class="cs-tech-list">
+              <div class="cs-tech-item"><span class="cs-tech-name">Web Agency:</span><span>Next.js 15 · SCSS · GSAP</span></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">Client Assistant:</span><span>React 19 · TypeScript · Tailwind</span></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">Server Runtime:</span><span>Node.js · Express.js</span></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">Database ORM:</span><span>Prisma ORM · PostgreSQL 16</span></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">AI Agent:</span><span>Ava Consultant LLM Pipeline</span></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">State &amp; Auth:</span><span>JWT · Cookie-based Guest UUID</span></div>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer>
+    <span class="ft">&copy; 2026 Syed Asjad Abbas</span>
+    <div class="ft-links">
+      <a href="https://github.com/syedasjadabbas" target="_blank">GitHub</a>
+      <a href="https://www.linkedin.com/in/syed-asjad-abbas/" target="_blank">LinkedIn</a>
+      <a href="mailto:asjadabbaszaidi@gmail.com">Email</a>
+    </div>
+  </footer>
+
+  <script src="../../assets/three.min.js" onerror="this.remove();var s=document.createElement('script');s.src='https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js';document.body.appendChild(s);"></script>
+  <script src="../../script.js"></script>
+</body>
+</html>

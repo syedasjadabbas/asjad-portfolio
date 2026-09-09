@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Italia Costruzioni Case Study — Syed Asjad Abbas | Frontend Architect</title>
+  <meta name="description" content="Technical case study of Italia Costruzioni, a luxury architectural engineering portal built by Syed Asjad Abbas using React 19, TypeScript, Tailwind CSS v4, and Framer Motion."/>
+  <meta name="author" content="Syed Asjad Abbas"/>
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"/>
+  <link rel="canonical" href="https://www.syedasjadabbas.dev/case-study/italian-construction/"/>
+
+  <!-- Open Graph -->
+  <meta property="og:site_name" content="Syed Asjad Abbas Portfolio"/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:url" content="https://www.syedasjadabbas.dev/case-study/italian-construction/"/>
+  <meta property="og:title" content="Italia Costruzioni Case Study — Syed Asjad Abbas | Frontend Architect"/>
+  <meta property="og:description" content="Architectural design tokens, Framer Motion transitions, and responsive corporate engineering breakdown by Syed Asjad Abbas."/>
+  <meta property="og:image" content="https://www.syedasjadabbas.dev/assets/asjad-profile.webp"/>
+  <meta property="og:image:alt" content="Italia Costruzioni Architectural Portal by Syed Asjad Abbas"/>
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Italia Costruzioni Case Study — Syed Asjad Abbas | Frontend Architect"/>
+  <meta name="twitter:description" content="Architectural design tokens, Framer Motion transitions, and responsive corporate engineering breakdown by Syed Asjad Abbas."/>
+  <meta name="twitter:image" content="https://www.syedasjadabbas.dev/assets/asjad-profile.webp"/>
+  <meta property="twitter:image:alt" content="Italia Costruzioni Architectural Portal by Syed Asjad Abbas"/>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300;1,9..40,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../../style.css"/>
+  <link rel="icon" type="image/x-icon" href="../../assets/favicon.ico"/>
+  <link rel="icon" type="image/png" sizes="48x48" href="../../assets/favicon-48x48.png"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="../../assets/favicon-32x32.png"/>
+  <link rel="apple-touch-icon" sizes="192x192" href="../../assets/apple-touch-icon.png"/>
+
+  <!-- Structured Data (TechArticle) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Italia Costruzioni: Architectural Engineering & Corporate Platform",
+    "description": "Technical case study of Italia Costruzioni, an architectural corporate web application built with React 19, TypeScript, Tailwind CSS v4, and Framer Motion micro-interactions.",
+    "author": {
+      "@type": "Person",
+      "name": "Syed Asjad Abbas",
+      "jobTitle": "Junior AI/ML Engineer",
+      "url": "https://www.syedasjadabbas.dev/"
+    },
+    "publisher": {
+      "@type": "Person",
+      "name": "Syed Asjad Abbas",
+      "url": "https://www.syedasjadabbas.dev/"
+    },
+    "mainEntityOfPage": "https://www.syedasjadabbas.dev/case-study/italian-construction/",
+    "image": "https://www.syedasjadabbas.dev/assets/asjad-profile.webp",
+    "inLanguage": "en-US"
+  }
+  </script>
+</head>
+<body>
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
+
+  <nav>
+    <a class="nav-logo" href="../../index.html">
+      <img src="../../assets/apple-touch-icon.png" alt="Syed Asjad Abbas Logo" class="nav-logo-img" width="20" height="20" />
+      <span>SYEDASJADABBAS.DEV</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="../../index.html#about">About</a></li>
+      <li><a href="../../index.html#skills">Skills</a></li>
+      <li><a href="../../index.html#projects">Projects</a></li>
+      <li><a href="../../index.html#experience">Experience</a></li>
+      <li><a href="../../index.html#blog">Log</a></li>
+      <li><a href="../../index.html#contact">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a class="nav-hire" href="mailto:asjadabbaszaidi@gmail.com">Let's Talk</a>
+      <a class="nav-resume" href="../../assets/syed-asjad-abbas-resume.pdf" target="_blank">Resume</a>
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-overlay" id="mobile-overlay">
+    <ul class="mobile-overlay-links">
+      <li><a href="../../index.html#about">About</a></li>
+      <li><a href="../../index.html#skills">Skills</a></li>
+      <li><a href="../../index.html#projects">Projects</a></li>
+      <li><a href="../../index.html#experience">Experience</a></li>
+      <li><a href="../../index.html#blog">Log</a></li>
+      <li><a href="../../index.html#contact">Contact</a></li>
+    </ul>
+    <div class="mobile-overlay-cta">
+      <a href="mailto:asjadabbaszaidi@gmail.com" class="mob-cta-primary">Let's Talk</a>
+      <a href="../../assets/syed-asjad-abbas-resume.pdf" target="_blank" class="mob-cta-secondary">Resume</a>
+    </div>
+  </div>
+
+  <header class="cs-header">
+    <div class="container">
+      <div class="cs-breadcrumbs">
+        <a href="../../index.html">Portfolio</a>
+        <span>/</span>
+        <a href="../../index.html#projects">Case Studies</a>
+        <span>/</span>
+        <span>Italian Construction</span>
+      </div>
+      <h1 class="cs-title-main">Italia Costruzioni</h1>
+      <p class="cs-subtitle">A state-of-the-art corporate digital portal for a premier Italian luxury construction and engineering firm, highlighting residential villas, corporate complexes, and infrastructure projects.</p>
+      
+      <div class="cs-meta-grid">
+        <div class="cs-meta-item">
+          <span class="cs-meta-label">Role</span>
+          <span class="cs-meta-val">Lead Frontend Architect &amp; Designer</span>
+        </div>
+        <div class="cs-meta-item">
+          <span class="cs-meta-label">Category</span>
+          <span class="cs-meta-val">Architectural Portals &amp; Engineering Platforms</span>
+        </div>
+        <div class="cs-meta-item">
+          <span class="cs-meta-label">Timeline</span>
+          <span class="cs-meta-val">Commercial Project · 2026</span>
+        </div>
+        <div class="cs-meta-item">
+          <span class="cs-meta-label">Core Stack</span>
+          <span class="cs-meta-val">React 19 · TypeScript · Vite · Tailwind CSS v4 · Framer Motion</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="cs-content-grid">
+      <div class="cs-main">
+        <section class="cs-section">
+          <h2>Problem &amp; Challenge</h2>
+          <p>Architectural engineering and infrastructure enterprises face high stakes when presenting commercial capabilities to municipal bodies and private investors. Websites in this sector frequently suffer from outdated aesthetic frameworks, rigid non-responsive gallery layouts, and a lack of interactive storytelling that conveys engineering durability.</p>
+          <p>Italia Costruzioni required an <strong>elevated digital identity</strong>. The platform needed to balance contemporary Italian design elegance with structural engineering authority—showcasing diverse portfolios across private residential estates, high-rise commercial headquarters, and public transit civil engineering with seamless micro-motion and high-converting client inquiry funnels.</p>
+        </section>
+
+        <section class="cs-section">
+          <h2>Technical Approach &amp; Architecture</h2>
+          <p>The solution was crafted with a focus on modern React 19 concurrency and fluid motion ergonomics:</p>
+          <ul>
+            <li><strong>Architectural Design Language:</strong> Developed a dark-mode-first aesthetic with bespoke typography tokens, atmospheric warm gold borders, and subtle glassmorphic backdrop overlays reflecting Italian masonry excellence.</li>
+            <li><strong>Choreographed Spring Reveals:</strong> Engineered smooth Framer Motion viewport triggers, line-masking headline transitions, and parallax background drift that respond dynamically to scroll momentum.</li>
+            <li><strong>Interactive Project Gallery:</strong> Categorized portfolio showcase allowing users to filter between Residential, Commercial, and Civil Infrastructure initiatives with smooth layout animations.</li>
+            <li><strong>Animated Telemetry Counters:</strong> Real-time animated number counters that tally completed square meters, architectural awards, and client satisfaction benchmarks upon entering the viewport.</li>
+          </ul>
+
+          <div class="cs-flow-visual">
+            <div class="cs-card-title">Italia Costruzioni User Discovery &amp; Portfolio Funnel</div>
+            <div class="cs-flow-step">
+              <div class="cs-step-name">Hero Introduction &amp; Heritage Narrative</div>
+              <div class="cs-step-desc">High-contrast architectural visual hook establishing craftsmanship and engineering precision</div>
+            </div>
+            <div class="cs-flow-arrow">&darr;</div>
+            <div class="cs-flow-step">
+              <div class="cs-step-name">Categorized Portfolio Showcase</div>
+              <div class="cs-step-desc">Filterable gallery covering luxury villas, commercial towers, and transit networks</div>
+            </div>
+            <div class="cs-flow-arrow">&darr;</div>
+            <div class="cs-flow-step">
+              <div class="cs-step-name">Comprehensive Services &amp; Methodology</div>
+              <div class="cs-step-desc">Interactive tabbed deep-dives into structural engineering, restoration, and BIM workflows</div>
+            </div>
+            <div class="cs-flow-arrow">&darr;</div>
+            <div class="cs-flow-step">
+              <div class="cs-step-name">Corporate RFP &amp; Consultation Ingestion</div>
+              <div class="cs-step-desc">Validated inquiry workflow channeling prospective project specifications to engineering directors</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="cs-section">
+          <h2>Engineering Challenges &amp; Solutions</h2>
+          <h3>1. Smooth Grid Morphing on Category Filter</h3>
+          <p>Switching between project categories (Residential, Commercial, Infrastructure) previously caused jarring DOM jumps as cards inserted and removed abruptly from the layout.</p>
+          <p><strong>Solution:</strong> Leveraged Framer Motion's <code>AnimatePresence</code> and <code>layout</code> projection engine. Filtered project cards gracefully transition position and opacity with spring physics (stiffness: 300, damping: 25), delivering an uninterrupted, tactile editorial feel.</p>
+
+          <h3>2. Zero-Stutter Viewport Stat Counters</h3>
+          <p>Animating numerical counters on multiple metrics simultaneously during rapid scrolling can lock the main thread, causing missed frame budgets on mobile devices.</p>
+          <p><strong>Solution:</strong> Built an atomic <code>AnimatedCounter</code> hook utilizing <code>requestAnimationFrame</code> with ease-out cubic interpolation. The counter triggers strictly when the element intersects the viewport via an <code>IntersectionObserver</code>, completing numerical animations within 1.8 seconds without blocking user scroll.</p>
+        </section>
+
+        <section class="cs-section">
+          <h2>Key Features &amp; Capabilities</h2>
+          <ul>
+            <li><strong>Luxury Architectural Aesthetic:</strong> Dark-mode palette with warm gold accents and editorial typography.</li>
+            <li><strong>Multi-Sector Showcase:</strong> Filterable portfolio detailing residential estates, commercial hubs, and civil engineering works.</li>
+            <li><strong>Hardware-Accelerated Animation:</strong> 60 FPS Framer Motion micro-interactions with zero layout shifting.</li>
+            <li><strong>High-Conversion Contact Flow:</strong> Integrated inquiry form with validation state feedback and responsive drawers.</li>
+          </ul>
+        </section>
+      </div>
+
+      <aside class="cs-sidebar">
+        <div class="cs-sidebar-sticky">
+          <div class="cs-card-box">
+            <h3 class="cs-card-title">Project Details</h3>
+            <div class="cs-tech-list">
+              <div class="cs-tech-item"><span class="cs-tech-name">Client:</span><span>Italia Costruzioni</span></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">Status:</span><span>Production Live</span></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">Release:</span><span>July 2026</span></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">Repository:</span><a href="https://github.com/syedasjadabbas/italian-construction-website" target="_blank" style="color:var(--brown-light); text-decoration:none">GitHub ↗</a></div>
+            </div>
+          </div>
+
+          <div class="cs-card-box">
+            <h3 class="cs-card-title">Detailed Architecture</h3>
+            <div class="cs-tech-list">
+              <div class="cs-tech-item"><span class="cs-tech-name">Framework:</span><span>React 19 · TypeScript 5</span></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">Build Tool:</span><span>Vite 6</span></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">Styling:</span><span>Tailwind CSS v4</span></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">Animation:</span><span>Framer Motion 12.0</span></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">Icons:</span><span>Lucide React</span></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">Deployment:</span><span>Vercel Edge Network</span></div>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer>
+    <span class="ft">&copy; 2026 Syed Asjad Abbas</span>
+    <div class="ft-links">
+      <a href="https://github.com/syedasjadabbas" target="_blank">GitHub</a>
+      <a href="https://www.linkedin.com/in/syed-asjad-abbas/" target="_blank">LinkedIn</a>
+      <a href="mailto:asjadabbaszaidi@gmail.com">Email</a>
+    </div>
+  </footer>
+
+  <script src="../../assets/three.min.js" onerror="this.remove();var s=document.createElement('script');s.src='https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js';document.body.appendChild(s);"></script>
+  <script src="../../script.js"></script>
+</body>
+</html>
