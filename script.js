@@ -231,10 +231,10 @@
     const el = document.getElementById('typed-out');
     if(!el) return;
     const lines = [
-      'FastAPI · Python · MongoDB Atlas',
-      'React.js · Flutter · Tailwind CSS',
-      'BERT · DeepFace · scikit-learn',
-      'Backend Systems · AI Pipelines · Full-Stack'
+      'LLM Integration',
+      'AI Systems',
+      'Backend Architecture',
+      'System Design'
     ];
     let li=0, ci=0, del=false;
     function tick(){

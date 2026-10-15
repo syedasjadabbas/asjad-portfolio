@@ -44,7 +44,7 @@
     "author": {
       "@type": "Person",
       "name": "Syed Asjad Abbas",
-      "jobTitle": "Junior AI/ML Engineer",
+      "jobTitle": "AI/ML Engineer",
       "url": "https://www.syedasjadabbas.dev/"
     },
     "publisher": {
@@ -71,7 +71,7 @@
       <li><a href="../../index.html#skills">Skills</a></li>
       <li><a href="../../index.html#projects">Projects</a></li>
       <li><a href="../../index.html#experience">Experience</a></li>
-      <li><a href="../../index.html#blog">Log</a></li>
+      <!-- <li><a href="../../index.html#blog">Log</a></li> -->
       <li><a href="../../index.html#contact">Contact</a></li>
     </ul>
     <div class="nav-actions">
@@ -89,7 +89,7 @@
       <li><a href="../../index.html#skills">Skills</a></li>
       <li><a href="../../index.html#projects">Projects</a></li>
       <li><a href="../../index.html#experience">Experience</a></li>
-      <li><a href="../../index.html#blog">Log</a></li>
+      <!-- <li><a href="../../index.html#blog">Log</a></li> -->
       <li><a href="../../index.html#contact">Contact</a></li>
     </ul>
     <div class="mobile-overlay-cta">
@@ -136,8 +136,8 @@
       <div class="cs-main">
         <section class="cs-section">
           <h2>Problem &amp; Challenge</h2>
-          <p>High-end hospitality and mountain resort real estate developments (such as Serene Heights in Nathiagali, Pakistan) suffer from conventional flat media marketing. Static photography and 2D blueprints fail to convey spatial elevation, panoramic pine forest vistas, and the architectural presence of luxury hillside suites.</p>
-          <p>The engineering challenge was to construct a <strong>scroll-driven digital experience</strong> that immerses prospective buyers in a cinematic 3D walkthrough of the resort. The web application had to render complex architectural geometries with ambient atmospheric mist, smooth lighting transitions, and responsive mobile touch support—maintaining a steady 60 FPS without overheating mobile GPUs.</p>
+          <p>High-end hospitality and mountain resort developments suffer from conventional flat media marketing. Static photography and 2D blueprints fail to convey spatial elevation, panoramic pine forest vistas, and the architectural presence of luxury hillside suites.</p>
+          <p>The engineering challenge was to construct a <strong>scroll-driven digital experience</strong> that immerses prospective buyers in a cinematic 3D walkthrough of the resort. The web application had to render architectural geometries with ambient atmospheric mist, smooth lighting transitions, and responsive mobile touch support without overheating mobile GPUs.</p>
         </section>
 
         <section class="cs-section">
@@ -146,7 +146,7 @@
           <ul>
             <li><strong>Scroll-Choreographed Camera Loop:</strong> Utilized GSAP ScrollTrigger integrated with Lenis smooth scrolling to interpolate 3D camera coordinates along Catmull-Rom spline paths matching the narrative flow.</li>
             <li><strong>Procedural Atmosphere &amp; Shaders:</strong> Implemented custom GLSL fog and ambient light shaders to recreate Himalayan pine forest morning haze and dusk golden hour transitions.</li>
-            <li><strong>Model Optimization &amp; Streaming:</strong> Converted architectural CAD assets into Draco-compressed glTF binaries with KTX2 textures, slashing model payload from 85MB down to under 4.2MB.</li>
+            <li><strong>Model Optimization &amp; Streaming:</strong> Converted architectural CAD assets into Draco-compressed glTF binaries with KTX2 textures, significantly reducing payload size for web delivery.</li>
             <li><strong>Editorial UI Overlay:</strong> High-contrast typography and translucent glassmorphism cards pinned over the WebGL canvas, responding directly to scroll progress milestones.</li>
           </ul>
 
@@ -177,8 +177,8 @@
         <section class="cs-section">
           <h2>Engineering Challenges &amp; Solutions</h2>
           <h3>1. GPU Overdraw &amp; Thermal Management on Mobile</h3>
-          <p>Initial mobile testing revealed severe frame drops (below 24 FPS) and rapid battery drain on smartphones caused by full-screen post-processing bloom passes and un-culled high-poly tree models.</p>
-          <p><strong>Solution:</strong> We developed an adaptive <strong>Performance Tiering Manager</strong>. On touch and mobile devices, the system automatically adjusts the canvas pixel ratio (clamped to 1.5x), disables costly multi-pass bloom in favor of lightweight pre-baked ambient lighting, and uses frustum-culled billboard instances for vegetation, guaranteeing silky 60 FPS performance.</p>
+          <p>Initial mobile testing revealed frame rate drops and battery drain on smartphones caused by full-screen post-processing bloom passes and un-culled high-poly tree models.</p>
+          <p><strong>Solution:</strong> We developed an adaptive <strong>Performance Tiering Manager</strong>. On touch and mobile devices, the system automatically adjusts the canvas pixel ratio (clamped to 1.5x), disables costly multi-pass bloom in favor of lightweight pre-baked ambient lighting, and uses frustum-culled billboard instances for vegetation, ensuring smooth rendering across devices.</p>
 
           <h3>2. Flawless DOM &amp; 3D State Alignment</h3>
           <p>Ensuring that marketing copy cards and residence floorplan modals appeared precisely when the 3D camera pivoted to each respective wing required strict mathematical synchronization between DOM scroll offsets and WebGL scene time.</p>
@@ -190,8 +190,8 @@
           <ul>
             <li><strong>Interactive Residence Explorer:</strong> 360-degree rotation and focal zoom on luxury suites, penthouses, and amenities.</li>
             <li><strong>Alpine Atmospheric Lighting:</strong> Real-time dawn, midday, and dusk lighting changes responding to user scroll position.</li>
-            <li><strong>Ultra-Fast 2.5s First Contentful Paint:</strong> Progressive geometry loading ensures users interact with UI while high-res textures stream in the background.</li>
-            <li><strong>Editorial Luxury Craft:</strong> Curated typography, sparse layouts, and tactile micro-interactions tailored to high-net-worth audiences.</li>
+            <li><strong>Progressive 3D Streaming:</strong> Progressive geometry loading ensures users interact with UI while high-res textures stream in the background.</li>
+            <li><strong>Editorial Luxury Craft:</strong> Curated typography, sparse layouts, and tactile micro-interactions tailored to prospective buyers.</li>
           </ul>
         </section>
       </div>
@@ -201,8 +201,8 @@
           <div class="cs-card-box">
             <h3 class="cs-card-title">Project Details</h3>
             <div class="cs-tech-list">
-              <div class="cs-tech-item"><span class="cs-tech-name">Client:</span><span>Serene Heights Hotel &amp; Resorts</span></div>
-              <div class="cs-tech-item"><span class="cs-tech-name">Status:</span><span>Production Live</span></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">Project:</span><span>Serene Heights 3D WebGL</span></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">Status:</span><span>Live</span></div>
               <div class="cs-tech-item"><span class="cs-tech-name">Release:</span><span>August 2026</span></div>
               <div class="cs-tech-item"><span class="cs-tech-name">Live Experience:</span><a href="https://serene-heights-3d-web.vercel.app" target="_blank" style="color:var(--brown-light); text-decoration:none">Visit Website ↗</a></div>
               <div class="cs-tech-item"><span class="cs-tech-name">Repository:</span><a href="https://github.com/syedasjadabbas/serene-heights-3d-web" target="_blank" style="color:var(--brown-light); text-decoration:none">GitHub ↗</a></div>

@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0f0f23,50:1a1a3e,100:0f0f23&height=200&section=header&text=Syed%20Asjad%20Abbas&fontSize=52&fontColor=e2c97e&fontAlignY=38&desc=AI%20%2F%20ML%20Engineer%20%E2%80%A2%20Full-Stack%20Developer%20%E2%80%A2%20Founder%20%40%20Zeploy%20Tech&descSize=16&descAlignY=60&descColor=a0a0c0" alt="Header"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0f0f23,50:1a1a3e,100:0f0f23&height=200&section=header&text=Syed%20Asjad%20Abbas&fontSize=52&fontColor=e2c97e&fontAlignY=38&desc=AI%2FML%20Engineer%20%E2%80%A2%20Founder%20%26%20Lead%20Engineer%20%40%20Zeploy%20Tech&descSize=16&descAlignY=60&descColor=a0a0c0" alt="Header"/>
 
 <br/>
 
@@ -23,11 +23,11 @@
 
 ## ✦ About This Portfolio
 
-> *"Focused on backend systems, AI workflows, and production-focused applications that need to handle real users, real data, and real operational constraints."*
+> *"I build AI systems that connect models, data, APIs and backend infrastructure into products that work beyond the prototype stage."*
 
 This is the source code for my **personal portfolio website** — a hand-crafted, production-grade site built with pure HTML, CSS, and JavaScript (no frameworks). It serves as a live demonstration of my engineering aesthetic: clean architecture, intentional design, and zero unnecessary dependencies.
 
-**Final-year CS student** at COMSATS University Islamabad · **Founder** of [Zeploy Tech](https://www.linkedin.com/company/zeploy-tech/) · Based in **Lahore, Pakistan**
+**AI/ML Engineer at SVYPE** · **Founder & Lead Engineer** at [Zeploy Tech](https://zeploy.tech) · Based in **Lahore, Pakistan**
 
 ---
 
@@ -50,65 +50,65 @@ This is the source code for my **personal portfolio website** — a hand-crafted
 
 ## 🚀 Featured Projects
 
-### 🤖 MockAI — AI Interview Evaluation System
-> *Final Year Project · Multi-modal AI pipeline*
+### 🤖 MockAI — Multimodal AI Interview Evaluation System
+> *Final Year Project · Multi-modal AI pipeline (In Development)*
 
-A sophisticated interview evaluation platform that simultaneously analyzes speech, facial emotions, and answer quality — without any manual review.
+A multimodal evaluation pipeline that brings BERT-based NLP, Whisper speech recognition and DeepFace facial analysis into one evaluation workflow.
 
 ```
-React.js  →  FastAPI  →  BERT NLP  →  DeepFace  →  MongoDB Atlas
+React.js  →  FastAPI  →  BERT · Whisper · DeepFace  →  Evaluation
 ```
 
 - **BERT-based NLP** for semantic answer grading
-- **DeepFace** computer vision for real-time emotion tracking
-- **Speech-to-text** transcription pipeline
-- Unified analytics dashboard for holistic candidate scoring
+- **Whisper** speech recognition transcription
+- **DeepFace** facial analysis
+- Unified analytics workflow
 
-[![Case Study](https://img.shields.io/badge/Read%20Case%20Study-→-e2c97e?style=flat-square)](https://www.syedasjadabbas.dev/case-study/mockai)
 [![GitHub](https://img.shields.io/badge/GitHub-Repo-181717?style=flat-square&logo=github)](https://github.com/syedasjadabbas/MockAI)
 
 ---
 
+### 🎬 ZePlay — Adaptive Video Streaming Platform
+> *Flagship Engineering · Full-Stack System*
+
+Uploads are transcoded in background FFmpeg jobs into 1080p, 720p and 480p HLS renditions for adaptive-bitrate playback. A FastAPI backend handles authentication, profiles, watch history, search and recommendations, with Redis caching in front of PostgreSQL.
+
+```
+React + TS  →  FastAPI  →  HLS.js / FFmpeg  →  Redis  →  PostgreSQL
+```
+
+[![Case Study](https://img.shields.io/badge/Read%20Case%20Study-→-e2c97e?style=flat-square)](https://www.syedasjadabbas.dev/case-study/zeplay)
+[![GitHub](https://img.shields.io/badge/GitHub-Repo-181717?style=flat-square&logo=github)](https://github.com/syedasjadabbas/ZePlay)
+
+---
+
 ### 🛒 EduCart — E-Commerce Platform
-> *Client Project · Live in Production*
+> *Web Application · Live in Production*
 
-A full-stack e-commerce storefront with role-based admin controls and a checkout flow engineered to handle concurrent user sessions without data conflicts.
+A MERN e-commerce platform with product search and filtering, cart, PayPal checkout, order tracking, wishlist and student discounts, plus an admin dashboard with sales analytics.
 
 ```
-React.js  →  FastAPI  →  JWT Auth  →  MySQL
+React (Vite)  →  Express API  →  JWT Auth  →  MongoDB
 ```
 
-- Indexed SQL queries for fast catalog search
-- Transactional checkout logic with inventory locks
-- JWT session management with refresh token rotation
+- Product search, filtering, and student discounts
+- PayPal checkout and order tracking
+- JWT authentication with role-based access
 
 [![Case Study](https://img.shields.io/badge/Read%20Case%20Study-→-e2c97e?style=flat-square)](https://www.syedasjadabbas.dev/case-study/educart)
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-↗-00c853?style=flat-square)](https://edu-cart-ten.vercel.app)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-↗-00c853?style=flat-square)](https://edu-cart-ten.vercel.app/)
 [![GitHub](https://img.shields.io/badge/GitHub-Repo-181717?style=flat-square&logo=github)](https://github.com/syedasjadabbas/EduCart)
 
 ---
 
-### 🎵 TuneBox — Mobile Music Streaming App
-> *Internship Project @ Svype · Flutter / Dart*
-
-Cross-platform mobile music streaming client with offline playback, audio buffer management, and seamless cloud/local source switching.
-
-- Reusable audio control library with **Provider** state management
-- Local-first playlist caching with async stream buffer handling
-- Reduced UI logic from **~1,200 → ~720 lines** through component abstraction
-
-[![GitHub](https://img.shields.io/badge/GitHub-Repo-181717?style=flat-square&logo=github)](https://github.com/syedasjadabbas/TuneBox)
-
----
-
 ### 🏋️ Gym Management System
-> *Client Deployment · Zeploy Tech*
+> *Academic Project · Desktop Application*
 
-Operations dashboard replacing error-prone spreadsheet workflows for a gym facility — member enrollment, attendance logs, and subscription billing.
+Desktop gym management system with member profiles, payments, measurements and a store module.
 
-- Transaction-safe enrollment workflows
-- Automated attendance logging
-- Payment verification tracking
+- Member profiles and subscription payment tracking
+- Physical measurement logs
+- Equipment and supplement store module
 
 [![Case Study](https://img.shields.io/badge/Read%20Case%20Study-→-e2c97e?style=flat-square)](https://www.syedasjadabbas.dev/case-study/gym-system)
 [![GitHub](https://img.shields.io/badge/GitHub-Repo-181717?style=flat-square&logo=github)](https://github.com/syedasjadabbas/Gym-Management-System)
@@ -122,37 +122,34 @@ Operations dashboard replacing error-prone spreadsheet workflows for a gym facil
 **AI / ML**
 
 ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white)
+![Gemini](https://img.shields.io/badge/Gemini%20API-4285F4?style=flat-square&logo=google&logoColor=white)
 ![scikit-learn](https://img.shields.io/badge/scikit--learn-F7931E?style=flat-square&logo=scikit-learn&logoColor=white)
-![OpenCV](https://img.shields.io/badge/OpenCV-5C3EE8?style=flat-square&logo=opencv&logoColor=white)
 ![NumPy](https://img.shields.io/badge/NumPy-013243?style=flat-square&logo=numpy&logoColor=white)
 ![Pandas](https://img.shields.io/badge/Pandas-150458?style=flat-square&logo=pandas&logoColor=white)
 
-**Backend**
+**Backend & Data**
 
-![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white)
 ![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=node.js&logoColor=white)
-![JWT](https://img.shields.io/badge/JWT-000000?style=flat-square&logo=jsonwebtokens&logoColor=white)
+![Express](https://img.shields.io/badge/Express-000000?style=flat-square&logo=express&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-336791?style=flat-square&logo=postgresql&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=flat-square&logo=mongodb&logoColor=white)
+![Redis](https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=redis&logoColor=white)
+![Prisma](https://img.shields.io/badge/Prisma-2D3748?style=flat-square&logo=prisma&logoColor=white)
 
-**Frontend**
+**Frontend & Mobile**
 
 ![React](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black)
+![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=next.js&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)
 ![Flutter](https://img.shields.io/badge/Flutter-02569B?style=flat-square&logo=flutter&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)
-
-**Databases**
-
-![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=flat-square&logo=mongodb&logoColor=white)
-![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=mysql&logoColor=white)
-![Firebase](https://img.shields.io/badge/Firebase-FFCA28?style=flat-square&logo=firebase&logoColor=black)
 
 **Tools & DevOps**
 
 ![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white)
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
 ![Postman](https://img.shields.io/badge/Postman-FF6C37?style=flat-square&logo=postman&logoColor=white)
-![Vercel](https://img.shields.io/badge/Vercel-000000?style=flat-square&logo=vercel&logoColor=white)
 ![Linux](https://img.shields.io/badge/Linux-FCC624?style=flat-square&logo=linux&logoColor=black)
 
 </div>
@@ -162,9 +159,9 @@ Operations dashboard replacing error-prone spreadsheet workflows for a gym facil
 ## 💼 Experience
 
 ```
-Aug 2026 – Present   │  Junior AI/ML Engineer           │  Svype        │  Lahore, PK
-Apr 2026 – Present   │  Founder & Full-Stack Developer  │  Zeploy Tech  │  Lahore, PK
-2024 – Present       │  Backend & Full-Stack Developer  │  Freelance    │  Remote
+Jul 2026 – Present   │  AI/ML Engineer                  │  SVYPE        │  Lahore, PK (Hybrid)
+Apr 2026 – Present   │  Founder & Lead Engineer         │  Zeploy Tech  │  Lahore, PK (Remote)
+Jan 2021 – Present   │  Co-Founder & COO                │  100 Se Support│ Khairpur, PK (Hybrid)
 ```
 
 ---
@@ -197,11 +194,8 @@ git clone https://github.com/syedasjadabbas/asjad-portfolio.git
 cd asjad-portfolio
 
 # Open in browser — no build step needed (pure HTML/CSS/JS)
-# Serve with any static server:
 npx serve .
 ```
-
-> **No npm install needed.** This portfolio has zero runtime dependencies — pure HTML, CSS, and JavaScript.
 
 ---
 
@@ -216,7 +210,5 @@ This project is open source and available under the **[MIT License](LICENSE)**.
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0f0f23,50:1a1a3e,100:0f0f23&height=100&section=footer" alt="Footer"/>
 
 **Designed & built by Syed Asjad Abbas**
-
-*If you found this portfolio inspiring, consider leaving a ⭐*
 
 </div>

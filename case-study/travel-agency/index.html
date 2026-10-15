@@ -44,7 +44,7 @@
     "author": {
       "@type": "Person",
       "name": "Syed Asjad Abbas",
-      "jobTitle": "Junior AI/ML Engineer",
+      "jobTitle": "AI/ML Engineer",
       "url": "https://www.syedasjadabbas.dev/"
     },
     "publisher": {
@@ -71,7 +71,7 @@
       <li><a href="../../index.html#skills">Skills</a></li>
       <li><a href="../../index.html#projects">Projects</a></li>
       <li><a href="../../index.html#experience">Experience</a></li>
-      <li><a href="../../index.html#blog">Log</a></li>
+      <!-- <li><a href="../../index.html#blog">Log</a></li> -->
       <li><a href="../../index.html#contact">Contact</a></li>
     </ul>
     <div class="nav-actions">
@@ -89,7 +89,7 @@
       <li><a href="../../index.html#skills">Skills</a></li>
       <li><a href="../../index.html#projects">Projects</a></li>
       <li><a href="../../index.html#experience">Experience</a></li>
-      <li><a href="../../index.html#blog">Log</a></li>
+      <!-- <li><a href="../../index.html#blog">Log</a></li> -->
       <li><a href="../../index.html#contact">Contact</a></li>
     </ul>
     <div class="mobile-overlay-cta">
@@ -137,7 +137,7 @@
         <section class="cs-section">
           <h2>Problem &amp; Challenge</h2>
           <p>Online travel discovery is often characterized by transactional, visually congested interfaces that fail to inspire wanderlust. Users are confronted with aggressive discount popups, static tables, and disjointed flight and hotel searches that dilute the emotional anticipation of international journeys.</p>
-          <p>The goal of Travel Agency was to build an <strong>inspirational destination discovery portal</strong>. The platform needed to integrate high-definition cinematic visual sections, scroll-driven destination storytelling (Turkey, Maldives, Dubai, Singapore), and structured custom itinerary builders—while keeping initial asset load times under 2 seconds on mobile networks.</p>
+          <p>The goal of Travel Agency was to build an <strong>inspirational destination discovery portal</strong>. The platform needed to integrate high-definition cinematic visual sections, scroll-driven destination storytelling (Turkey, Maldives, Dubai, Singapore), and structured custom itinerary builders—while maintaining fast asset load times on mobile networks.</p>
         </section>
 
         <section class="cs-section">
@@ -145,7 +145,7 @@
           <p>We engineered a modern Next.js platform prioritizing motion smoothness and visual hierarchy:</p>
           <ul>
             <li><strong>Kinetic Scroll Architecture:</strong> Combined Lenis smooth scrolling with GSAP ScrollTrigger timelines to choreograph fluid layer parallax, pin sections during interactive reviews, and reveal custom travel package cards.</li>
-            <li><strong>Destination Explorer Module:</strong> Interactive destination selector enabling travelers to preview day-by-day itineraries, flight durations, and visa requirements with sub-second transitions.</li>
+            <li><strong>Destination Explorer Module:</strong> Interactive destination selector enabling travelers to preview day-by-day itineraries, flight durations, and visa requirements with smooth, responsive transitions.</li>
             <li><strong>Component-Scoped SCSS Modules:</strong> Zero style collision architecture utilizing localized CSS modules for clean maintenance, responsive breakpoint clamps, and dark theme consistency.</li>
             <li><strong>Optimized Asset Pipelines:</strong> Next.js automatic image optimization and WebP delivery pipelines ensuring crisp imagery with minimal bandwidth consumption.</li>
           </ul>
@@ -178,7 +178,7 @@
           <h2>Engineering Challenges &amp; Solutions</h2>
           <h3>1. Sticky Viewport Scroll Syncing</h3>
           <p>Pinning complex multi-element package cards during vertical scroll often caused visual shuddering and incorrect scroll offset calculations on mobile Safari and Chrome.</p>
-          <p><strong>Solution:</strong> We synchronized Lenis scroll ticks with the GSAP ticker via <code>gsap.ticker.add((time) => lenis.raf(time * 1000))</code>, completely unifying scroll interpolation and layout render passes. This guarantees zero micro-stuttering across all device refresh rates (60Hz to 120Hz ProMotion displays).</p>
+          <p><strong>Solution:</strong> We synchronized Lenis scroll ticks with the GSAP ticker via <code>gsap.ticker.add((time) => lenis.raf(time * 1000))</code>, completely unifying scroll interpolation and layout render passes. This guarantees smooth motion across different device displays.</p>
 
           <h3>2. Responsive Visual Scaling Across Breakpoints</h3>
           <p>Layered visual compositions containing aircraft, skylines, and cloud layers required consistent optical proportions from narrow 375px screens up to ultra-wide displays.</p>
@@ -189,7 +189,7 @@
           <h2>Key Features &amp; Capabilities</h2>
           <ul>
             <li><strong>Cinematic Destination Exploration:</strong> Immersive destination portfolios with interactive day-by-day breakdowns.</li>
-            <li><strong>60 FPS Scroll Fluidity:</strong> Unified Lenis and GSAP motion pipeline with zero layout thrashing.</li>
+            <li><strong>Smooth Scroll Fluidity:</strong> Unified Lenis and GSAP motion pipeline with zero layout thrashing.</li>
             <li><strong>Custom Package Configurator:</strong> Instant comparison between solo, honeymoon, family, and corporate travel tiers.</li>
             <li><strong>Mobile-First Ergonomics:</strong> Touch-tuned navigation with accessible drawer controls and quick-inquiry actions.</li>
           </ul>
@@ -202,7 +202,7 @@
             <h3 class="cs-card-title">Project Details</h3>
             <div class="cs-tech-list">
               <div class="cs-tech-item"><span class="cs-tech-name">Client:</span><span>Travel Agency Platform</span></div>
-              <div class="cs-tech-item"><span class="cs-tech-name">Status:</span><span>Production Live</span></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">Status:</span><span>Live</span></div>
               <div class="cs-tech-item"><span class="cs-tech-name">Release:</span><span>August 2026</span></div>
               <div class="cs-tech-item"><span class="cs-tech-name">Repository:</span><a href="https://github.com/syedasjadabbas/travel-agency" target="_blank" style="color:var(--brown-light); text-decoration:none">GitHub ↗</a></div>
             </div>

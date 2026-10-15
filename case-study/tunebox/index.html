@@ -44,7 +44,7 @@
     "author": {
       "@type": "Person",
       "name": "Syed Asjad Abbas",
-      "jobTitle": "Junior AI/ML Engineer",
+      "jobTitle": "AI/ML Engineer",
       "url": "https://www.syedasjadabbas.dev/"
     },
     "publisher": {
@@ -71,7 +71,7 @@
       <li><a href="../../index.html#skills">Skills</a></li>
       <li><a href="../../index.html#projects">Projects</a></li>
       <li><a href="../../index.html#experience">Experience</a></li>
-      <li><a href="../../index.html#blog">Log</a></li>
+      <!-- <li><a href="../../index.html#blog">Log</a></li> -->
       <li><a href="../../index.html#contact">Contact</a></li>
     </ul>
     <div class="nav-actions">
@@ -89,7 +89,7 @@
       <li><a href="../../index.html#skills">Skills</a></li>
       <li><a href="../../index.html#projects">Projects</a></li>
       <li><a href="../../index.html#experience">Experience</a></li>
-      <li><a href="../../index.html#blog">Log</a></li>
+      <!-- <li><a href="../../index.html#blog">Log</a></li> -->
       <li><a href="../../index.html#contact">Contact</a></li>
     </ul>
     <div class="mobile-overlay-cta">
@@ -108,24 +108,24 @@
         <span>TuneBox</span>
       </div>
       <h1 class="cs-title-main">TuneBox</h1>
-      <p class="cs-subtitle">A cross-platform mobile audio streaming client featuring resilient offline playback, asynchronous audio buffer management, and decoupled Provider state architecture.</p>
+      <p class="cs-subtitle">A cross-platform mobile audio player client featuring playback controls, playlist management, and a decoupled Provider state architecture.</p>
       
       <div class="cs-meta-grid">
         <div class="cs-meta-item">
           <span class="cs-meta-label">Role</span>
-          <span class="cs-meta-val">Mobile Software Engineer Intern</span>
+          <span class="cs-meta-val">Full Stack Development Intern</span>
         </div>
         <div class="cs-meta-item">
           <span class="cs-meta-label">Category</span>
-          <span class="cs-meta-val">Mobile App Architecture &amp; Audio Streaming</span>
+          <span class="cs-meta-val">Mobile App Architecture &amp; Audio Playback</span>
         </div>
         <div class="cs-meta-item">
           <span class="cs-meta-label">Timeline</span>
-          <span class="cs-meta-val">Svype Internship · 2026</span>
+          <span class="cs-meta-val">SVYPE Internship · May 2026 – Jul 2026</span>
         </div>
         <div class="cs-meta-item">
           <span class="cs-meta-label">Core Stack</span>
-          <span class="cs-meta-val">Flutter · Dart · Provider · REST APIs · SQLite</span>
+          <span class="cs-meta-val">Flutter · Dart · Provider · REST APIs</span>
         </div>
       </div>
     </div>
@@ -136,8 +136,8 @@
       <div class="cs-main">
         <section class="cs-section">
           <h2>Problem &amp; Challenge</h2>
-          <p>Mobile audio applications encounter severe edge cases in real-world use: network transitions between Wi-Fi and mobile data trigger audio dropout, aggressive OS background execution limits terminate playback threads unexpectedly, and coupling audio playback logic directly into UI widgets creates tangled state bugs.</p>
-          <p>The engineering challenge was to architect a <strong>reusable, modular audio service</strong> in Flutter that handles background playback, lock screen media controls, playlist queues, and local-first offline caching while dramatically simplifying screen rendering code.</p>
+          <p>Mobile audio applications encounter common state challenges: background execution transitions, mini-player state synchronization, and coupling audio playback logic directly into UI widgets creates tangled state bugs.</p>
+          <p>The engineering challenge was to architect a <strong>reusable, modular audio service</strong> in Flutter that handles playback controls, notification controls, and playlist queues while dramatically simplifying screen rendering code.</p>
         </section>
 
         <section class="cs-section">
@@ -146,7 +146,7 @@
           <ul>
             <li><strong>Decoupled Audio Manager Service:</strong> Encapsulates player lifecycle events, headphone unplug events, audio focus loss (such as incoming telephone calls), and notification service synchronization.</li>
             <li><strong>Reactive State Management:</strong> Replaced scattered <code>setState()</code> calls across multiple player screens with a centralized <code>AudioPlayerProvider</code>, preventing unnecessary widget rebuilds during position updates.</li>
-            <li><strong>Local-First Playlist Cache:</strong> Integrated an on-device key-value store to cache song metadata, album art bitmaps, and audio stream buffers for instantaneous offline resumption.</li>
+            <li><strong>Structured Playlist Management:</strong> Structured clean playlist models and track queues for sequential, shuffle, and repeat modes.</li>
             <li><strong>REST API Gateway Integration:</strong> Structured clean data contracts for catalog search, artist discography fetches, and personalized user library syncing.</li>
           </ul>
 
@@ -168,30 +168,30 @@
             </div>
             <div class="cs-flow-arrow">&darr;</div>
             <div class="cs-flow-step">
-              <div class="cs-step-name">Hybrid Audio Cache (Remote Stream vs. Local Disk)</div>
-              <div class="cs-step-desc">Streams chunks via HTTP while spooling verified audio segments to local storage</div>
+              <div class="cs-step-name">Audio Stream Service</div>
+              <div class="cs-step-desc">Streams chunks via HTTP and maintains playback buffer stability</div>
             </div>
           </div>
         </section>
 
         <section class="cs-section">
           <h2>Engineering Challenges &amp; Solutions</h2>
-          <h3>1. Codebase Bloat &amp; State Duplication</h3>
-          <p>Initially, player logic, seekbar animation interpolation, and network request handling were duplicate-implemented across the full-screen player, the bottom persistent mini-player, and the lock screen service, spanning over 1,200 lines of brittle code.</p>
-          <p><strong>Solution:</strong> Extracted an atomic <code>AudioControlService</code> singleton that exposed pure reactive streams. Both the full player and mini-player subscribe to the same underlying stream through a unified controller. This reduced UI logic from ~1,200 to ~720 lines, completely eliminating UI state drift between views.</p>
+          <h3>1. Codebase Simplification &amp; State Consolidation</h3>
+          <p>Initially, player logic, seekbar animation interpolation, and playback state handling were duplicate-implemented across the full-screen player and persistent mini-player.</p>
+          <p><strong>Solution:</strong> Extracted an atomic <code>AudioControlService</code> singleton that exposed pure reactive streams. Both the full player and mini-player subscribe to the same underlying stream through a unified controller, reducing UI logic complexity and completely eliminating UI state drift between views.</p>
 
-          <h3>2. Smooth Scrubbing on Uncached Streams</h3>
-          <p>Rapid seekbar dragging on remote audio streams resulted in multiple overlapping HTTP range requests, causing audio stuttering and thread lock on lower-spec Android devices.</p>
-          <p><strong>Solution:</strong> Implemented a <strong>300ms Debounce Operator</strong> on seek gestures. The UI visual slider updates immediately at 60 FPS for responsive tactile feel, while network buffer repositioning requests are dispatched only once user touch interaction completes.</p>
+          <h3>2. Smooth Scrubbing on Audio Streams</h3>
+          <p>Rapid seekbar dragging on remote audio streams resulted in multiple overlapping range requests, causing audio stuttering on mobile devices.</p>
+          <p><strong>Solution:</strong> Implemented debounce handling on seek gestures. The UI visual slider updates smoothly during interaction, while audio repositioning requests are dispatched only once user touch interaction completes.</p>
         </section>
 
         <section class="cs-section">
           <h2>Key Features &amp; Capabilities</h2>
           <ul>
-            <li><strong>Continuous Background Playback:</strong> Uninterrupted audio delivery with native lock screen controls and headphone button response.</li>
-            <li><strong>40% Codebase Optimization:</strong> Reduced architectural complexity through modular Provider state consolidation.</li>
-            <li><strong>Offline Playlist Resiliency:</strong> Automatic fallback to cached audio files when cellular connectivity drops.</li>
-            <li><strong>Cross-Platform Parity:</strong> Identical responsive design and fluid gesture ergonomics across iOS and Android.</li>
+            <li><strong>Continuous Background Playback:</strong> Audio delivery with native lock screen controls and headphone button response.</li>
+            <li><strong>State &amp; Codebase Optimization:</strong> Streamlined architectural complexity through modular Provider state consolidation.</li>
+            <li><strong>Playlist &amp; Queue Management:</strong> Seamless queue management with shuffle and repeat playback modes.</li>
+            <li><strong>Cross-Platform Parity:</strong> Responsive design and fluid ergonomics across iOS and Android.</li>
           </ul>
         </section>
       </div>
@@ -201,9 +201,9 @@
           <div class="cs-card-box">
             <h3 class="cs-card-title">Project Details</h3>
             <div class="cs-tech-list">
-              <div class="cs-tech-item"><span class="cs-tech-name">Client:</span><span>Svype Internship Project</span></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">Context:</span><span>SVYPE Internship Project</span></div>
               <div class="cs-tech-item"><span class="cs-tech-name">Status:</span><span>Completed</span></div>
-              <div class="cs-tech-item"><span class="cs-tech-name">Release:</span><span>July 2026</span></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">Timeline:</span><span>May 2026 – Jul 2026</span></div>
               <div class="cs-tech-item"><span class="cs-tech-name">Repository:</span><a href="https://github.com/syedasjadabbas/TuneBox" target="_blank" style="color:var(--brown-light); text-decoration:none">GitHub ↗</a></div>
             </div>
           </div>

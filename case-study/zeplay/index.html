@@ -44,7 +44,7 @@
     "author": {
       "@type": "Person",
       "name": "Syed Asjad Abbas",
-      "jobTitle": "Junior AI/ML Engineer",
+      "jobTitle": "AI/ML Engineer",
       "url": "https://www.syedasjadabbas.dev/"
     },
     "publisher": {
@@ -71,7 +71,7 @@
       <li><a href="../../index.html#skills">Skills</a></li>
       <li><a href="../../index.html#projects">Projects</a></li>
       <li><a href="../../index.html#experience">Experience</a></li>
-      <li><a href="../../index.html#blog">Log</a></li>
+      <!-- <li><a href="../../index.html#blog">Log</a></li> -->
       <li><a href="../../index.html#contact">Contact</a></li>
     </ul>
     <div class="nav-actions">
@@ -89,7 +89,7 @@
       <li><a href="../../index.html#skills">Skills</a></li>
       <li><a href="../../index.html#projects">Projects</a></li>
       <li><a href="../../index.html#experience">Experience</a></li>
-      <li><a href="../../index.html#blog">Log</a></li>
+      <!-- <li><a href="../../index.html#blog">Log</a></li> -->
       <li><a href="../../index.html#contact">Contact</a></li>
     </ul>
     <div class="mobile-overlay-cta">
@@ -136,8 +136,8 @@
       <div class="cs-main">
         <section class="cs-section">
           <h2>Problem &amp; Challenge</h2>
-          <p>Delivering high-definition video across varied regional broadband and mobile cellular networks presents steep challenges: network bandwidth is volatile, monolithic video formats (such as raw MP4) cause intolerable start-up latency, and unoptimized seek operations consume massive unnecessary bandwidth.</p>
-          <p>ZePlay was engineered to solve these bottlenecks by implementing a <strong>Netflix-caliber streaming pipeline</strong>. The platform needed to transcode raw video uploads asynchronously into multi-quality HLS streams (1080p, 720p, 480p), dynamically adjust playback resolutions in real-time based on client buffer health, and synchronize watch positions reliably across multi-user profiles secured by custom PIN locks.</p>
+          <p>Delivering high-definition video across varied regional broadband and mobile cellular networks presents steep challenges: network bandwidth is volatile, monolithic video formats (such as raw MP4) cause start-up latency, and unoptimized seek operations consume unnecessary bandwidth.</p>
+          <p>ZePlay was engineered to solve these bottlenecks by implementing an <strong>adaptive streaming pipeline</strong>. The platform transcodes raw video uploads asynchronously into multi-quality HLS streams (1080p, 720p, 480p), dynamically adjusts playback resolutions in real time based on client buffer health, and synchronizes watch positions reliably across multi-user profiles secured by custom PIN locks.</p>
         </section>
 
         <section class="cs-section">
@@ -146,7 +146,7 @@
           <ul>
             <li><strong>Frontend Player Engine:</strong> Built with React and TypeScript using custom HLS.js controllers. Features adaptive quality switching without playback interruption, custom gesture controls, and low-latency buffer management.</li>
             <li><strong>Asynchronous Ingestion Service:</strong> An automated FFmpeg worker queue that splits incoming master videos into segmented <code>.ts</code> media files, generates synchronized multi-bitrate <code>.m3u8</code> manifest playlists, and extracts automated poster thumbnails.</li>
-            <li><strong>FastAPI Core &amp; Redis Caching:</strong> Handles high-throughput playback session heartbeats, caches manifest lookups in-memory, and provides low-latency user watch history lookups.</li>
+            <li><strong>FastAPI Core &amp; Redis Caching:</strong> Handles playback session heartbeats, caches manifest lookups in-memory, and provides low-latency user watch history lookups.</li>
             <li><strong>PostgreSQL Database:</strong> Stores relational catalog data, user profiles, PIN credentials, and historical telemetry.</li>
           </ul>
 
@@ -164,7 +164,7 @@
             <div class="cs-flow-arrow">&darr;</div>
             <div class="cs-flow-step">
               <div class="cs-step-name">Segmented Static Storage &amp; Redis Manifest Cache</div>
-              <div class="cs-step-desc">Distributes HLS chunks and caches authorization keys for sub-second retrieval</div>
+              <div class="cs-step-desc">Distributes HLS chunks and caches authorization keys for low-latency retrieval</div>
             </div>
             <div class="cs-flow-arrow">&darr;</div>
             <div class="cs-flow-step">
@@ -181,8 +181,8 @@
           <p><strong>Solution:</strong> We implemented seamless ABR (Adaptive Bitrate) algorithms using HLS.js custom configuration. By aligning keyframe intervals (GOP size = 48 at 24fps) across all resolutions during FFmpeg transcoding, the player transitions between 1080p, 720p, and 480p at identical segment boundaries without clearing active playback buffers, preserving continuous audio-visual flow.</p>
 
           <h3>2. High-Frequency Playback Telemetry Load</h3>
-          <p>Tracking watch positions every 5 seconds across hundreds of concurrent streams would flood the primary relational database with continuous row updates, degrading catalog search query performance.</p>
-          <p><strong>Solution:</strong> Designed a <strong>Write-Behind Caching Pattern</strong> powered by Redis. Playback timestamps and resume positions are updated atomically in Redis keys with high-speed in-memory operations. A periodic Celery worker flushes consolidated progress states to PostgreSQL in batch writes, reducing database write IOPS by over 88%.</p>
+          <p>Tracking watch positions continuously across concurrent streams would flood the primary relational database with continuous row updates, degrading catalog search query performance.</p>
+          <p><strong>Solution:</strong> Designed a <strong>Write-Behind Caching Pattern</strong> powered by Redis. Playback timestamps and resume positions are updated atomically in Redis keys with high-speed in-memory operations. A periodic Celery worker flushes consolidated progress states to PostgreSQL in batch writes, significantly reducing direct database write load and preventing search query bottlenecks.</p>
         </section>
 
         <section class="cs-section">
@@ -191,7 +191,7 @@
             <li><strong>Adaptive Multi-Quality Streaming:</strong> Dynamic playback selection across 1080p Full HD, 720p HD, and 480p SD tiers.</li>
             <li><strong>Multi-Profile Architecture:</strong> Independent watch histories, continue-watching carousels, and PIN-protected profile security.</li>
             <li><strong>Automated Ingestion Pipeline:</strong> Automated playlist verification, repair scripts, and real segment detection avoiding corrupted streams.</li>
-            <li><strong>Production-Frozen UI:</strong> Netflix-inspired sleek dark styling with complete keyboard shortcut navigation and fullscreen mobile gestures.</li>
+            <li><strong>Responsive UI:</strong> Dark styling with complete keyboard shortcut navigation and fullscreen mobile gestures.</li>
           </ul>
         </section>
       </div>
@@ -201,8 +201,8 @@
           <div class="cs-card-box">
             <h3 class="cs-card-title">Project Details</h3>
             <div class="cs-tech-list">
-              <div class="cs-tech-item"><span class="cs-tech-name">Client:</span><span>Zeploy Tech Flagship</span></div>
-              <div class="cs-tech-item"><span class="cs-tech-name">Status:</span><span>Production Ready</span></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">Context:</span><span>Flagship Engineering (Zeploy Tech)</span></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">Status:</span><span>Built &amp; Tested</span></div>
               <div class="cs-tech-item"><span class="cs-tech-name">Release:</span><span>May 2026</span></div>
               <div class="cs-tech-item"><span class="cs-tech-name">Repository:</span><a href="https://github.com/syedasjadabbas/ZePlay" target="_blank" style="color:var(--brown-light); text-decoration:none">GitHub ↗</a></div>
             </div>

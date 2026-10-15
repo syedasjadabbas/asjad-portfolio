@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>EduCart Case Study — Syed Asjad Abbas | Full-Stack Engineer</title>
-  <meta name="description" content="In-depth case study of EduCart, a transactional e-commerce platform built by Syed Asjad Abbas using React.js, FastAPI, JWT Auth, and MySQL."/>
+  <title>EduCart Case Study — Syed Asjad Abbas | AI/ML Engineer</title>
+  <meta name="description" content="Case study of EduCart, a MERN e-commerce platform built by Syed Asjad Abbas with product search and filtering, PayPal checkout, order tracking, and admin dashboard."/>
   <meta name="author" content="Syed Asjad Abbas"/>
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"/>
   <link rel="canonical" href="https://www.syedasjadabbas.dev/case-study/educart/"/>
@@ -13,15 +13,15 @@
   <meta property="og:site_name" content="Syed Asjad Abbas Portfolio"/>
   <meta property="og:type" content="article"/>
   <meta property="og:url" content="https://www.syedasjadabbas.dev/case-study/educart/"/>
-  <meta property="og:title" content="EduCart Case Study — Syed Asjad Abbas | Full-Stack Engineer"/>
-  <meta property="og:description" content="Technical architecture and database concurrency breakdown of the EduCart platform by Syed Asjad Abbas."/>
+  <meta property="og:title" content="EduCart Case Study — Syed Asjad Abbas | AI/ML Engineer"/>
+  <meta property="og:description" content="Technical case study of EduCart, a MERN e-commerce platform by Syed Asjad Abbas."/>
   <meta property="og:image" content="https://www.syedasjadabbas.dev/assets/educart.webp"/>
   <meta property="og:image:alt" content="EduCart E-Commerce Platform by Syed Asjad Abbas"/>
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image"/>
-  <meta name="twitter:title" content="EduCart Case Study — Syed Asjad Abbas | Full-Stack Engineer"/>
-  <meta name="twitter:description" content="Technical architecture and database concurrency breakdown of the EduCart platform by Syed Asjad Abbas."/>
+  <meta name="twitter:title" content="EduCart Case Study — Syed Asjad Abbas | AI/ML Engineer"/>
+  <meta name="twitter:description" content="Technical case study of EduCart, a MERN e-commerce platform by Syed Asjad Abbas."/>
   <meta name="twitter:image" content="https://www.syedasjadabbas.dev/assets/educart.webp"/>
   <meta name="twitter:image:alt" content="EduCart E-Commerce Platform by Syed Asjad Abbas"/>
 
@@ -39,12 +39,12 @@
   {
     "@context": "https://schema.org",
     "@type": "TechArticle",
-    "headline": "EduCart: High-Concurrency E-Commerce Platform Architecture",
-    "description": "Technical case study of EduCart, a role-based e-commerce platform built with FastAPI, React, and MySQL database concurrency locks.",
+    "headline": "EduCart: Full-Stack MERN E-Commerce Platform Architecture",
+    "description": "Technical case study of EduCart, a role-based MERN e-commerce platform built with React, Node.js, Express, MongoDB, and PayPal checkout.",
     "author": {
       "@type": "Person",
       "name": "Syed Asjad Abbas",
-      "jobTitle": "Full-Stack Engineer",
+      "jobTitle": "AI/ML Engineer",
       "url": "https://www.syedasjadabbas.dev/"
     },
     "publisher": {
@@ -71,7 +71,7 @@
       <li><a href="../../index.html#skills">Skills</a></li>
       <li><a href="../../index.html#projects">Projects</a></li>
       <li><a href="../../index.html#experience">Experience</a></li>
-      <li><a href="../../index.html#blog">Log</a></li>
+      <!-- <li><a href="../../index.html#blog">Log</a></li> -->
       <li><a href="../../index.html#contact">Contact</a></li>
     </ul>
     <div class="nav-actions">
@@ -89,7 +89,7 @@
       <li><a href="../../index.html#skills">Skills</a></li>
       <li><a href="../../index.html#projects">Projects</a></li>
       <li><a href="../../index.html#experience">Experience</a></li>
-      <li><a href="../../index.html#blog">Log</a></li>
+      <!-- <li><a href="../../index.html#blog">Log</a></li> -->
       <li><a href="../../index.html#contact">Contact</a></li>
     </ul>
     <div class="mobile-overlay-cta">
@@ -108,7 +108,7 @@
         <span>EduCart</span>
       </div>
       <h1 class="cs-title-main">EduCart</h1>
-      <p class="cs-subtitle">A high-performance full-stack e-commerce storefront utilizing transaction-level database locking, compound relational query indexing, and Redis cache architectures to process concurrent sales without race conditions.</p>
+      <p class="cs-subtitle">A full-stack MERN student e-commerce platform featuring product search and filtering, cart, PayPal checkout, order tracking, wishlist, student discounts, and role-based admin dashboard with sales analytics.</p>
       
       <div class="cs-meta-grid">
         <div class="cs-meta-item">
@@ -117,15 +117,15 @@
         </div>
         <div class="cs-meta-item">
           <span class="cs-meta-label">Category</span>
-          <span class="cs-meta-val">E-Commerce &amp; Database Systems</span>
+          <span class="cs-meta-val">E-Commerce &amp; Web Applications</span>
         </div>
         <div class="cs-meta-item">
           <span class="cs-meta-label">Timeline</span>
-          <span class="cs-meta-val">Zeploy Tech Client Project · 2026</span>
+          <span class="cs-meta-val">Full-Stack Project · 2026</span>
         </div>
         <div class="cs-meta-item">
           <span class="cs-meta-label">Core Stack</span>
-          <span class="cs-meta-val">React · FastAPI · MySQL · Redis · JWT Auth</span>
+          <span class="cs-meta-val">React.js · Node.js · Express · MongoDB · JWT · Tailwind CSS</span>
         </div>
       </div>
     </div>
@@ -136,69 +136,57 @@
       <div class="cs-main">
         <section class="cs-section">
           <h2>Problem &amp; Challenge</h2>
-          <p>E-commerce checkout pipelines suffer from concurrency bottlenecks. If multiple users attempt to purchase the final items in an inventory stock simultaneously, classic race conditions (dirty reads and phantom writes) can allow purchases that exceed actual inventory volumes, leading to database degradation and downstream fulfillment errors.</p>
-          <p>The engineering mandate was to build a multi-role storefront with robust administrative portals and a high-throughput, transaction-safe checkout system. The backend needed to validate user permissions, verify stock levels, process transactions, and update inventory under high concurrent session limits without visual lagging or connection overhead.</p>
+          <p>Online student commerce platforms need to provide seamless browsing, trusted checkout flows, and accessible customer support while keeping administrative tools secure and easy to manage.</p>
+          <p>The goal was to build a complete student e-commerce application with intuitive catalog exploration, reliable payment processing, authenticated order history, wishlist management, and an administrative control panel providing sales analytics and product management.</p>
         </section>
 
         <section class="cs-section">
           <h2>Technical Approach &amp; Architecture</h2>
-          <p>The system is built on a decoupled architecture. A **React.js client** handles UI state and interacts with a **FastAPI backend REST API** gateway. Real-time data validation runs through Pydantic schemas, and SQLAlchemy ORM maps relational database logic to a multi-indexed MySQL engine. A Redis cache layer intercepts incoming lookup operations, saving database cycles.</p>
+          <p>The application is built on the classic MERN stack. A **React.js (Vite)** single-page application styled with Tailwind CSS provides the user interface, communicating via REST endpoints with a **Node.js and Express** backend. MongoDB stores product records, user accounts, and purchase orders.</p>
 
           <div class="cs-flow-visual">
-            <div class="cs-card-title">Transactional Order Flow &amp; Lock Path</div>
+            <div class="cs-card-title">MERN Application Architecture &amp; Data Flow</div>
             <div class="cs-flow-step">
-              <div class="cs-step-name">Client React UI</div>
-              <div class="cs-step-desc">Submits order data payload with active bearer JWT token</div>
+              <div class="cs-step-name">React (Vite) UI</div>
+              <div class="cs-step-desc">Interactive catalog filtering, cart state, wishlist, and student discount applications</div>
             </div>
             <div class="cs-flow-arrow">&darr;</div>
             <div class="cs-flow-step">
-              <div class="cs-step-name">FastAPI Router Dependency</div>
-              <div class="cs-step-desc">Verifies token signature, decodes RBAC permissions locally</div>
+              <div class="cs-step-name">Express REST API Gateway</div>
+              <div class="cs-step-desc">Authenticates requests, enforces role-based access control, validates payload schemas</div>
             </div>
             <div class="cs-flow-arrow">&darr;</div>
             <div class="cs-flow-step">
-              <div class="cs-step-name">SQL Database Lock (SELECT FOR UPDATE)</div>
-              <div class="cs-step-desc">Acquires transaction-level write lock on selected inventory rows</div>
+              <div class="cs-step-name">PayPal SDK &amp; External Integrations</div>
+              <div class="cs-step-desc">Handles transaction checkout, Cloudinary media hosting, and Nodemailer email receipts</div>
             </div>
             <div class="cs-flow-arrow">&darr;</div>
             <div class="cs-flow-step">
-              <div class="cs-step-name">Atomic Stock Update &amp; Log Flush</div>
-              <div class="cs-step-desc">Deducts quantity, flushes MySQL session, invalidates product Redis cache</div>
+              <div class="cs-step-name">MongoDB Database Store</div>
+              <div class="cs-step-desc">Persists products, order records, user profiles, and operational logs</div>
             </div>
           </div>
           
-          <p>By enforcing security validation at the router level and moving catalog retrieval queries to the Redis cache-aside model, database transactions are isolated exclusively for critical writes (checkout, admin inventory changes), keeping the pool load low.</p>
+          <p>Stateless JWT authentication protects private endpoints, allowing regular users to track personal orders while reserving analytics and catalog modifications strictly for admin accounts.</p>
         </section>
 
         <section class="cs-section">
-          <h2>Engineering Challenges &amp; Solutions</h2>
-          <h3>1. Inventory Race Conditions under Load</h3>
-          <p>Under simulated flash-sale load testing (50 concurrent checkouts/sec for a single product with stock = 5), the standard <code>SELECT</code> and subsequent <code>UPDATE</code> database operations overlapped. The checkouts read the positive stock state before updates occurred, completing the order but setting inventory values to negative figures.</p>
-          <p><strong>Solution:</strong> We wrapped the checkout logic inside an ACID-compliant SQLAlchemy database transaction block using an explicit **Pessimistic Locking** strategy. We modified the stock selection query to use <code>with_for_update()</code> (generating a native SQL <code>SELECT ... FOR UPDATE</code> statement). This locks target inventory rows for read-and-write operations from concurrent sessions until the current transaction commits or rolls back, ensuring stock integrity is preserved.</p>
+          <h2>Key Features &amp; Implementation</h2>
+          <h3>1. Authentication &amp; Role-Based Access Control</h3>
+          <p>Implemented secure JWT authentication with password hashing using bcrypt. Middleware layers intercept incoming requests, validating bearer tokens and verifying roles before allowing access to administrative routes or personal customer orders.</p>
 
-          <h3>2. JWT Cryptographic Verification Overload</h3>
-          <p>Initially, user role and permission validation occurred on every API route request by querying the database using the token sub-claim ID. This created massive connection queue blockages on the MySQL socket loop for read-only catalog routes.</p>
-          <p><strong>Solution:</strong> We refactored our security module to inject cryptographic role parameters (e.g., <code>{"roles": ["admin", "customer"]}</code>) directly into the signed JWT payload. Our FastAPI dependency decodes and validates the HS256 JWT signature locally using the system secret key, identifying user roles in under 1.2ms without making database calls, thereby eliminating DB round-trips for permission audits.</p>
-        </section>
-
-        <section class="cs-section">
-          <h2>Optimization Decisions</h2>
-          <ul>
-            <li><strong>Compound Catalog Indexing:</strong> To optimize public search and filtering routines, we created a composite MySQL database index on `(category_id, is_active, price)`. This eliminated temporary table sorting overhead and cut multi-filter query response times from 340ms to 28ms.</li>
-            <li><strong>Redis Cache-Aside Strategy:</strong> The product list is cached as structured JSON blocks in Redis with a 10-minute TTL. Any administrative action modifying catalog parameters automatically fires an eviction signal, purging the stale cache key to enforce visual updates.</li>
-            <li><strong>SQL Connection Pool Management:</strong> Configured SQLAlchemy engine parameters with `pool_size=20`, `max_overflow=10`, and `pool_recycle=3600` to prevent socket leakage and thread exhaustion during peak traffic events.</li>
-          </ul>
+          <h3>2. Integrated Checkout &amp; Service Layer</h3>
+          <p>Integrated PayPal payment processing to provide a secure checkout flow. Media uploads for products are managed through Cloudinary for optimized asset delivery, and Nodemailer handles automated email confirmations and status updates. The platform also includes a rule-based support chatbot to guide visitors through common queries.</p>
         </section>
 
         <section class="cs-section">
           <h2>Deployment &amp; Production Notes</h2>
-          <p>The backend application is deployed inside containerized environments using <strong>Docker Compose</strong> to run isolated FastAPI nodes and a MySQL database cluster. Nginx acts as a reverse proxy managing incoming traffic and SSL certificate handshakes.</p>
-          <p>The frontend is compiled and served via **Vercel's global edge network** with caching optimizations. API requests are routed securely across an encrypted HTTPS transport network with custom CORS controls.</p>
+          <p>The frontend application is deployed on <strong>Vercel</strong> for global edge delivery and fast static asset caching. The backend Node.js and Express server runs on <strong>Render</strong>, connected to a managed MongoDB cluster.</p>
         </section>
 
         <section class="cs-section">
           <h2>Lessons Learned</h2>
-          <p>Application-level validation loops are insufficient for handling transactional state changes. Safety rules must be established within the database schema itself (e.g. unsigned database constraints, row locks). Combining JWT-encoded role variables with isolated query caches offers an excellent balance between latency controls and authorization scalability.</p>
+          <p>Building a full MERN application provides end-to-end control over data modeling, authentication pipelines, and third-party API integration. Separating concerns across clear middleware boundaries ensures maintainable code and robust security enforcement.</p>
         </section>
       </div>
 
@@ -207,10 +195,10 @@
           <div class="cs-card-box">
             <h3 class="cs-card-title">Project Details</h3>
             <div class="cs-tech-list">
-              <div class="cs-tech-item"><span class="cs-tech-name">Client:</span><span>Zeploy Tech Contract</span></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">Project:</span><span>EduCart Storefront</span></div>
               <div class="cs-tech-item"><span class="cs-tech-name">Status:</span><span>Production Live</span></div>
               <div class="cs-tech-item"><span class="cs-tech-name">Release:</span><span>May 2026</span></div>
-              <div class="cs-tech-item"><span class="cs-tech-name">Live URL:</span><a href="https://edu-cart-ten.vercel.app" target="_blank" style="color:var(--brown-light); text-decoration:none">EduCart ↗</a></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">Live URL:</span><a href="https://edu-cart-ten.vercel.app/" target="_blank" style="color:var(--brown-light); text-decoration:none">EduCart ↗</a></div>
               <div class="cs-tech-item"><span class="cs-tech-name">Repository:</span><a href="https://github.com/syedasjadabbas/EduCart" target="_blank" style="color:var(--brown-light); text-decoration:none">GitHub ↗</a></div>
             </div>
           </div>
@@ -218,12 +206,12 @@
           <div class="cs-card-box">
             <h3 class="cs-card-title">Detailed Architecture</h3>
             <div class="cs-tech-list">
-              <div class="cs-tech-item"><span class="cs-tech-name">Backend Framework:</span><span>FastAPI (Python)</span></div>
-              <div class="cs-tech-item"><span class="cs-tech-name">Frontend Core:</span><span>React.js + CSS</span></div>
-              <div class="cs-tech-item"><span class="cs-tech-name">Database Engine:</span><span>MySQL Relational DB</span></div>
-              <div class="cs-tech-item"><span class="cs-tech-name">Caching Engine:</span><span>Redis (In-Memory)</span></div>
-              <div class="cs-tech-item"><span class="cs-tech-name">ORM Layer:</span><span>SQLAlchemy + Alembic</span></div>
-              <div class="cs-tech-item"><span class="cs-tech-name">Authentication:</span><span>Stateless JWT Tokens</span></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">Backend Framework:</span><span>Node.js &amp; Express</span></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">Frontend Core:</span><span>React.js (Vite) + Tailwind</span></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">Database Engine:</span><span>MongoDB</span></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">Authentication:</span><span>JWT (Role-Based Access)</span></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">Payment Gateway:</span><span>PayPal SDK</span></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">Cloud Services:</span><span>Cloudinary &amp; Nodemailer</span></div>
             </div>
           </div>
         </div>

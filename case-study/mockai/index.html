@@ -44,7 +44,7 @@
     "author": {
       "@type": "Person",
       "name": "Syed Asjad Abbas",
-      "jobTitle": "Junior AI/ML Engineer",
+      "jobTitle": "AI/ML Engineer",
       "url": "https://www.syedasjadabbas.dev/"
     },
     "publisher": {
@@ -71,7 +71,7 @@
       <li><a href="../../index.html#skills">Skills</a></li>
       <li><a href="../../index.html#projects">Projects</a></li>
       <li><a href="../../index.html#experience">Experience</a></li>
-      <li><a href="../../index.html#blog">Log</a></li>
+      <!-- <li><a href="../../index.html#blog">Log</a></li> -->
       <li><a href="../../index.html#contact">Contact</a></li>
     </ul>
     <div class="nav-actions">
@@ -89,7 +89,7 @@
       <li><a href="../../index.html#skills">Skills</a></li>
       <li><a href="../../index.html#projects">Projects</a></li>
       <li><a href="../../index.html#experience">Experience</a></li>
-      <li><a href="../../index.html#blog">Log</a></li>
+      <!-- <li><a href="../../index.html#blog">Log</a></li> -->
       <li><a href="../../index.html#contact">Contact</a></li>
     </ul>
     <div class="mobile-overlay-cta">
@@ -108,7 +108,7 @@
         <span>MockAI</span>
       </div>
       <h1 class="cs-title-main">MockAI</h1>
-      <p class="cs-subtitle">A multi-modal AI interview evaluation system integrating audio transcription, emotional cue analysis, and semantic answer grading into a unified async processing pipeline.</p>
+      <p class="cs-subtitle">A multimodal interview-evaluation system integrating BERT NLP, Whisper speech recognition, and DeepFace facial analysis into one evaluation workflow. User and admin platforms are complete; AI model integration and evaluation are in progress.</p>
       
       <div class="cs-meta-grid">
         <div class="cs-meta-item">
@@ -136,13 +136,14 @@
       <div class="cs-main">
         <section class="cs-section">
           <h2>Problem &amp; Challenge</h2>
-          <p>Traditional candidate interview preparations are bottlenecked by manual reviewer latency, subjective assessment biases, and the inability to track non-verbal physiological traits (such as structural emotional fluctuations and vocal rhythms) in real-time. Automated grading systems typically evaluate only the semantic text of a candidate's answer, missing vital cues like confidence levels, eye contact drift, and structural answer relevance.</p>
-          <p>The core engineering challenge was to build a system that concurrently processes <strong>live WebRTC camera streams</strong>, extracts and transcript-transcribes vocal signals, monitors emotional attributes from video frames, and semantic-grades textual responses—without introducing execution lags or socket connection timeouts on the client interface.</p>
+          <p>Traditional candidate interview preparations are bottlenecked by manual reviewer latency, subjective assessment biases, and the inability to track non-verbal traits in real time. Automated grading tools typically evaluate only the semantic text of a candidate's answer, missing vital cues like facial expressions and vocal rhythms.</p>
+          <p>The core engineering challenge is to build a system that concurrently processes live video streams, transcribes vocal signals, monitors emotional attributes from video frames, and semantic-grades textual responses without introducing execution lags or socket connection timeouts on the client interface.</p>
         </section>
 
         <section class="cs-section">
-          <h2>Technical Approach &amp; Architecture</h2>
-          <p>We designed an asynchronous micro-pipeline utilizing a <strong>FastAPI WebSockets backend</strong> acting as a central coordinator, routing raw client media feeds to isolated processing loops. This decoupled structure ensures that heavy computer vision calculations do not interfere with WebRTC frame capture or audio processing threads.</p>
+          <h2>Technical Approach &amp; Current Status</h2>
+          <p>MockAI is organized into user and admin management portals, an asynchronous ingestion gateway, and a decoupled multimodal AI evaluation pipeline. <strong>The user and admin platforms are complete</strong>, providing interview setup, question bank management, and candidate dashboard interfaces. <strong>AI model integration and evaluation are currently in active progress.</strong></p>
+          <p>We designed an asynchronous micro-pipeline utilizing a <strong>FastAPI WebSockets backend</strong> acting as a central coordinator, routing raw client media feeds to isolated processing loops. This decoupled structure ensures that computer vision calculations do not interfere with frame capture or audio processing threads.</p>
 
           <div class="cs-flow-visual">
             <div class="cs-card-title">Live Pipeline Stream Routing</div>
@@ -157,7 +158,7 @@
             </div>
             <div class="cs-flow-arrow">&darr;</div>
             <div class="cs-flow-step">
-              <div class="cs-step-name">isolated Worker Process Thread Pools</div>
+              <div class="cs-step-name">Isolated Worker Process Thread Pools</div>
               <div class="cs-step-desc">Queue 1: DeepFace CV (Emotions) · Queue 2: Whisper API (Transcription)</div>
             </div>
             <div class="cs-flow-arrow">&darr;</div>
@@ -173,27 +174,27 @@
         <section class="cs-section">
           <h2>Engineering Challenges &amp; Solutions</h2>
           <h3>1. The GIL Bottleneck &amp; Socket Dropouts</h3>
-          <p>During initial testing, executing DeepFace frame evaluations on incoming WebSocket buffers blocked the main asyncio event loop due to Python's Global Interpreter Lock (GIL). This blockage stalled socket handshakes, causing the client connection to drop within 10–12 seconds of streaming.</p>
+          <p>During initial testing, executing DeepFace frame evaluations on incoming WebSocket buffers blocked the main asyncio event loop due to Python's Global Interpreter Lock (GIL). This blockage stalled socket handshakes, causing client connections to drop under continuous streaming.</p>
           <p><strong>Solution:</strong> We resolved this by isolating the computer vision pipeline into a native subprocess using Python's <code>multiprocessing.Process</code> class and utilizing memory-mapped queues (<code>multiprocessing.Queue</code>) for inter-process communication. Frame capture runs continuously on the asyncio event loop, writing data to a shared memory buffer, while the CV worker process pulls and processes frames independently at its own pace.</p>
 
           <h3>2. Audio-Video Synchronization Drift</h3>
-          <p>Network latency jitter during live WebRTC streaming created drift between the timestamp of candidate emotional changes and their corresponding verbal responses, leading to skewed evaluation charts.</p>
-          <p><strong>Solution:</strong> We implemented a timestamp synchronization protocol where each video frame and audio packet are indexed with a client-generated epoch timestamp. Upon backend collection, evaluations are matched and aligned on these markers, ensuring final report charts accurately represent what candidates were saying at the exact moment they showed key emotional markers.</p>
+          <p>Network latency jitter during live streaming created drift between the timestamp of candidate emotional changes and their corresponding verbal responses, leading to skewed evaluation charts.</p>
+          <p><strong>Solution:</strong> We implemented a timestamp synchronization protocol where each video frame and audio packet are indexed with a client-generated epoch timestamp. Upon backend collection, evaluations are matched and aligned on these markers, ensuring final reports accurately correlate expressions with verbal responses.</p>
         </section>
 
         <section class="cs-section">
           <h2>Optimization Decisions</h2>
           <ul>
-            <li><strong>Dynamic Frame Skipping:</strong> Rather than processing all 30 frames per second (which caused server CPU utilization to spike to 100%), the system processes only every 4th frame (7.5 FPS). Emotion state tracking metrics remain highly accurate while reducing server load by 75%.</li>
-            <li><strong>Model Cache Warmup:</strong> Model weights for the BERT NLP semantic evaluator and face detectors are preloaded into CPU cache memory upon server initialization. This cuts the evaluation starting delay of the first candidate answer from 8.2 seconds down to less than 0.4 seconds.</li>
-            <li><strong>Optimized Database Writing:</strong> Metric data point flushes to MongoDB Atlas are batched into a buffer memory cache and written in single bulk write transactions every 5 seconds, rather than single data writes on every frame. This preserves DB socket connections.</li>
+            <li><strong>Dynamic Frame Skipping:</strong> Rather than processing every video frame, the pipeline samples periodic frames to track emotional markers without overloading server resources.</li>
+            <li><strong>Model Cache Warmup:</strong> Model weights for the BERT NLP semantic evaluator and face detectors are preloaded into memory upon server initialization, eliminating cold-start delays on initial evaluation requests.</li>
+            <li><strong>Batched Database Writing:</strong> Metric data flushes to MongoDB Atlas are batched into a memory buffer and written in bulk transactions rather than on every frame, preserving socket connection stability.</li>
           </ul>
         </section>
 
         <section class="cs-section">
-          <h2>Deployment &amp; Production Notes</h2>
-          <p>The system is deployed on a Linux VPS infrastructure using <strong>Gunicorn with Uvicorn workers</strong> running behind an Nginx reverse proxy. Static frontend directories are compiled and served via Vercel to optimize assets delivery speed, and media assets are routed securely through an authenticated SSL WebSocket connection.</p>
-          <p>For scale management, a Docker compose structure isolates FastAPI backend nodes and handles automatic worker instance pooling, providing clean modular upgrades.</p>
+          <h2>Architecture &amp; Environment Notes</h2>
+          <p>The system architecture utilizes <strong>Gunicorn with Uvicorn workers</strong> behind an Nginx reverse proxy. Static frontend directories are compiled and served via modern edge delivery, and media assets route through authenticated SSL WebSocket connections.</p>
+          <p>For modular maintenance, Docker Compose isolates FastAPI backend nodes and manages worker instance pooling.</p>
         </section>
       </div>
 
@@ -202,9 +203,9 @@
           <div class="cs-card-box">
             <h3 class="cs-card-title">Project Details</h3>
             <div class="cs-tech-list">
-              <div class="cs-tech-item"><span class="cs-tech-name">Client:</span><span>Academic FYP Research</span></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">Context:</span><span>Final Year Project (COMSATS)</span></div>
               <div class="cs-tech-item"><span class="cs-tech-name">Status:</span><span>In Development</span></div>
-              <div class="cs-tech-item"><span class="cs-tech-name">Release:</span><span>June 2026</span></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">Timeline:</span><span>2026–Present</span></div>
               <div class="cs-tech-item"><span class="cs-tech-name">Repository:</span><a href="https://github.com/syedasjadabbas/MockAI" target="_blank" style="color:var(--brown-light); text-decoration:none">GitHub ↗</a></div>
             </div>
           </div>
