@@ -62,17 +62,17 @@
   <canvas id="bg-canvas" aria-hidden="true"></canvas>
 
   <nav>
-    <a class="nav-logo" href="../../index.html">
+    <a class="nav-logo" href="../../">
       <img src="../../assets/apple-touch-icon.png" alt="Syed Asjad Abbas Logo" class="nav-logo-img" width="20" height="20" />
       <span>SYEDASJADABBAS.DEV</span>
     </a>
     <ul class="nav-links">
-      <li><a href="../../index.html#about">About</a></li>
-      <li><a href="../../index.html#skills">Skills</a></li>
-      <li><a href="../../index.html#projects">Projects</a></li>
-      <li><a href="../../index.html#experience">Experience</a></li>
-      <!-- <li><a href="../../index.html#blog">Log</a></li> -->
-      <li><a href="../../index.html#contact">Contact</a></li>
+      <li><a href="../../#about">About</a></li>
+      <li><a href="../../#skills">Skills</a></li>
+      <li><a href="../../#projects">Projects</a></li>
+      <li><a href="../../#experience">Experience</a></li>
+      <!-- <li><a href="../../#blog">Log</a></li> -->
+      <li><a href="../../#contact">Contact</a></li>
     </ul>
     <div class="nav-actions">
       <a class="nav-hire" href="mailto:asjadabbaszaidi@gmail.com">Let's Talk</a>
@@ -85,12 +85,12 @@
 
   <div class="mobile-overlay" id="mobile-overlay">
     <ul class="mobile-overlay-links">
-      <li><a href="../../index.html#about">About</a></li>
-      <li><a href="../../index.html#skills">Skills</a></li>
-      <li><a href="../../index.html#projects">Projects</a></li>
-      <li><a href="../../index.html#experience">Experience</a></li>
-      <!-- <li><a href="../../index.html#blog">Log</a></li> -->
-      <li><a href="../../index.html#contact">Contact</a></li>
+      <li><a href="../../#about">About</a></li>
+      <li><a href="../../#skills">Skills</a></li>
+      <li><a href="../../#projects">Projects</a></li>
+      <li><a href="../../#experience">Experience</a></li>
+      <!-- <li><a href="../../#blog">Log</a></li> -->
+      <li><a href="../../#contact">Contact</a></li>
     </ul>
     <div class="mobile-overlay-cta">
       <a href="mailto:asjadabbaszaidi@gmail.com" class="mob-cta-primary">Let's Talk</a>
@@ -101,9 +101,9 @@
   <header class="cs-header">
     <div class="container">
       <div class="cs-breadcrumbs">
-        <a href="../../index.html">Portfolio</a>
+        <a href="../../">Portfolio</a>
         <span>/</span>
-        <a href="../../index.html#projects">Case Studies</a>
+        <a href="../../#projects">Case Studies</a>
         <span>/</span>
         <span>FlightOne</span>
       </div>
@@ -113,7 +113,7 @@
       <div class="cs-meta-grid">
         <div class="cs-meta-item">
           <span class="cs-meta-label">Role</span>
-          <span class="cs-meta-val">Full-Stack Architect &amp; AI Engineer</span>
+          <span class="cs-meta-val">Full-Stack &amp; AI Engineer</span>
         </div>
         <div class="cs-meta-item">
           <span class="cs-meta-label">Category</span>
@@ -137,7 +137,7 @@
         <section class="cs-section">
           <h2>Problem &amp; Challenge</h2>
           <p>Traditional travel agencies often operate through fragmented communication channels: customer discovery occurs through manual chats, tour pricing relies on unstructured spreadsheets, and package curation requires days of back-and-forth consultation with airline and hotel supplier portals.</p>
-          <p>FlightOne was conceptualized as an <strong>integrated AI travel platform</strong> designed to automate this lifecycle. The platform needed to fulfill two critical mandates simultaneously: deliver a bespoke web portal that showcases international tours (Maldives, Dubai, Turkey, Thailand), while providing a dedicated conversational AI consultant (Ava) capable of real-time flight search, hotel tier pricing (3★, 4★, 5★), and booking orchestration.</p>
+          <p>FlightOne was conceptualized as an <strong>integrated AI travel platform</strong> designed to automate this lifecycle. The platform needed to fulfill two critical mandates simultaneously: deliver a bespoke web portal that showcases international tours (Maldives, Dubai, Turkey, Thailand), while providing a dedicated conversational AI consultant (Ava) capable of flight search, hotel tier pricing (3★, 4★, 5★), and booking orchestration.</p>
         </section>
 
         <section class="cs-section">
@@ -146,7 +146,7 @@
           <ul>
             <li><strong>Agency Web Portal:</strong> A high-performance Next.js web application built with responsive SCSS modules, Lenis smooth scrolling, and dynamic destination visualizers.</li>
             <li><strong>Conversational Assistant Client:</strong> A lightweight React application where travelers converse with Ava, explore structured recommendations, refine dates, and review flight fares.</li>
-            <li><strong>Modular API Server:</strong> An Express.js backend using Prisma ORM on PostgreSQL that enforces deterministic pricing rules, manages itinerary drafts, handles token authentication, and coordinates GDS fare audits.</li>
+            <li><strong>Modular API Server:</strong> An Express.js backend using Prisma ORM on PostgreSQL that enforces deterministic pricing rules, manages itinerary drafts and handles token authentication.</li>
           </ul>
 
           <div class="cs-flow-visual">
@@ -167,8 +167,8 @@
             </div>
             <div class="cs-flow-arrow">&darr;</div>
             <div class="cs-flow-step">
-              <div class="cs-step-name">PostgreSQL Database &amp; Supplier Connectors</div>
-              <div class="cs-step-desc">Stores user profiles, itinerary histories, transaction logs, and partner integrations</div>
+              <div class="cs-step-name">PostgreSQL Database</div>
+              <div class="cs-step-desc">Stores user profiles, itinerary drafts, bookings and transaction records</div>
             </div>
           </div>
         </section>
@@ -176,8 +176,8 @@
         <section class="cs-section">
           <h2>Engineering Challenges &amp; Solutions</h2>
           <h3>1. Deterministic Pricing vs. Generative LLM Variance</h3>
-          <p>Large language models are inherently probabilistic, making them prone to hallucinations when calculating flight fares, currency conversions, and seasonal surcharges. Allowing an LLM to invent pricing would result in severe financial discrepancies.</p>
-          <p><strong>Solution:</strong> We separated semantic understanding from business calculations. Ava handles natural language intent extraction and structures parameters into typed JSON payloads. The Express/Prisma server evaluates live fare metadata, applies tiered markup formulas, and returns verified pricing tables to the client, guaranteeing zero pricing hallucinations.</p>
+          <p>Language models are probabilistic and can produce wrong numbers when calculating flight fares, currency conversions, and seasonal surcharges. A price invented by the model would be a real financial error.</p>
+          <p><strong>Solution:</strong> We separated semantic understanding from business calculations. Ava handles natural language intent extraction and structures parameters into typed JSON payloads. The Express/Prisma server applies the pricing rules and tiered markups and returns every fare to the client, so the model never calculates or invents a price.</p>
 
           <h3>2. Cross-Device Consultation Continuity</h3>
           <p>Travelers frequently initiate trip consultations on mobile devices but complete itinerary reviews on desktop computers. Maintaining active session state without requiring mandatory upfront registration was essential for user retention.</p>
@@ -203,9 +203,7 @@
               <div class="cs-tech-item"><span class="cs-tech-name">Context:</span><span>Product Engineering Platform</span></div>
               <div class="cs-tech-item"><span class="cs-tech-name">Status:</span><span>Built &amp; Tested</span></div>
               <div class="cs-tech-item"><span class="cs-tech-name">Release:</span><span>2026</span></div>
-              <div class="cs-tech-item"><span class="cs-tech-name">Web Agency:</span><a href="https://github.com/syedasjadabbas/FlightOne-Web-Travel-Agency" target="_blank" style="color:var(--brown-light); text-decoration:none">GitHub ↗</a></div>
-              <div class="cs-tech-item"><span class="cs-tech-name">Client App:</span><a href="https://github.com/syedasjadabbas/FlightOne-Client" target="_blank" style="color:var(--brown-light); text-decoration:none">GitHub ↗</a></div>
-              <div class="cs-tech-item"><span class="cs-tech-name">Server API:</span><a href="https://github.com/syedasjadabbas/FlightOne-Server" target="_blank" style="color:var(--brown-light); text-decoration:none">GitHub ↗</a></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">Slides:</span><a href="../../assets/case-studies/flightone-case-study.pdf" target="_blank" style="color:var(--brown-light); text-decoration:none">Case study PDF ↗</a></div>
             </div>
           </div>
 

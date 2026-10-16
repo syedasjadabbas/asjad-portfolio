@@ -4,7 +4,7 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>ZePlay Case Study — Syed Asjad Abbas | AI/ML Engineer</title>
-  <meta name="description" content="In-depth technical case study of ZePlay, a production video streaming platform built by Syed Asjad Abbas using FastAPI, HLS.js, FFmpeg transcoding, Redis, and PostgreSQL."/>
+  <meta name="description" content="In-depth technical case study of ZePlay, an adaptive video streaming platform built by Syed Asjad Abbas with FastAPI, HLS.js, FFmpeg, Redis and PostgreSQL, load-tested to 500 concurrent users with k6."/>
   <meta name="author" content="Syed Asjad Abbas"/>
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"/>
   <link rel="canonical" href="https://www.syedasjadabbas.dev/case-study/zeplay/"/>
@@ -62,17 +62,17 @@
   <canvas id="bg-canvas" aria-hidden="true"></canvas>
 
   <nav>
-    <a class="nav-logo" href="../../index.html">
+    <a class="nav-logo" href="../../">
       <img src="../../assets/apple-touch-icon.png" alt="Syed Asjad Abbas Logo" class="nav-logo-img" width="20" height="20" />
       <span>SYEDASJADABBAS.DEV</span>
     </a>
     <ul class="nav-links">
-      <li><a href="../../index.html#about">About</a></li>
-      <li><a href="../../index.html#skills">Skills</a></li>
-      <li><a href="../../index.html#projects">Projects</a></li>
-      <li><a href="../../index.html#experience">Experience</a></li>
-      <!-- <li><a href="../../index.html#blog">Log</a></li> -->
-      <li><a href="../../index.html#contact">Contact</a></li>
+      <li><a href="../../#about">About</a></li>
+      <li><a href="../../#skills">Skills</a></li>
+      <li><a href="../../#projects">Projects</a></li>
+      <li><a href="../../#experience">Experience</a></li>
+      <!-- <li><a href="../../#blog">Log</a></li> -->
+      <li><a href="../../#contact">Contact</a></li>
     </ul>
     <div class="nav-actions">
       <a class="nav-hire" href="mailto:asjadabbaszaidi@gmail.com">Let's Talk</a>
@@ -85,12 +85,12 @@
 
   <div class="mobile-overlay" id="mobile-overlay">
     <ul class="mobile-overlay-links">
-      <li><a href="../../index.html#about">About</a></li>
-      <li><a href="../../index.html#skills">Skills</a></li>
-      <li><a href="../../index.html#projects">Projects</a></li>
-      <li><a href="../../index.html#experience">Experience</a></li>
-      <!-- <li><a href="../../index.html#blog">Log</a></li> -->
-      <li><a href="../../index.html#contact">Contact</a></li>
+      <li><a href="../../#about">About</a></li>
+      <li><a href="../../#skills">Skills</a></li>
+      <li><a href="../../#projects">Projects</a></li>
+      <li><a href="../../#experience">Experience</a></li>
+      <!-- <li><a href="../../#blog">Log</a></li> -->
+      <li><a href="../../#contact">Contact</a></li>
     </ul>
     <div class="mobile-overlay-cta">
       <a href="mailto:asjadabbaszaidi@gmail.com" class="mob-cta-primary">Let's Talk</a>
@@ -101,19 +101,19 @@
   <header class="cs-header">
     <div class="container">
       <div class="cs-breadcrumbs">
-        <a href="../../index.html">Portfolio</a>
+        <a href="../../">Portfolio</a>
         <span>/</span>
-        <a href="../../index.html#projects">Case Studies</a>
+        <a href="../../#projects">Case Studies</a>
         <span>/</span>
         <span>ZePlay</span>
       </div>
       <h1 class="cs-title-main">ZePlay</h1>
-      <p class="cs-subtitle">A production-focused video streaming platform built around adaptive HLS delivery, automated FFmpeg multi-bitrate transcoding, Redis playback caching, and resilient profile security.</p>
+      <p class="cs-subtitle">An adaptive video streaming platform with background FFmpeg transcoding, multi-bitrate HLS delivery and Redis caching, load-tested with k6 to 650 requests per second at 500 concurrent users with 0% failures.</p>
       
       <div class="cs-meta-grid">
         <div class="cs-meta-item">
           <span class="cs-meta-label">Role</span>
-          <span class="cs-meta-val">Lead Systems Architect &amp; Developer</span>
+          <span class="cs-meta-val">Engineer (SVYPE internship)</span>
         </div>
         <div class="cs-meta-item">
           <span class="cs-meta-label">Category</span>
@@ -121,7 +121,7 @@
         </div>
         <div class="cs-meta-item">
           <span class="cs-meta-label">Timeline</span>
-          <span class="cs-meta-val">Zeploy Tech Flagship · 2026</span>
+          <span class="cs-meta-val">SVYPE Internship Project · 2026</span>
         </div>
         <div class="cs-meta-item">
           <span class="cs-meta-label">Core Stack</span>
@@ -176,13 +176,35 @@
 
         <section class="cs-section">
           <h2>Engineering Challenges &amp; Solutions</h2>
-          <h3>1. Zero-Stall Bitrate Adaptation &amp; Seeking</h3>
-          <p>Switching quality tiers during video playback often introduces jarring pauses or audio/video desynchronization when clients discard existing buffer segments.</p>
-          <p><strong>Solution:</strong> We implemented seamless ABR (Adaptive Bitrate) algorithms using HLS.js custom configuration. By aligning keyframe intervals (GOP size = 48 at 24fps) across all resolutions during FFmpeg transcoding, the player transitions between 1080p, 720p, and 480p at identical segment boundaries without clearing active playback buffers, preserving continuous audio-visual flow.</p>
+          <h3>1. Quality switches without playback stalls</h3>
+          <p>Switching quality tiers mid-playback causes pauses when renditions do not share segment boundaries.</p>
+          <p><strong>Solution:</strong> FFmpeg encodes every rendition with a fixed keyframe interval and scene-cut detection disabled, so 1080p, 720p and 480p segments line up and HLS.js can switch tiers at the same boundary.</p>
 
-          <h3>2. High-Frequency Playback Telemetry Load</h3>
-          <p>Tracking watch positions continuously across concurrent streams would flood the primary relational database with continuous row updates, degrading catalog search query performance.</p>
-          <p><strong>Solution:</strong> Designed a <strong>Write-Behind Caching Pattern</strong> powered by Redis. Playback timestamps and resume positions are updated atomically in Redis keys with high-speed in-memory operations. A periodic Celery worker flushes consolidated progress states to PostgreSQL in batch writes, significantly reducing direct database write load and preventing search query bottlenecks.</p>
+          <h3>2. Throughput under concurrent load</h3>
+          <p>The first 500-user benchmark reached only 84.2 requests per second with a P95 latency of 8.3 seconds.</p>
+          <p><strong>Solution:</strong> Redis caching for frequently requested data, GZip responses and multiple Uvicorn workers. Each step was measured with k6; together they raised throughput 7.7&times; to 650.2 requests per second with 0% failures.</p>
+
+          <h3>3. Slow deep pagination</h3>
+          <p>OFFSET pagination makes PostgreSQL read and discard every earlier row, so deep pages of a 100,017-title catalogue got slower the further a user scrolled.</p>
+          <p><strong>Solution:</strong> keyset (cursor) pagination. In the measured deep-page case, SQL execution fell from about 295 ms to 0.27 ms.</p>
+        </section>
+
+        <section class="cs-section">
+          <h2>Performance Results</h2>
+          <p>Measured with k6 on a local WSL/Linux benchmark environment, 500 virtual users, cached workload. These are benchmark results, not a production capacity claim.</p>
+          <div class="cs-table-wrap">
+            <table class="cs-table">
+              <thead><tr><th>Stage</th><th>Requests/s</th><th>Median</th><th>P95</th><th>Failures</th></tr></thead>
+              <tbody>
+                <tr><td>Baseline</td><td>84.2</td><td>4,162 ms</td><td>8,281 ms</td><td>0.00%</td></tr>
+                <tr><td>+ Redis</td><td>233.0</td><td>357 ms</td><td>6,680 ms</td><td>0.00%</td></tr>
+                <tr><td>+ GZip</td><td>298.2</td><td>300 ms</td><td>6,256 ms</td><td>0.00%</td></tr>
+                <tr><td>Optimised, 1 worker</td><td>359.5</td><td>410 ms</td><td>5,863 ms</td><td>0.00%</td></tr>
+                <tr><td>Optimised, 4 workers</td><td>650.2</td><td>527 ms</td><td>1,684 ms</td><td>0.00%</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>A separate database-bound test (no Redis cache hits) ran to 1,000 virtual users as a saturation test: requests still completed with 0% failures, but P95 latency exceeded 12 seconds. The backend test suite passes 59 of 59 tests.</p>
         </section>
 
         <section class="cs-section">
@@ -190,8 +212,8 @@
           <ul>
             <li><strong>Adaptive Multi-Quality Streaming:</strong> Dynamic playback selection across 1080p Full HD, 720p HD, and 480p SD tiers.</li>
             <li><strong>Multi-Profile Architecture:</strong> Independent watch histories, continue-watching carousels, and PIN-protected profile security.</li>
-            <li><strong>Automated Ingestion Pipeline:</strong> Automated playlist verification, repair scripts, and real segment detection avoiding corrupted streams.</li>
-            <li><strong>Responsive UI:</strong> Dark styling with complete keyboard shortcut navigation and fullscreen mobile gestures.</li>
+            <li><strong>Automated Ingestion Pipeline:</strong> Playlist verification and repair scripts that detect missing or corrupted segments.</li>
+            <li><strong>Responsive UI:</strong> Keyboard shortcuts and fullscreen mobile gestures.</li>
           </ul>
         </section>
       </div>
@@ -205,6 +227,7 @@
               <div class="cs-tech-item"><span class="cs-tech-name">Status:</span><span>Built &amp; Tested</span></div>
               <div class="cs-tech-item"><span class="cs-tech-name">Release:</span><span>May 2026</span></div>
               <div class="cs-tech-item"><span class="cs-tech-name">Repository:</span><a href="https://github.com/syedasjadabbas/ZePlay" target="_blank" style="color:var(--brown-light); text-decoration:none">GitHub ↗</a></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">Slides:</span><a href="../../assets/case-studies/zeplay-case-study.pdf" target="_blank" style="color:var(--brown-light); text-decoration:none">Case study PDF ↗</a></div>
             </div>
           </div>
 

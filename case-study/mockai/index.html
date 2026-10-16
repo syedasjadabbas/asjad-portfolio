@@ -4,7 +4,7 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>MockAI Case Study — Syed Asjad Abbas | AI/ML Engineer</title>
-  <meta name="description" content="In-depth technical case study of MockAI, a multi-modal AI interview evaluation platform built by Syed Asjad Abbas using BERT NLP, DeepFace computer vision, and FastAPI."/>
+  <meta name="description" content="In-depth technical case study of MockAI, a multimodal AI interview evaluation platform built by Syed Asjad Abbas with DistilBERT semantic scoring, Google Speech-to-Text, FERPlus facial analysis and FastAPI."/>
   <meta name="author" content="Syed Asjad Abbas"/>
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"/>
   <link rel="canonical" href="https://www.syedasjadabbas.dev/case-study/mockai/"/>
@@ -14,14 +14,14 @@
   <meta property="og:type" content="article"/>
   <meta property="og:url" content="https://www.syedasjadabbas.dev/case-study/mockai/"/>
   <meta property="og:title" content="MockAI Case Study — Syed Asjad Abbas | AI/ML Engineer"/>
-  <meta property="og:description" content="Technical deep-dive into MockAI's multi-modal AI pipeline combining BERT NLP, DeepFace emotion tracking, and FastAPI."/>
+  <meta property="og:description" content="How MockAI scores interview answers on content, delivery and composure with DistilBERT, Google Speech-to-Text, FERPlus and late multimodal fusion."/>
   <meta property="og:image" content="https://www.syedasjadabbas.dev/assets/mock-ai.webp"/>
   <meta property="og:image:alt" content="MockAI AI Interview Evaluation Platform by Syed Asjad Abbas"/>
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image"/>
   <meta name="twitter:title" content="MockAI Case Study — Syed Asjad Abbas | AI/ML Engineer"/>
-  <meta name="twitter:description" content="Technical deep-dive into MockAI's multi-modal AI pipeline combining BERT NLP, DeepFace emotion tracking, and FastAPI."/>
+  <meta name="twitter:description" content="How MockAI scores interview answers on content, delivery and composure with DistilBERT, Google Speech-to-Text, FERPlus and late multimodal fusion."/>
   <meta name="twitter:image" content="https://www.syedasjadabbas.dev/assets/mock-ai.webp"/>
   <meta name="twitter:image:alt" content="MockAI AI Interview Evaluation Platform by Syed Asjad Abbas"/>
 
@@ -40,7 +40,7 @@
     "@context": "https://schema.org",
     "@type": "TechArticle",
     "headline": "MockAI: Multi-Modal AI Interview Evaluation Platform",
-    "description": "Technical case study of MockAI, an AI interview evaluation pipeline combining BERT NLP semantic grading and DeepFace emotion analysis.",
+    "description": "Technical case study of MockAI, an AI interview evaluation pipeline combining DistilBERT semantic scoring, Google Speech-to-Text and FERPlus facial analysis.",
     "author": {
       "@type": "Person",
       "name": "Syed Asjad Abbas",
@@ -62,17 +62,17 @@
   <canvas id="bg-canvas" aria-hidden="true"></canvas>
 
   <nav>
-    <a class="nav-logo" href="../../index.html">
+    <a class="nav-logo" href="../../">
       <img src="../../assets/apple-touch-icon.png" alt="Syed Asjad Abbas Logo" class="nav-logo-img" width="20" height="20" />
       <span>SYEDASJADABBAS.DEV</span>
     </a>
     <ul class="nav-links">
-      <li><a href="../../index.html#about">About</a></li>
-      <li><a href="../../index.html#skills">Skills</a></li>
-      <li><a href="../../index.html#projects">Projects</a></li>
-      <li><a href="../../index.html#experience">Experience</a></li>
-      <!-- <li><a href="../../index.html#blog">Log</a></li> -->
-      <li><a href="../../index.html#contact">Contact</a></li>
+      <li><a href="../../#about">About</a></li>
+      <li><a href="../../#skills">Skills</a></li>
+      <li><a href="../../#projects">Projects</a></li>
+      <li><a href="../../#experience">Experience</a></li>
+      <!-- <li><a href="../../#blog">Log</a></li> -->
+      <li><a href="../../#contact">Contact</a></li>
     </ul>
     <div class="nav-actions">
       <a class="nav-hire" href="mailto:asjadabbaszaidi@gmail.com">Let's Talk</a>
@@ -85,12 +85,12 @@
 
   <div class="mobile-overlay" id="mobile-overlay">
     <ul class="mobile-overlay-links">
-      <li><a href="../../index.html#about">About</a></li>
-      <li><a href="../../index.html#skills">Skills</a></li>
-      <li><a href="../../index.html#projects">Projects</a></li>
-      <li><a href="../../index.html#experience">Experience</a></li>
-      <!-- <li><a href="../../index.html#blog">Log</a></li> -->
-      <li><a href="../../index.html#contact">Contact</a></li>
+      <li><a href="../../#about">About</a></li>
+      <li><a href="../../#skills">Skills</a></li>
+      <li><a href="../../#projects">Projects</a></li>
+      <li><a href="../../#experience">Experience</a></li>
+      <!-- <li><a href="../../#blog">Log</a></li> -->
+      <li><a href="../../#contact">Contact</a></li>
     </ul>
     <div class="mobile-overlay-cta">
       <a href="mailto:asjadabbaszaidi@gmail.com" class="mob-cta-primary">Let's Talk</a>
@@ -101,19 +101,19 @@
   <header class="cs-header">
     <div class="container">
       <div class="cs-breadcrumbs">
-        <a href="../../index.html">Portfolio</a>
+        <a href="../../">Portfolio</a>
         <span>/</span>
-        <a href="../../index.html#projects">Case Studies</a>
+        <a href="../../#projects">Case Studies</a>
         <span>/</span>
         <span>MockAI</span>
       </div>
       <h1 class="cs-title-main">MockAI</h1>
-      <p class="cs-subtitle">A multimodal interview-evaluation system integrating BERT NLP, Whisper speech recognition, and DeepFace facial analysis into one evaluation workflow. User and admin platforms are complete; AI model integration and evaluation are in progress.</p>
+      <p class="cs-subtitle">A multimodal interview-evaluation system that scores each recorded answer on content, delivery and composure, and fuses the three into an explainable report. Candidate and admin platforms and the full AI evaluation pipeline are complete and tested end to end.</p>
       
       <div class="cs-meta-grid">
         <div class="cs-meta-item">
           <span class="cs-meta-label">Role</span>
-          <span class="cs-meta-val">Lead AI Engineer / Architect</span>
+          <span class="cs-meta-val">AI Engineer (Final Year Project)</span>
         </div>
         <div class="cs-meta-item">
           <span class="cs-meta-label">Category</span>
@@ -121,11 +121,11 @@
         </div>
         <div class="cs-meta-item">
           <span class="cs-meta-label">Timeline</span>
-          <span class="cs-meta-val">FYP Project · 2026–Present</span>
+          <span class="cs-meta-val">Final Year Project · 2026</span>
         </div>
         <div class="cs-meta-item">
           <span class="cs-meta-label">Core Stack</span>
-          <span class="cs-meta-val">FastAPI · PyTorch · BERT · DeepFace · React</span>
+          <span class="cs-meta-val">FastAPI · React · MongoDB · DistilBERT · FERPlus</span>
         </div>
       </div>
     </div>
@@ -136,65 +136,65 @@
       <div class="cs-main">
         <section class="cs-section">
           <h2>Problem &amp; Challenge</h2>
-          <p>Traditional candidate interview preparations are bottlenecked by manual reviewer latency, subjective assessment biases, and the inability to track non-verbal traits in real time. Automated grading tools typically evaluate only the semantic text of a candidate's answer, missing vital cues like facial expressions and vocal rhythms.</p>
-          <p>The core engineering challenge is to build a system that concurrently processes live video streams, transcribes vocal signals, monitors emotional attributes from video frames, and semantic-grades textual responses without introducing execution lags or socket connection timeouts on the client interface.</p>
+          <p>Interview practice tools usually grade only the text of an answer. A human interviewer also judges how the answer was delivered and how composed the candidate looked, and that feedback normally needs a person to review every recording.</p>
+          <p>The engineering challenge was to score content, speech delivery and facial composure from a single recorded answer, combine them into one fair score, and keep working when a camera or microphone is missing, without letting one signal inflate the result.</p>
         </section>
 
         <section class="cs-section">
-          <h2>Technical Approach &amp; Current Status</h2>
-          <p>MockAI is organized into user and admin management portals, an asynchronous ingestion gateway, and a decoupled multimodal AI evaluation pipeline. <strong>The user and admin platforms are complete</strong>, providing interview setup, question bank management, and candidate dashboard interfaces. <strong>AI model integration and evaluation are currently in active progress.</strong></p>
-          <p>We designed an asynchronous micro-pipeline utilizing a <strong>FastAPI WebSockets backend</strong> acting as a central coordinator, routing raw client media feeds to isolated processing loops. This decoupled structure ensures that computer vision calculations do not interfere with frame capture or audio processing threads.</p>
+          <h2>Technical Approach</h2>
+          <p>MockAI has a React candidate platform, a separate admin platform and a FastAPI backend with JWT authentication and role-based access. Each recorded answer is stored and evaluated by a <strong>background evaluation worker</strong>, so the interview flow never waits on model inference.</p>
 
           <div class="cs-flow-visual">
-            <div class="cs-card-title">Live Pipeline Stream Routing</div>
+            <div class="cs-card-title">Evaluation Pipeline</div>
             <div class="cs-flow-step">
-              <div class="cs-step-name">Client browser (React WebRTC)</div>
-              <div class="cs-step-desc">Streams video/audio frames via WebSocket links</div>
+              <div class="cs-step-name">Recorded answer (WebM)</div>
+              <div class="cs-step-desc">Captured in the browser and uploaded per question</div>
             </div>
             <div class="cs-flow-arrow">&darr;</div>
             <div class="cs-flow-step">
-              <div class="cs-step-name">FastAPI Core Gateway</div>
-              <div class="cs-step-desc">Ingests sockets, chunks buffer streams, routes asynchronously</div>
+              <div class="cs-step-name">FFmpeg normalisation</div>
+              <div class="cs-step-desc">16 kHz mono WAV audio and indexed H.264 MP4 video</div>
             </div>
             <div class="cs-flow-arrow">&darr;</div>
             <div class="cs-flow-step">
-              <div class="cs-step-name">Isolated Worker Process Thread Pools</div>
-              <div class="cs-step-desc">Queue 1: DeepFace CV (Emotions) · Queue 2: Whisper API (Transcription)</div>
+              <div class="cs-step-name">Three analyzers</div>
+              <div class="cs-step-desc">Content: Google Speech-to-Text + DistilBERT embeddings · Delivery: pace, pauses, fillers · Composure: YuNet face detection + FERPlus emotion classification</div>
             </div>
             <div class="cs-flow-arrow">&darr;</div>
             <div class="cs-flow-step">
-              <div class="cs-step-name">BERT Scoring &amp; DB Flush</div>
-              <div class="cs-step-desc">Semantic comparison against response schemas &amp; save to MongoDB</div>
+              <div class="cs-step-name">Late fusion &amp; report</div>
+              <div class="cs-step-desc">50% content · 30% delivery · 20% composure, difficulty-weighted, saved to MongoDB with an explainable breakdown</div>
             </div>
           </div>
-          
-          <p>Rather than running multi-threaded loops inside a single process, the system offloads heavy computational nodes to independent workers. Frame analysis is managed via dynamic sampling, while language translation tasks run in an asynchronous consumer queue.</p>
         </section>
 
         <section class="cs-section">
           <h2>Engineering Challenges &amp; Solutions</h2>
-          <h3>1. The GIL Bottleneck &amp; Socket Dropouts</h3>
-          <p>During initial testing, executing DeepFace frame evaluations on incoming WebSocket buffers blocked the main asyncio event loop due to Python's Global Interpreter Lock (GIL). This blockage stalled socket handshakes, causing client connections to drop under continuous streaming.</p>
-          <p><strong>Solution:</strong> We resolved this by isolating the computer vision pipeline into a native subprocess using Python's <code>multiprocessing.Process</code> class and utilizing memory-mapped queues (<code>multiprocessing.Queue</code>) for inter-process communication. Frame capture runs continuously on the asyncio event loop, writing data to a shared memory buffer, while the CV worker process pulls and processes frames independently at its own pace.</p>
+          <h3>1. Keeping a silent answer from scoring well</h3>
+          <p>A candidate who says nothing but looks calm could score highly if missing modalities simply had their weight redistributed.</p>
+          <p><strong>Solution:</strong> a verbal-primacy rule. If an answer has no speech, content and delivery score zero and composure stays capped at its 20% weight, so a silent answer cannot score above 20%.</p>
 
-          <h3>2. Audio-Video Synchronization Drift</h3>
-          <p>Network latency jitter during live streaming created drift between the timestamp of candidate emotional changes and their corresponding verbal responses, leading to skewed evaluation charts.</p>
-          <p><strong>Solution:</strong> We implemented a timestamp synchronization protocol where each video frame and audio packet are indexed with a client-generated epoch timestamp. Upon backend collection, evaluations are matched and aligned on these markers, ensuring final reports accurately correlate expressions with verbal responses.</p>
+          <h3>2. Missing camera or microphone</h3>
+          <p>Candidates do not always have both devices available, and failing the evaluation would end the interview.</p>
+          <p><strong>Solution:</strong> graceful degradation with fixed weight tables. Audio only uses 62.5% content and 37.5% delivery; a typed answer uses content only; typed with camera uses 71.4% content and 28.6% composure.</p>
+
+          <h3>3. Comparing answers of different difficulty</h3>
+          <p>An average of raw question scores treats an easy question and a hard one as equal.</p>
+          <p><strong>Solution:</strong> difficulty-weighted aggregation (easy 1.0&times;, medium 1.25&times;, hard 1.5&times;). Skipped questions score zero but keep their weight, so skipping cannot raise the overall score.</p>
         </section>
 
         <section class="cs-section">
-          <h2>Optimization Decisions</h2>
+          <h2>Explainable Feedback</h2>
           <ul>
-            <li><strong>Dynamic Frame Skipping:</strong> Rather than processing every video frame, the pipeline samples periodic frames to track emotional markers without overloading server resources.</li>
-            <li><strong>Model Cache Warmup:</strong> Model weights for the BERT NLP semantic evaluator and face detectors are preloaded into memory upon server initialization, eliminating cold-start delays on initial evaluation requests.</li>
-            <li><strong>Batched Database Writing:</strong> Metric data flushes to MongoDB Atlas are batched into a memory buffer and written in bulk transactions rather than on every frame, preserving socket connection stability.</li>
+            <li><strong>Score rationale:</strong> each report shows how the content, delivery and composure scores combined into the final score.</li>
+            <li><strong>Strengths and gaps:</strong> rubric concepts covered and missed, with STAR-method coaching suggestions.</li>
+            <li><strong>Confidence and stress:</strong> a combined reading from acoustic and facial signals, tracked across sessions.</li>
           </ul>
         </section>
 
         <section class="cs-section">
-          <h2>Architecture &amp; Environment Notes</h2>
-          <p>The system architecture utilizes <strong>Gunicorn with Uvicorn workers</strong> behind an Nginx reverse proxy. Static frontend directories are compiled and served via modern edge delivery, and media assets route through authenticated SSL WebSocket connections.</p>
-          <p>For modular maintenance, Docker Compose isolates FastAPI backend nodes and manages worker instance pooling.</p>
+          <h2>Testing</h2>
+          <p>An end-to-end acceptance run executed all three modalities on a real recorded answer, from FFmpeg normalisation through fused scoring. The repository includes automated tests for media normalisation, speech recognition, the NLP scorer, facial analysis, fusion rules, role-based access and the end-to-end pipeline.</p>
         </section>
       </div>
 
@@ -204,8 +204,8 @@
             <h3 class="cs-card-title">Project Details</h3>
             <div class="cs-tech-list">
               <div class="cs-tech-item"><span class="cs-tech-name">Context:</span><span>Final Year Project (COMSATS)</span></div>
-              <div class="cs-tech-item"><span class="cs-tech-name">Status:</span><span>In Development</span></div>
-              <div class="cs-tech-item"><span class="cs-tech-name">Timeline:</span><span>2026–Present</span></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">Status:</span><span>Completed</span></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">Timeline:</span><span>2026</span></div>
               <div class="cs-tech-item"><span class="cs-tech-name">Repository:</span><a href="https://github.com/syedasjadabbas/MockAI" target="_blank" style="color:var(--brown-light); text-decoration:none">GitHub ↗</a></div>
             </div>
           </div>
@@ -215,10 +215,10 @@
             <div class="cs-tech-list">
               <div class="cs-tech-item"><span class="cs-tech-name">Backend Framework:</span><span>FastAPI (Python)</span></div>
               <div class="cs-tech-item"><span class="cs-tech-name">Frontend Core:</span><span>React.js + Tailwind CSS</span></div>
-              <div class="cs-tech-item"><span class="cs-tech-name">CV Framework:</span><span>DeepFace · OpenCV</span></div>
-              <div class="cs-tech-item"><span class="cs-tech-name">NLP Transformer:</span><span>HuggingFace BERT</span></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">CV Framework:</span><span>OpenCV YuNet · FERPlus (ONNX)</span></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">NLP:</span><span>DistilBERT embeddings</span></div>
               <div class="cs-tech-item"><span class="cs-tech-name">Database Engine:</span><span>MongoDB Atlas</span></div>
-              <div class="cs-tech-item"><span class="cs-tech-name">Socket Transport:</span><span>Asynchronous WebSockets</span></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">Speech:</span><span>Google Speech-to-Text</span></div>
             </div>
           </div>
         </div>

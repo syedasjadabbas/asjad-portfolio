@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Serene Management Case Study — Syed Asjad Abbas | AI/ML Engineer</title>
+  <meta name="description" content="Case study of Serene Management, a multi-property hotel PMS built by Syed Asjad Abbas with Next.js, TypeScript, PostgreSQL and Prisma: idempotent payments, a worker-run night audit and measured performance fixes."/>
+  <meta name="author" content="Syed Asjad Abbas"/>
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"/>
+  <link rel="canonical" href="https://www.syedasjadabbas.dev/case-study/serene-management/"/>
+
+  <!-- Open Graph -->
+  <meta property="og:site_name" content="Syed Asjad Abbas Portfolio"/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:url" content="https://www.syedasjadabbas.dev/case-study/serene-management/"/>
+  <meta property="og:title" content="Serene Management Case Study — Syed Asjad Abbas | AI/ML Engineer"/>
+  <meta property="og:description" content="How Serene Management handles money, night audit and multi-property data safely, with measured performance fixes."/>
+  <meta property="og:image" content="https://www.syedasjadabbas.dev/assets/og-image.png"/>
+  <meta property="og:image:alt" content="Serene Management hotel PMS by Syed Asjad Abbas"/>
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Serene Management Case Study — Syed Asjad Abbas | AI/ML Engineer"/>
+  <meta name="twitter:description" content="How Serene Management handles money, night audit and multi-property data safely, with measured performance fixes."/>
+  <meta name="twitter:image" content="https://www.syedasjadabbas.dev/assets/og-image.png"/>
+  <meta name="twitter:image:alt" content="Serene Management hotel PMS by Syed Asjad Abbas"/>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300;1,9..40,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../../style.css"/>
+  <link rel="icon" type="image/x-icon" href="../../assets/favicon.ico"/>
+  <link rel="icon" type="image/png" sizes="48x48" href="../../assets/favicon-48x48.png"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="../../assets/favicon-32x32.png"/>
+  <link rel="apple-touch-icon" sizes="192x192" href="../../assets/apple-touch-icon.png"/>
+
+  <!-- Structured Data (TechArticle) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Serene Management: A Multi-Property Hotel PMS",
+    "description": "Technical case study of Serene Management, a hotel property management system with server-side authorization, idempotent payments and a worker-run night audit.",
+    "author": {
+      "@type": "Person",
+      "name": "Syed Asjad Abbas",
+      "jobTitle": "AI/ML Engineer",
+      "url": "https://www.syedasjadabbas.dev/"
+    },
+    "publisher": {
+      "@type": "Person",
+      "name": "Syed Asjad Abbas",
+      "url": "https://www.syedasjadabbas.dev/"
+    },
+    "mainEntityOfPage": "https://www.syedasjadabbas.dev/case-study/serene-management/",
+    "image": "https://www.syedasjadabbas.dev/assets/og-image.png",
+    "inLanguage": "en-US"
+  }
+  </script>
+</head>
+<body>
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
+
+  <nav>
+    <a class="nav-logo" href="../../">
+      <img src="../../assets/apple-touch-icon.png" alt="Syed Asjad Abbas Logo" class="nav-logo-img" width="20" height="20" />
+      <span>SYEDASJADABBAS.DEV</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="../../#about">About</a></li>
+      <li><a href="../../#skills">Skills</a></li>
+      <li><a href="../../#projects">Projects</a></li>
+      <li><a href="../../#experience">Experience</a></li>
+      <!-- <li><a href="../../#blog">Log</a></li> -->
+      <li><a href="../../#contact">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a class="nav-hire" href="mailto:asjadabbaszaidi@gmail.com">Let's Talk</a>
+      <a class="nav-resume" href="../../assets/syed-asjad-abbas-resume.pdf" target="_blank">Resume</a>
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-overlay" id="mobile-overlay">
+    <ul class="mobile-overlay-links">
+      <li><a href="../../#about">About</a></li>
+      <li><a href="../../#skills">Skills</a></li>
+      <li><a href="../../#projects">Projects</a></li>
+      <li><a href="../../#experience">Experience</a></li>
+      <!-- <li><a href="../../#blog">Log</a></li> -->
+      <li><a href="../../#contact">Contact</a></li>
+    </ul>
+    <div class="mobile-overlay-cta">
+      <a href="mailto:asjadabbaszaidi@gmail.com" class="mob-cta-primary">Let's Talk</a>
+      <a href="../../assets/syed-asjad-abbas-resume.pdf" target="_blank" class="mob-cta-secondary">Resume</a>
+    </div>
+  </div>
+
+  <header class="cs-header">
+    <div class="container">
+      <div class="cs-breadcrumbs">
+        <a href="../../">Portfolio</a>
+        <span>/</span>
+        <a href="../../#projects">Case Studies</a>
+        <span>/</span>
+        <span>Serene Management</span>
+      </div>
+      <h1 class="cs-title-main">Serene Management</h1>
+      <p class="cs-subtitle">A hotel property management system for one or many properties, from reservation to night audit, built so the money and the data can be audited.</p>
+
+      <div class="cs-meta-grid">
+        <div class="cs-meta-item">
+          <span class="cs-meta-label">Role</span>
+          <span class="cs-meta-val">Full-Stack Engineer</span>
+        </div>
+        <div class="cs-meta-item">
+          <span class="cs-meta-label">Category</span>
+          <span class="cs-meta-val">Hospitality Platform</span>
+        </div>
+        <div class="cs-meta-item">
+          <span class="cs-meta-label">Timeline</span>
+          <span class="cs-meta-val">2026</span>
+        </div>
+        <div class="cs-meta-item">
+          <span class="cs-meta-label">Core Stack</span>
+          <span class="cs-meta-val">Next.js · TypeScript · PostgreSQL · Prisma · Zod</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="cs-content-grid">
+      <div class="cs-main">
+        <section class="cs-section">
+          <h2>Problem &amp; Challenge</h2>
+          <p>Bugs in hotel software cost real money. A guest billed twice means refunds and complaints, a room sold twice means an overbooked night, and one property seeing another's data is a privacy breach.</p>
+          <p>Serene Management serves 12 staff roles across one or more hotels, and every night an audit has to close the books correctly.</p>
+        </section>
+
+        <section class="cs-section">
+          <h2>Rules Before the First Line</h2>
+          <ul>
+            <li><strong>Thin routes, rules in services:</strong> route handlers authorize, validate and scope; business rules live in domain services.</li>
+            <li><strong>Property scope from the server:</strong> the property a request can touch comes from the session, never from the client.</li>
+            <li><strong>Exact money:</strong> amounts are stored exactly, never as floats.</li>
+            <li><strong>Append-only ledgers:</strong> financial records are never edited; corrections add a row.</li>
+            <li><strong>Slow work goes to a worker:</strong> long jobs never depend on a browser staying open.</li>
+          </ul>
+          <p>These rules are enforced by lint and tests, so they held across 127 database models.</p>
+        </section>
+
+        <section class="cs-section">
+          <h2>Architecture</h2>
+          <div class="cs-flow-visual">
+            <div class="cs-card-title">Request Path</div>
+            <div class="cs-flow-step">
+              <div class="cs-step-name">Staff browser</div>
+              <div class="cs-step-desc">Next.js with RTK Query</div>
+            </div>
+            <div class="cs-flow-arrow">&darr;</div>
+            <div class="cs-flow-step">
+              <div class="cs-step-name">Request boundary</div>
+              <div class="cs-step-desc">Session, CSRF protection and rate limits</div>
+            </div>
+            <div class="cs-flow-arrow">&darr;</div>
+            <div class="cs-flow-step">
+              <div class="cs-step-name">Route handler</div>
+              <div class="cs-step-desc">Authorize, validate with Zod, scope to the property</div>
+            </div>
+            <div class="cs-flow-arrow">&darr;</div>
+            <div class="cs-flow-step">
+              <div class="cs-step-name">Domain services &rarr; PostgreSQL</div>
+              <div class="cs-step-desc">Business rules applied, then persisted through Prisma</div>
+            </div>
+          </div>
+          <p>A second, background path handles night audit: the job is queued as a row in PostgreSQL, a worker claims it, the business date rolls over, charges are posted once, and room boards refresh through database notifications. A hidden button is never the only protection; every action is authorized on the server.</p>
+        </section>
+
+        <section class="cs-section">
+          <h2>Key Decisions</h2>
+          <h3>1. Retries can't double-charge</h3>
+          <p>Payments and other financial actions carry an idempotency key. If a response is lost and the client retries, the server returns the first result instead of recording a second payment. An acceptance test sends the same payment twice and checks that one is recorded.</p>
+
+          <h3>2. The books close in a worker</h3>
+          <p>A worker claims the night-audit job with <code>FOR UPDATE SKIP LOCKED</code>, runs it under a lease and retries up to three times. Postings are held while the date closes. Duplicate night charges in testing: zero.</p>
+
+          <h3>3. Offline is read-only, on purpose</h3>
+          <p>When the connection drops, the front desk can still see arrivals, in-house guests and departures, but cannot book, check in or take payment. That avoids the hardest problem in hotel software: merging conflicting offline bookings.</p>
+        </section>
+
+        <section class="cs-section">
+          <h2>Performance Results</h2>
+          <p>Measured before optimizing. One innocent-looking ORM count was scanning every reservation room on each request.</p>
+          <div class="cs-table-wrap">
+            <table class="cs-table">
+              <thead><tr><th>Bottleneck</th><th>Before</th><th>After</th></tr></thead>
+              <tbody>
+                <tr><td>Global search</td><td>8.3 s</td><td>0.45 s</td></tr>
+                <tr><td>Guest statistics</td><td>168 ms</td><td>0.16 ms</td></tr>
+                <tr><td>Room board (buffers read)</td><td>38,346</td><td>4,967</td></tr>
+                <tr><td>List page (ORM count)</td><td>~1 s</td><td>Fixed</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>Slow list queries were holding the connection pool, so simple auth checks rose from 8 ms to 550 ms. Before the fixes the server saturated at 10&ndash;25 requests per second; after four fixes it handled 50 requests per second with 0 errors and a P95 latency of 192 ms. Measured on one instance on a 4-core laptop.</p>
+        </section>
+
+        <section class="cs-section">
+          <h2>Auditing My Own Work</h2>
+          <p>A pre-release audit found a release blocker: a routine rate-plan change could silently re-bill nights that had already been charged. Nothing crashed; guests would simply have paid twice.</p>
+          <ul>
+            <li><strong>P0:</strong> silent re-billing, fixed and covered by tests.</li>
+            <li><strong>P1:</strong> no request size limit, now capped at 1 MiB.</li>
+            <li><strong>P1:</strong> the offline page exposed guest lists, now fixed.</li>
+          </ul>
+        </section>
+      </div>
+
+      <aside class="cs-sidebar">
+        <div class="cs-sidebar-sticky">
+          <div class="cs-card-box">
+            <h3 class="cs-card-title">Project Details</h3>
+            <div class="cs-tech-list">
+              <div class="cs-tech-item"><span class="cs-tech-name">Type:</span><span>Hotel PMS (multi-property)</span></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">Status:</span><span>Built &amp; Tested</span></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">Release:</span><span>2026</span></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">Slides:</span><a href="../../assets/case-studies/serene-management-case-study.pdf" target="_blank" style="color:var(--brown-light); text-decoration:none">Case study PDF ↗</a></div>
+            </div>
+          </div>
+
+          <div class="cs-card-box">
+            <h3 class="cs-card-title">Detailed Architecture</h3>
+            <div class="cs-tech-list">
+              <div class="cs-tech-item"><span class="cs-tech-name">Frontend:</span><span>Next.js · React · RTK Query</span></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">Language:</span><span>TypeScript</span></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">Database:</span><span>PostgreSQL · Prisma</span></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">Validation:</span><span>Zod</span></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">Background jobs:</span><span>PostgreSQL job queue · SKIP LOCKED</span></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">CI:</span><span>GitHub Actions</span></div>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer>
+    <span class="ft">&copy; 2026 Syed Asjad Abbas</span>
+    <div class="ft-links">
+      <a href="https://github.com/syedasjadabbas" target="_blank">GitHub</a>
+      <a href="https://www.linkedin.com/in/syed-asjad-abbas/" target="_blank">LinkedIn</a>
+      <a href="mailto:asjadabbaszaidi@gmail.com">Email</a>
+    </div>
+  </footer>
+
+  <script src="../../assets/three.min.js" onerror="this.remove();var s=document.createElement('script');s.src='https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js';document.body.appendChild(s);"></script>
+  <script src="../../script.js"></script>
+</body>
+</html>

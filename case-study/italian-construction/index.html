@@ -62,17 +62,17 @@
   <canvas id="bg-canvas" aria-hidden="true"></canvas>
 
   <nav>
-    <a class="nav-logo" href="../../index.html">
+    <a class="nav-logo" href="../../">
       <img src="../../assets/apple-touch-icon.png" alt="Syed Asjad Abbas Logo" class="nav-logo-img" width="20" height="20" />
       <span>SYEDASJADABBAS.DEV</span>
     </a>
     <ul class="nav-links">
-      <li><a href="../../index.html#about">About</a></li>
-      <li><a href="../../index.html#skills">Skills</a></li>
-      <li><a href="../../index.html#projects">Projects</a></li>
-      <li><a href="../../index.html#experience">Experience</a></li>
-      <!-- <li><a href="../../index.html#blog">Log</a></li> -->
-      <li><a href="../../index.html#contact">Contact</a></li>
+      <li><a href="../../#about">About</a></li>
+      <li><a href="../../#skills">Skills</a></li>
+      <li><a href="../../#projects">Projects</a></li>
+      <li><a href="../../#experience">Experience</a></li>
+      <!-- <li><a href="../../#blog">Log</a></li> -->
+      <li><a href="../../#contact">Contact</a></li>
     </ul>
     <div class="nav-actions">
       <a class="nav-hire" href="mailto:asjadabbaszaidi@gmail.com">Let's Talk</a>
@@ -85,12 +85,12 @@
 
   <div class="mobile-overlay" id="mobile-overlay">
     <ul class="mobile-overlay-links">
-      <li><a href="../../index.html#about">About</a></li>
-      <li><a href="../../index.html#skills">Skills</a></li>
-      <li><a href="../../index.html#projects">Projects</a></li>
-      <li><a href="../../index.html#experience">Experience</a></li>
-      <!-- <li><a href="../../index.html#blog">Log</a></li> -->
-      <li><a href="../../index.html#contact">Contact</a></li>
+      <li><a href="../../#about">About</a></li>
+      <li><a href="../../#skills">Skills</a></li>
+      <li><a href="../../#projects">Projects</a></li>
+      <li><a href="../../#experience">Experience</a></li>
+      <!-- <li><a href="../../#blog">Log</a></li> -->
+      <li><a href="../../#contact">Contact</a></li>
     </ul>
     <div class="mobile-overlay-cta">
       <a href="mailto:asjadabbaszaidi@gmail.com" class="mob-cta-primary">Let's Talk</a>
@@ -101,9 +101,9 @@
   <header class="cs-header">
     <div class="container">
       <div class="cs-breadcrumbs">
-        <a href="../../index.html">Portfolio</a>
+        <a href="../../">Portfolio</a>
         <span>/</span>
-        <a href="../../index.html#projects">Case Studies</a>
+        <a href="../../#projects">Case Studies</a>
         <span>/</span>
         <span>Italian Construction</span>
       </div>
@@ -180,7 +180,7 @@
           <p>Switching between project categories (Residential, Commercial, Infrastructure) previously caused jarring DOM jumps as cards inserted and removed abruptly from the layout.</p>
           <p><strong>Solution:</strong> Leveraged Framer Motion's <code>AnimatePresence</code> and <code>layout</code> projection engine. Filtered project cards gracefully transition position and opacity with spring physics (stiffness: 300, damping: 25), delivering an uninterrupted, tactile editorial feel.</p>
 
-          <h3>2. Zero-Stutter Viewport Stat Counters</h3>
+          <h3>2. Smooth Viewport Stat Counters</h3>
           <p>Animating numerical counters on multiple metrics simultaneously during rapid scrolling can lock the main thread, causing missed frame budgets on mobile devices.</p>
           <p><strong>Solution:</strong> Built an atomic <code>AnimatedCounter</code> hook utilizing <code>requestAnimationFrame</code> with ease-out cubic interpolation. The counter triggers strictly when the element intersects the viewport via an <code>IntersectionObserver</code>, completing numerical animations smoothly without blocking user scroll.</p>
         </section>
@@ -190,7 +190,7 @@
           <ul>
             <li><strong>Luxury Architectural Aesthetic:</strong> Dark-mode palette with warm gold accents and editorial typography.</li>
             <li><strong>Multi-Sector Showcase:</strong> Filterable portfolio detailing residential estates, commercial hubs, and civil engineering works.</li>
-            <li><strong>Hardware-Accelerated Animation:</strong> Fluid Framer Motion micro-interactions with zero layout shifting.</li>
+            <li><strong>Hardware-Accelerated Animation:</strong> Framer Motion micro-interactions using transform and opacity to avoid layout shifts.</li>
             <li><strong>High-Conversion Contact Flow:</strong> Integrated inquiry form with validation state feedback and responsive drawers.</li>
           </ul>
         </section>
