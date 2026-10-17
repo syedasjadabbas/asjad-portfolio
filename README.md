@@ -1,214 +1,162 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0f0f23,50:1a1a3e,100:0f0f23&height=200&section=header&text=Syed%20Asjad%20Abbas&fontSize=52&fontColor=e2c97e&fontAlignY=38&desc=AI%2FML%20Engineer%20%E2%80%A2%20Founder%20%26%20Lead%20Engineer%20%40%20Zeploy%20Tech&descSize=16&descAlignY=60&descColor=a0a0c0" alt="Header"/>
+<a href="https://www.syedasjadabbas.dev/">
+  <img src="assets/og-image.png" alt="syedasjadabbas.dev, portfolio of Syed Asjad Abbas, AI/ML Engineer" width="100%"/>
+</a>
 
-<br/>
+# syedasjadabbas.dev
 
-[![Portfolio](https://img.shields.io/badge/🌐%20Portfolio-syedasjadabbas.dev-e2c97e?style=for-the-badge&labelColor=0f0f23)](https://www.syedasjadabbas.dev/)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Syed%20Asjad%20Abbas-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/syed-asjad-abbas/)
-[![GitHub](https://img.shields.io/badge/GitHub-syedasjadabbas-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/syedasjadabbas)
-[![Email](https://img.shields.io/badge/Email-asjadabbaszaidi%40gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:asjadabbaszaidi@gmail.com)
+**Portfolio of Syed Asjad Abbas, AI/ML & Backend Engineer**
 
-<br/>
+Production AI, backend systems and the engineering decisions behind them.
 
-![Visitors](https://visitor-badge.laobi.icu/badge?page_id=syedasjadabbas.asjad-portfolio&style=flat-square&color=e2c97e)
-&nbsp;
-![Stars](https://img.shields.io/github/stars/syedasjadabbas/asjad-portfolio?style=flat-square&color=e2c97e)
-&nbsp;
-![Last Commit](https://img.shields.io/github/last-commit/syedasjadabbas/asjad-portfolio?style=flat-square&color=a0a0c0)
+[![Live Site](https://img.shields.io/badge/Live-syedasjadabbas.dev-B8914F?style=for-the-badge&labelColor=0F1E36)](https://www.syedasjadabbas.dev/)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Syed%20Asjad%20Abbas-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white&labelColor=0F1E36)](https://www.linkedin.com/in/syed-asjad-abbas/)
+[![Resume](https://img.shields.io/badge/Resume-PDF-B8914F?style=for-the-badge&labelColor=0F1E36)](https://www.syedasjadabbas.dev/assets/syed-asjad-abbas-resume.pdf)
 
-</div>
-
----
-
-## ✦ About This Portfolio
-
-> *"I build AI systems that connect models, data, APIs and backend infrastructure into products that work beyond the prototype stage."*
-
-This is the source code for my **personal portfolio website** — a hand-crafted, production-grade site built with pure HTML, CSS, and JavaScript (no frameworks). It serves as a live demonstration of my engineering aesthetic: clean architecture, intentional design, and zero unnecessary dependencies.
-
-**AI/ML Engineer at SVYPE** · **Founder & Lead Engineer** at [Zeploy Tech](https://zeploy.tech) · Based in **Lahore, Pakistan**
-
----
-
-## ⚡ Tech Stack
-
-<div align="center">
-
-| Layer | Technologies |
-|:---|:---|
-| **Structure** | HTML5 (semantic, SEO-optimized) |
-| **Styling** | Vanilla CSS3 — custom design system, glassmorphism, animations |
-| **Logic** | Vanilla JavaScript — canvas animations, intersection observers, typed text |
-| **Typography** | DM Sans + JetBrains Mono (Google Fonts) |
-| **Deployment** | Vercel (with `vercel.json` config) |
-| **Version Control** | Git + GitHub |
+![HTML5](https://img.shields.io/badge/HTML5-0F1E36?style=flat-square&logo=html5&logoColor=E34F26)
+![CSS3](https://img.shields.io/badge/CSS3-0F1E36?style=flat-square&logo=css&logoColor=1572B6)
+![JavaScript](https://img.shields.io/badge/JavaScript-0F1E36?style=flat-square&logo=javascript&logoColor=F7DF1E)
+![Three.js](https://img.shields.io/badge/Three.js-0F1E36?style=flat-square&logo=threedotjs&logoColor=white)
+![Vercel](https://img.shields.io/badge/Vercel-0F1E36?style=flat-square&logo=vercel&logoColor=white)
+![Last Commit](https://img.shields.io/github/last-commit/syedasjadabbas/asjad-portfolio?style=flat-square&color=B8914F&labelColor=0F1E36)
 
 </div>
 
 ---
 
-## 🚀 Featured Projects
+## Overview
 
-### 🤖 MockAI — Multimodal AI Interview Evaluation System
-> *Final Year Project · Multi-modal AI pipeline (In Development)*
+This repository is the source of [syedasjadabbas.dev](https://www.syedasjadabbas.dev/). It's a hand-built static site, with no framework and no build step.
 
-A multimodal evaluation pipeline that brings BERT-based NLP, Whisper speech recognition and DeepFace facial analysis into one evaluation workflow.
+It isn't a template. Each project is presented the way an engineer would review it, covering:
+- the problem;
+- the architecture;
+- the trade-offs;
+- the measured results;
+- a full case study page and a downloadable case study PDF.
 
-```
-React.js  →  FastAPI  →  BERT · Whisper · DeepFace  →  Evaluation
-```
-
-- **BERT-based NLP** for semantic answer grading
-- **Whisper** speech recognition transcription
-- **DeepFace** facial analysis
-- Unified analytics workflow
-
-[![GitHub](https://img.shields.io/badge/GitHub-Repo-181717?style=flat-square&logo=github)](https://github.com/syedasjadabbas/MockAI)
+I'm an AI/ML Engineer at **SVYPE** and Founder & Lead Engineer of **[Zeploy Tech](https://zeploy.tech)**, and I'm completing a BS in Computer Science at COMSATS University Islamabad.
 
 ---
 
-### 🎬 ZePlay — Adaptive Video Streaming Platform
-> *Flagship Engineering · Full-Stack System*
+## Featured Work
 
-Uploads are transcoded in background FFmpeg jobs into 1080p, 720p and 480p HLS renditions for adaptive-bitrate playback. A FastAPI backend handles authentication, profiles, watch history, search and recommendations, with Redis caching in front of PostgreSQL.
+| Project | What it is | Engineering highlight | Case study |
+|:---|:---|:---|:---:|
+| **MockAI** | Multimodal AI interview evaluation (final year project) | Scores content (DistilBERT), delivery (speech pace, pauses, fillers) and composure (YuNet + FERPlus), fused 50 / 30 / 20 into an explainable report. Degrades gracefully when the camera or microphone is missing | [Read](https://www.syedasjadabbas.dev/case-study/mockai/) |
+| **ZePlay** | Adaptive video streaming platform | Throughput up 7.7× (84 → 650 req/s) at 500 concurrent users with 0% failures in local k6 load tests. Keyset pagination cut deep-page queries from ~295 ms to 0.27 ms | [Read](https://www.syedasjadabbas.dev/case-study/zeplay/) |
+| **Serene Management** | Hotel property management system | Idempotent billing so no payment is charged twice. Search went from 8.3 s to 0.45 s, with 50 req/s and zero errors on a single instance | [Read](https://www.syedasjadabbas.dev/case-study/serene-management/) |
+| **FlightOne** | AI travel platform | The AI assistant (Ava) plans the trip, but the server calculates every fare, so the model never generates a price | [Read](https://www.syedasjadabbas.dev/case-study/flightone/) |
+| **Zee** | AI assistant on zeploy.tech | Gemini streaming responses, conversation history cleaning, and an automatic fallback model when the primary model fails | [Live](https://zeploy.tech) |
 
-```
-React + TS  →  FastAPI  →  HLS.js / FFmpeg  →  Redis  →  PostgreSQL
-```
-
-[![Case Study](https://img.shields.io/badge/Read%20Case%20Study-→-e2c97e?style=flat-square)](https://www.syedasjadabbas.dev/case-study/zeplay)
-[![GitHub](https://img.shields.io/badge/GitHub-Repo-181717?style=flat-square&logo=github)](https://github.com/syedasjadabbas/ZePlay)
-
----
-
-### 🛒 EduCart — E-Commerce Platform
-> *Web Application · Live in Production*
-
-A MERN e-commerce platform with product search and filtering, cart, PayPal checkout, order tracking, wishlist and student discounts, plus an admin dashboard with sales analytics.
-
-```
-React (Vite)  →  Express API  →  JWT Auth  →  MongoDB
-```
-
-- Product search, filtering, and student discounts
-- PayPal checkout and order tracking
-- JWT authentication with role-based access
-
-[![Case Study](https://img.shields.io/badge/Read%20Case%20Study-→-e2c97e?style=flat-square)](https://www.syedasjadabbas.dev/case-study/educart)
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-↗-00c853?style=flat-square)](https://edu-cart-ten.vercel.app/)
-[![GitHub](https://img.shields.io/badge/GitHub-Repo-181717?style=flat-square&logo=github)](https://github.com/syedasjadabbas/EduCart)
+The site also covers EduCart, TuneBox, FrameGrill, the Gym Management System and other client and academic work, each with its own case study page.
 
 ---
 
-### 🏋️ Gym Management System
-> *Academic Project · Desktop Application*
+## Site Highlights
 
-Desktop gym management system with member profiles, payments, measurements and a store module.
+**Design and interaction**
+- A Three.js wireframe hero scene and a typed-text headline. Section reveals use `IntersectionObserver`.
+- Respects `prefers-reduced-motion`, so animation is reduced for visitors who ask for it.
+- Fully responsive down to small phones, with a dedicated mobile navigation overlay.
+- DM Sans for text and JetBrains Mono for technical details.
 
-- Member profiles and subscription payment tracking
-- Physical measurement logs
-- Equipment and supplement store module
+**Content**
+- Projects are written as engineering case studies, not screenshots: the problem, the architecture, decisions, results and limitations.
+- Every flagship project has a downloadable PDF case study in `assets/case-studies/`.
+- A one-page resume is served directly from the site.
 
-[![Case Study](https://img.shields.io/badge/Read%20Case%20Study-→-e2c97e?style=flat-square)](https://www.syedasjadabbas.dev/case-study/gym-system)
-[![GitHub](https://img.shields.io/badge/GitHub-Repo-181717?style=flat-square&logo=github)](https://github.com/syedasjadabbas/Gym-Management-System)
+**SEO and sharing**
+- Unique title, description and canonical URL on every page.
+- Open Graph and Twitter Card tags, with a dedicated 1200×630 share image per case study.
+- JSON-LD structured data: `WebSite`, `ProfilePage`, `Person`, `Organization` and `ItemList` on the homepage, and a `TechArticle` on each case study.
+- `sitemap.xml`, `robots.txt`, a custom 404 page and verified Google Search Console indexing.
 
----
-
-## 🧠 Engineering Stack
-
-<div align="center">
-
-**AI / ML**
-
-![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
-![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white)
-![Gemini](https://img.shields.io/badge/Gemini%20API-4285F4?style=flat-square&logo=google&logoColor=white)
-![scikit-learn](https://img.shields.io/badge/scikit--learn-F7931E?style=flat-square&logo=scikit-learn&logoColor=white)
-![NumPy](https://img.shields.io/badge/NumPy-013243?style=flat-square&logo=numpy&logoColor=white)
-![Pandas](https://img.shields.io/badge/Pandas-150458?style=flat-square&logo=pandas&logoColor=white)
-
-**Backend & Data**
-
-![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=node.js&logoColor=white)
-![Express](https://img.shields.io/badge/Express-000000?style=flat-square&logo=express&logoColor=white)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-336791?style=flat-square&logo=postgresql&logoColor=white)
-![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=flat-square&logo=mongodb&logoColor=white)
-![Redis](https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=redis&logoColor=white)
-![Prisma](https://img.shields.io/badge/Prisma-2D3748?style=flat-square&logo=prisma&logoColor=white)
-
-**Frontend & Mobile**
-
-![React](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black)
-![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=next.js&logoColor=white)
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)
-![Flutter](https://img.shields.io/badge/Flutter-02569B?style=flat-square&logo=flutter&logoColor=white)
-
-**Tools & DevOps**
-
-![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white)
-![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
-![Postman](https://img.shields.io/badge/Postman-FF6C37?style=flat-square&logo=postman&logoColor=white)
-![Linux](https://img.shields.io/badge/Linux-FCC624?style=flat-square&logo=linux&logoColor=black)
-
-</div>
+**Performance**
+- No framework and no bundler: three static files plus images.
+- WebP project images and a local copy of `three.min.js`.
+- Clean URLs through Vercel (`cleanUrls`, `trailingSlash`).
 
 ---
 
-## 💼 Experience
+## Project Structure
 
 ```
-Jul 2026 – Present   │  AI/ML Engineer                  │  SVYPE        │  Lahore, PK (Hybrid)
-Apr 2026 – Present   │  Founder & Lead Engineer         │  Zeploy Tech  │  Lahore, PK (Remote)
-Jan 2021 – Present   │  Co-Founder & COO                │  100 Se Support│ Khairpur, PK (Hybrid)
+asjad-portfolio/
+├── index.html                 # Homepage: hero, about, skills, projects, experience, contact
+├── style.css                  # Design system, layout, responsive rules, animations
+├── script.js                  # Three.js hero, typed text, scroll reveals, navigation
+├── 404.html                   # Custom not-found page
+├── case-study/
+│   ├── mockai/                # One folder per project, each with index.html
+│   ├── zeplay/
+│   ├── serene-management/
+│   ├── flightone/
+│   └── ...
+├── assets/
+│   ├── case-studies/          # Downloadable PDF case studies
+│   ├── og/                    # 1200×630 social share images per case study
+│   ├── og-image.png           # Homepage share image
+│   ├── *.webp                 # Project showcase images
+│   ├── three.min.js
+│   └── syed-asjad-abbas-resume.pdf
+├── sitemap.xml
+├── robots.txt
+└── vercel.json                # Clean URLs and trailing slash
 ```
 
 ---
 
-## 🎓 Education
+## Run Locally
 
-**BS Computer Science** — COMSATS University Islamabad *(2023 – 2027)*
-
-Coursework: Machine Learning · Computer Vision · NLP · Database Systems
-
----
-
-## 🌐 Live Site
-
-<div align="center">
-
-**[→ syedasjadabbas.dev](https://www.syedasjadabbas.dev/)**
-
-</div>
-
----
-
-## 🛠 Run Locally
+No install and no build. Serve the folder with any static server:
 
 ```bash
-# Clone the repository
 git clone https://github.com/syedasjadabbas/asjad-portfolio.git
-
-# Navigate into the project
 cd asjad-portfolio
 
-# Open in browser — no build step needed (pure HTML/CSS/JS)
+# Either of these works
 npx serve .
+python -m http.server 8000
 ```
 
----
+Then open `http://localhost:3000` if you used `serve`, or `http://localhost:8000` if you used Python.
 
-## 📄 License
-
-This project is open source and available under the **[MIT License](LICENSE)**.
+Case study links use clean URLs (`/case-study/zeplay/`). These resolve to each folder's `index.html` on both a local server and Vercel.
 
 ---
+
+## Deployment
+
+The site deploys on **Vercel**. Every push to `main` triggers a production deploy, and `vercel.json` sets the URL behaviour:
+
+```json
+{
+  "cleanUrls": true,
+  "trailingSlash": true
+}
+```
+
+When you add a new page, also add its URL to `sitemap.xml` and resubmit the sitemap in Google Search Console.
+
+---
+
+## Contact
+
+Open to AI/ML and backend engineering roles, and to businesses that want an AI prototype or a manual process turned into something real users can rely on.
+
+- **Website:** [syedasjadabbas.dev](https://www.syedasjadabbas.dev/)
+- **LinkedIn:** [linkedin.com/in/syed-asjad-abbas](https://www.linkedin.com/in/syed-asjad-abbas/)
+- **Email:** [asjadabbaszaidi@gmail.com](mailto:asjadabbaszaidi@gmail.com)
+- **Studio:** [Zeploy Tech](https://zeploy.tech)
+
+---
+
+## Usage
+
+The code is public for reference and learning. The written content, case studies, project images, resume and personal branding are © Syed Asjad Abbas and may not be reused or republished without permission.
 
 <div align="center">
-
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0f0f23,50:1a1a3e,100:0f0f23&height=100&section=footer" alt="Footer"/>
-
-**Designed & built by Syed Asjad Abbas**
-
+<sub>Designed and built by Syed Asjad Abbas · Lahore, Pakistan</sub>
 </div>
