@@ -332,7 +332,7 @@
         <span class="hero-big">ENGINEER</span>
         <div class="hero-gold-line">From models to production.</div>
         <div class="hero-typed" id="typed-out" style="margin-top:1.5rem; margin-bottom:1rem"></div>
-        <p class="hero-desc">I build AI systems that connect models, data, APIs and backend infrastructure into products that work beyond the prototype stage.</p>
+        <p class="hero-desc">I build AI-powered software that people actually use: assistants that answer customers, systems that run day-to-day operations, and tools that take repetitive work off a team's plate.</p>
       </div>
       <div class="hero-r-bottom">
         <div>
@@ -372,15 +372,12 @@
   <section id="about">
     <div class="container">
       <div class="s-label reveal">About</div>
-      <h2 class="s-title reveal">Engineering at the edge of <em>AI</em></h2>
+      <h2 class="s-title reveal">AI that works in the <em>real world</em></h2>
       <div class="about-grid">
         <div class="about-body">
-          <p class="reveal reveal-d1">I build AI systems designed to work beyond the prototype stage.</p>
-          <p class="reveal reveal-d2">My work sits at the intersection of AI/ML engineering, LLM integration and backend architecture: connecting models, data pipelines, APIs and software infrastructure into products that serve real workflows.</p>
-          <p class="reveal reveal-d3">At SVYPE, I work as an AI/ML Engineer, bringing machine learning and LLM capabilities into internal platforms and client products. I joined as a Full Stack Development Intern and moved into the AI/ML role in 2026.</p>
-          <p class="reveal reveal-d4">As Founder &amp; Lead Engineer of Zeploy Tech, I lead the engineering and delivery of web, backend and AI products, including zeploy.tech and its AI assistant, Zee.</p>
-          <p class="reveal reveal-d5">My final-year project, MockAI, is a multimodal interview-evaluation system that brings NLP, speech recognition and facial analysis into one evaluation pipeline, with separate candidate and admin platforms.</p>
-          <p class="reveal reveal-d6">I treat AI as a systems engineering problem: a good model is only the start; latency, reliability and architecture decide whether it works in production.</p>
+          <p class="reveal reveal-d1">I'm an AI/ML Engineer at SVYPE and the founder of Zeploy Tech, a studio that builds websites, software and AI for businesses.</p>
+          <p class="reveal reveal-d2">Most AI looks impressive in a demo and breaks in daily use. My job is the part after the demo: making sure it is fast, reliable and safe to use with real customers and real money.</p>
+          <p class="reveal reveal-d3">My final-year project, MockAI, coaches people for job interviews by judging their answers, voice and confidence. At Zeploy, I built Zee, the AI assistant that answers our website visitors.</p>
         </div>
         <div class="about-facts reveal">
           <div class="fact-row"><span class="fact-key">Education</span><span class="fact-val">BS Computer Science, COMSATS University Islamabad, 2023 to 2027</span></div>
@@ -485,7 +482,7 @@
     <div class="container">
       <div class="s-label reveal">Projects</div>
       <h2 class="s-title reveal">Systems I've <em>built</em></h2>
-      <p class="s-sub reveal">AI systems, backend platforms and product engineering work.</p>
+      <p class="s-sub reveal">What each project does, what it achieved, and how it's built.</p>
       <div class="proj-list">
         <!-- Project 1: MockAI -->
         <div class="proj-item reveal">
@@ -496,15 +493,17 @@
           </div>
           <div class="proj-content-col">
             <div style="display:flex;align-items:center;gap:1rem;flex-wrap:wrap">
-              <span class="proj-meta-label">01 / AI System</span>
+              <span class="proj-meta-label">01 / AI INTERVIEW COACH</span>
               <span class="proj-status proj-status--live"><span class="proj-status-dot"></span>Completed</span>
             </div>
             <h3 class="proj-title">MockAI</h3>
             <div class="proj-case">
-              <div class="proj-case-row"><span class="proj-case-key">Challenge</span><span
-                  class="proj-case-val">Evaluate interview performance across answer content, speech and facial expression at the same time, without manual review.</span></div>
-              <div class="proj-case-row"><span class="proj-case-key">Solution</span><span
-                  class="proj-case-val">A multimodal pipeline that scores each recorded answer on content (DistilBERT semantic scoring), delivery (Google Speech-to-Text with pace, pause and filler analysis) and composure (YuNet face detection with FERPlus emotion analysis). A late-fusion engine weights the three 50 / 30 / 20 into an explainable report. Built with separate candidate and admin platforms on a FastAPI and MongoDB backend.</span></div>
+              <div class="proj-case-row"><span class="proj-case-key">What it does</span><span
+                  class="proj-case-val">Practise job interviews and get scored the way a real interviewer would. You record your answers, and MockAI rates what you said, how clearly you said it and how confident you looked, then explains every score.</span></div>
+              <div class="proj-case-row"><span class="proj-case-key">Result</span><span
+                  class="proj-case-val">Three AI models work together to produce one clear, explainable report for every answer. Completed as my final-year project at COMSATS.</span></div>
+              <div class="proj-case-row"><span class="proj-case-key">How it's built</span><span
+                  class="proj-case-val">DistilBERT judges answer quality, speech-to-text measures delivery and facial-expression analysis reads composure, combined 50/30/20. FastAPI and MongoDB backend with separate candidate and admin apps.</span></div>
             </div>
             <div class="proj-arch">
               <span class="arch-node">React.js</span>
@@ -541,14 +540,17 @@
           </div>
           <div class="proj-content-col">
             <div style="display:flex;align-items:center;gap:1rem;flex-wrap:wrap">
-              <span class="proj-meta-label">02 / Video Streaming Platform</span>
+              <span class="proj-meta-label">02 / VIDEO STREAMING</span>
               <span class="proj-status proj-status--intern"><span class="proj-status-dot"></span>Internship Project</span>
             </div>
             <h3 class="proj-title">ZePlay</h3>
             <div class="proj-case">
-              <div class="proj-case-row"><span class="proj-case-key">Challenge</span><span
-                  class="proj-case-val">Deliver video reliably across different network conditions without blocking the application while videos are processed.</span></div>
-              <div class="proj-case-row"><span class="proj-case-key">Solution</span><span class="proj-case-val">Uploads are transcoded in background FFmpeg jobs into 1080p, 720p and 480p HLS renditions for adaptive-bitrate playback. A FastAPI backend handles authentication, profiles, watch history, search and recommendations, with Redis caching in front of PostgreSQL. Load-tested with k6 at 650 requests per second with 500 concurrent users and 0% failures (local benchmark, 4 workers); 59 of 59 backend tests pass.</span></div>
+              <div class="proj-case-row"><span class="proj-case-key">What it does</span><span
+                  class="proj-case-val">A Netflix-style streaming platform where videos play smoothly on fast or slow internet, because every upload is automatically prepared in three qualities.</span></div>
+              <div class="proj-case-row"><span class="proj-case-key">Result</span><span
+                  class="proj-case-val">Handled 7.7× more traffic after optimisation: 650 requests per second with 500 simultaneous users and zero failures in load testing.</span></div>
+              <div class="proj-case-row"><span class="proj-case-key">How it's built</span><span
+                  class="proj-case-val">FFmpeg converts uploads to 1080p, 720p and 480p HLS in the background; FastAPI backend with Redis caching and PostgreSQL; 59 of 59 automated tests pass.</span></div>
             </div>
             <div class="proj-arch">
               <span class="arch-node">React + TS</span>
@@ -586,15 +588,17 @@
           </div>
           <div class="proj-content-col">
             <div style="display:flex;align-items:center;gap:1rem;flex-wrap:wrap">
-              <span class="proj-meta-label">03 / AI Travel Platform</span>
-              <span class="proj-status proj-status--dev"><span class="proj-status-dot"></span>Full-Stack Architecture</span>
+              <span class="proj-meta-label">03 / AI TRAVEL PLATFORM</span>
+              <span class="proj-status proj-status--client"><span class="proj-status-dot"></span>Client Project</span>
             </div>
             <h3 class="proj-title">FlightOne</h3>
             <div class="proj-case">
-              <div class="proj-case-row"><span class="proj-case-key">Challenge</span><span
-                  class="proj-case-val">Make AI part of the travel workflow, from a traveller's request to booking and post-booking support, instead of a chat window attached to a website.</span></div>
-              <div class="proj-case-row"><span class="proj-case-key">Solution</span><span
-                  class="proj-case-val">Ava, an AI travel consultant, turns a request like "Lahore to Karachi on 10 Oct" into comparable options with filters and recommendations, then leads into a structured checkout (traveller details, payment, ticket). After booking, journey tracking, disruption assistance and servicing continue in the same product.</span></div>
+              <div class="proj-case-row"><span class="proj-case-key">What it does</span><span
+                  class="proj-case-val">Book a trip by simply typing what you want. Tell Ava, the AI travel assistant, "Lahore to Karachi on 10 Oct" and she shows the best options, takes you through booking and stays with you after you've paid.</span></div>
+              <div class="proj-case-row"><span class="proj-case-key">Result</span><span
+                  class="proj-case-val">One continuous journey from the first question to the ticket, with refunds, changes and disruption help in the same place. The AI never sets a price: every fare is calculated by the system.</span></div>
+              <div class="proj-case-row"><span class="proj-case-key">How it's built</span><span
+                  class="proj-case-val">Next.js and React front end, Express API with Prisma and PostgreSQL. The AI turns requests into structured trip details; the server computes every fare.</span></div>
             </div>
             <div class="proj-arch">
               <span class="arch-node">Next.js Web</span>
@@ -630,15 +634,17 @@
           </div>
           <div class="proj-content-col">
             <div style="display:flex;align-items:center;gap:1rem;flex-wrap:wrap">
-              <span class="proj-meta-label">04 / Hospitality Platform</span>
+              <span class="proj-meta-label">04 / HOTEL MANAGEMENT</span>
               <span class="proj-status proj-status--dev"><span class="proj-status-dot"></span>Built &amp; Tested</span>
             </div>
             <h3 class="proj-title">Serene Management</h3>
             <div class="proj-case">
-              <div class="proj-case-row"><span class="proj-case-key">Challenge</span><span
-                  class="proj-case-val">Run daily hotel operations for one or several properties without staff seeing another property's data or billing records ending up inconsistent.</span></div>
-              <div class="proj-case-row"><span class="proj-case-key">Solution</span><span
-                  class="proj-case-val">A hotel property management system covering reservations, guest profiles, rooms, housekeeping, rates, billing, reporting and night audit. Permissions are enforced on the server, each property's data is isolated, billing and night audit run inside database transactions, and every operational change is recorded in an audit trail. Payments use idempotency keys and night audit runs in a background worker. Performance fixes took global search from 8.3 s to 0.45 s and sustained load from 10&ndash;25 to 50 requests per second with 0 errors (P95 192 ms, single instance).</span></div>
+              <div class="proj-case-row"><span class="proj-case-key">What it does</span><span
+                  class="proj-case-val">Software that runs a hotel's day: bookings, check-in, housekeeping, billing and the nightly closing of accounts, for one hotel or several.</span></div>
+              <div class="proj-case-row"><span class="proj-case-key">Result</span><span
+                  class="proj-case-val">Guests can never be charged twice, and searches that took 8 seconds now take under half a second. Handles 50 requests per second with zero errors in testing.</span></div>
+              <div class="proj-case-row"><span class="proj-case-key">How it's built</span><span
+                  class="proj-case-val">Next.js, Prisma and PostgreSQL; 12 staff roles with permissions checked on the server, each property's data kept separate, and a full audit trail of every change.</span></div>
             </div>
             <div class="proj-arch">
               <span class="arch-node">Next.js</span>
@@ -670,15 +676,17 @@
           </div>
           <div class="proj-content-col">
             <div style="display:flex;align-items:center;gap:1rem;flex-wrap:wrap">
-              <span class="proj-meta-label">05 / AI Assistant</span>
+              <span class="proj-meta-label">05 / AI ASSISTANT</span>
               <span class="proj-status proj-status--live"><span class="proj-status-dot"></span>Live</span>
             </div>
             <h3 class="proj-title">Zee (Zeploy Tech)</h3>
             <div class="proj-case">
-              <div class="proj-case-row"><span class="proj-case-key">Challenge</span><span
-                  class="proj-case-val">Give website visitors instant, reliable answers about Zeploy's services without the assistant ever failing visibly.</span></div>
-              <div class="proj-case-row"><span class="proj-case-key">Solution</span><span
-                  class="proj-case-val">An AI assistant on zeploy.tech that streams responses from Google Gemini with a focused system prompt, cleans conversation history before each request, and automatically falls back to a second model if the primary one is unavailable.</span></div>
+              <div class="proj-case-row"><span class="proj-case-key">What it does</span><span
+                  class="proj-case-val">The AI assistant on zeploy.tech. Visitors ask about Zeploy's services, timelines or process and get an instant answer, any time of day.</span></div>
+              <div class="proj-case-row"><span class="proj-case-key">Result</span><span
+                  class="proj-case-val">Answers start appearing within about a second, and if the main AI model goes down, a backup takes over automatically, so visitors never see an error.</span></div>
+              <div class="proj-case-row"><span class="proj-case-key">How it's built</span><span
+                  class="proj-case-val">React front end, a TypeScript server route and Google's Gemini API, with streaming replies and automatic model fallback.</span></div>
             </div>
             <div class="proj-arch">
               <span class="arch-node">React</span>
@@ -708,20 +716,22 @@
             <div class="proj-visual-glow"></div>
             <div class="proj-placeholder-panel">
               <span class="proj-placeholder-name">Intelligence OS</span>
-              <span class="proj-placeholder-tag">RAG Platform · In Development</span>
+              <span class="proj-placeholder-tag">AI DOCUMENT ASSISTANT · IN DEVELOPMENT</span>
             </div>
           </div>
           <div class="proj-content-col">
             <div style="display:flex;align-items:center;gap:1rem;flex-wrap:wrap">
-              <span class="proj-meta-label">06 / RAG PLATFORM</span>
+              <span class="proj-meta-label">06 / AI DOCUMENT ASSISTANT</span>
               <span class="proj-status proj-status--dev"><span class="proj-status-dot"></span>IN DEVELOPMENT</span>
             </div>
             <h3 class="proj-title">Intelligence OS</h3>
             <div class="proj-case">
-              <div class="proj-case-row"><span class="proj-case-key">Challenge</span><span
-                  class="proj-case-val">Answer questions over an organisation's own documents with grounded, cited answers, and prove retrieval quality instead of assuming it.</span></div>
-              <div class="proj-case-row"><span class="proj-case-key">Solution</span><span
-                  class="proj-case-val">A multi-tenant RAG platform: pgvector HNSW vector search and PostgreSQL full-text search fused with Reciprocal Rank Fusion, query rewriting and cross-encoder reranking, with page-level citations and tenant isolation from the JWT. A 50-case golden benchmark gates every change in CI: Recall@5 0.97, MRR 0.85, citation precision 1.00, 100% correct refusals and 11/11 regression checks (offline deterministic judge).</span></div>
+              <div class="proj-case-row"><span class="proj-case-key">What it does</span><span
+                  class="proj-case-val">Ask questions about your company's own documents and get answers with the exact page they came from. Each organisation's data stays completely separate.</span></div>
+              <div class="proj-case-row"><span class="proj-case-key">Result</span><span
+                  class="proj-case-val">In a 50-question test it finds the right source in its top 5 results 97% of the time, and correctly says "I don't know" whenever the answer isn't in the documents. Every update must pass this test before release.</span></div>
+              <div class="proj-case-row"><span class="proj-case-key">How it's built</span><span
+                  class="proj-case-val">Hybrid search (pgvector plus PostgreSQL full-text) with reranking and page-level citations; FastAPI, Next.js and an automated evaluation gate on GitHub Actions.</span></div>
             </div>
             <div class="proj-arch">
               <span class="arch-node">Next.js</span>
@@ -764,7 +774,7 @@
                 <span class="proj-meta-label">CLIENT WEBSITE · 3D</span>
               </div>
               <h4 class="more-work-title">Serene Heights Nathia Gali</h4>
-              <p class="more-work-desc">Multi-page website for a winter resort in Nathia Gali, built around 3D: a scroll-driven hero fly-over, a terrain map rendered from real elevation data, and an interactive tower model whose floors open the published floor plans, alongside a payment-plan calculator, gallery and enquiry form.</p>
+              <p class="more-work-desc">A resort website you explore in 3D: fly over the mountains, turn the tower, and click any floor to see its plan, plus a payment calculator and enquiry form.</p>
             </div>
             <div class="more-work-bottom">
               <div class="proj-tech-stack">
@@ -794,7 +804,7 @@
                 </a>
               </div>
               <h4 class="more-work-title">TuneBox</h4>
-              <p class="more-work-desc">Flutter music player with playback controls, playlist management and Provider state management. <!-- TODO(Asjad): confirm offline playback, cloud/local source switching, and line reduction (~1,200 to ~720) before restoring --></p>
+              <p class="more-work-desc">A music player app for phones, with playlists and simple playback controls. <!-- TODO(Asjad): confirm offline playback, cloud/local source switching, and line reduction (~1,200 to ~720) before restoring --></p>
             </div>
             <div class="more-work-bottom">
               <div class="proj-tech-stack">
@@ -822,7 +832,7 @@
                 </a>
               </div>
               <h4 class="more-work-title">EduCart</h4>
-              <p class="more-work-desc">MERN e-commerce platform with JWT authentication, PayPal checkout and an admin dashboard.</p>
+              <p class="more-work-desc">An online shop for students, with secure login, PayPal checkout and a dashboard for the store owner.</p>
             </div>
             <div class="more-work-bottom">
               <div class="proj-tech-stack">
@@ -851,7 +861,7 @@
                 </a>
               </div>
               <h4 class="more-work-title">Gym Management System</h4>
-              <p class="more-work-desc">Desktop gym management system with member profiles, payments, measurements and a store module.</p>
+              <p class="more-work-desc">Desktop software for running a gym: members, payments, body measurements and an in-house store.</p>
             </div>
             <div class="more-work-bottom">
               <div class="proj-tech-stack">
@@ -878,7 +888,7 @@
                 </a>
               </div>
               <h4 class="more-work-title">FrameGrill</h4>
-              <p class="more-work-desc">Polished restaurant website focused on premium presentation, responsive interaction, and commercial web execution across desktop and mobile.</p>
+              <p class="more-work-desc">A restaurant website with a browsable menu, a cart and ordering through WhatsApp.</p>
             </div>
             <div class="more-work-bottom">
               <div class="proj-tech-stack">
@@ -901,7 +911,7 @@
                 <span class="proj-meta-label">Corporate Platform</span>
               </div>
               <h4 class="more-work-title">Serene Vantage</h4>
-              <p class="more-work-desc">Next-generation corporate platform for a diversified development group operating across Technology, Energy, and Property with editorial aesthetics and choreographed motion.</p>
+              <p class="more-work-desc">Corporate website for a development group working across technology, energy and property.</p>
             </div>
             <div class="more-work-bottom">
               <div class="proj-tech-stack">
@@ -929,7 +939,7 @@
                 </a>
               </div>
               <h4 class="more-work-title">Italian Construction Website</h4>
-              <p class="more-work-desc">Premium construction company website focused on modern architecture, responsive layouts, visual presentation, and business conversion.</p>
+              <p class="more-work-desc">A premium website for a construction company, built to show its projects and turn visitors into enquiries.</p>
             </div>
             <div class="more-work-bottom">
               <div class="proj-tech-stack">
@@ -957,7 +967,7 @@
                 </a>
               </div>
               <h4 class="more-work-title">Inventory System</h4>
-              <p class="more-work-desc">Local-first Progressive Web Application providing offline inventory tracking, point-of-sale transactions, and business analytics powered by IndexedDB.</p>
+              <p class="more-work-desc">Stock and sales software for small shops that keeps working without internet and installs like an app.</p>
             </div>
             <div class="more-work-bottom">
               <div class="proj-tech-stack">
@@ -986,7 +996,7 @@
                 </a>
               </div>
               <h4 class="more-work-title">KitabGhar Digital</h4>
-              <p class="more-work-desc">Digital bookstore web application showcasing authentic Urdu and classical literature, featuring an in-browser audio player, Unicode Nastaleeq reader, and REST API streaming.</p>
+              <p class="more-work-desc">An online Urdu bookstore with a built-in reader and audiobook player.</p>
             </div>
             <div class="more-work-bottom">
               <div class="proj-tech-stack">
@@ -1008,7 +1018,7 @@
                 <span class="proj-meta-label">CLIENT PROJECT · PROTOTYPE</span>
               </div>
               <h4 class="more-work-title">Salon CRM</h4>
-              <p class="more-work-desc">Interactive frontend prototype covering 14 salon management modules, client scheduling, and service workflows with sample browser data.</p>
+              <p class="more-work-desc">A clickable prototype of salon management software (appointments, clients and services across 14 modules), built for the client to review before full development.</p>
             </div>
             <div class="more-work-bottom">
               <div class="proj-tech-stack">
@@ -1029,7 +1039,7 @@
                 <span class="proj-meta-label">CLIENT WEBSITE</span>
               </div>
               <h4 class="more-work-title">Serene Heights Lahore</h4>
-              <p class="more-work-desc">Luxury real estate website featuring a pinned hero scroll sequence, GSAP ScrollTrigger animations, smooth Lenis scrolling, and bot-protected enquiry forms.</p>
+              <p class="more-work-desc">A real estate website with smooth scroll-driven storytelling and a spam-protected enquiry form.</p>
             </div>
             <div class="more-work-bottom">
               <div class="proj-tech-stack">
@@ -1053,7 +1063,7 @@
                 <span class="proj-meta-label">CLIENT WEBSITE</span>
               </div>
               <h4 class="more-work-title">VRTX Tradez</h4>
-              <p class="more-work-desc">Motion-led single-page marketing website for a gold trading community and 1-on-1 mentorship, featuring stacked scroll approach cards and animated trade showcases.</p>
+              <p class="more-work-desc">A website for a gold-trading community and its 1-on-1 mentorship programme.</p>
             </div>
             <div class="more-work-bottom">
               <div class="proj-tech-stack">
@@ -1075,7 +1085,7 @@
                 <span class="proj-meta-label">CLIENT WEBSITE</span>
               </div>
               <h4 class="more-work-title">Zakia Batool Najafi</h4>
-              <p class="more-work-desc">Single-page portfolio and live-lecture registration platform for Zakia Batool Najafi, built with Next.js cache components and PostgreSQL database management.</p>
+              <p class="more-work-desc">A personal website where students can learn about Zakia Batool Najafi and register for her paid live lectures.</p>
             </div>
             <div class="more-work-bottom">
               <div class="proj-tech-stack">
@@ -1110,9 +1120,9 @@
             <div class="exp-role">AI/ML Engineer</div>
             <div class="exp-sub">Previously Full Stack Development Intern (May 2026 to Jul 2026)</div>
             <ul class="exp-bullets">
-              <li>Develop and integrate AI capabilities across internal platforms and client-facing products, covering model integration, data preparation, evaluation and backend implementation.</li>
-              <li>Integrate LLMs and machine learning models into existing products through Python backend services and APIs.</li>
-              <li>Joined as a Full Stack Development Intern building JavaScript web applications and REST APIs, and was promoted to AI/ML Engineer on completion of the internship.</li>
+              <li>Build AI features into the company's own platforms and its clients' products, from preparing the data to testing the results.</li>
+              <li>Connect AI models to existing software through Python services and APIs.</li>
+              <li>Joined as a Full Stack Development Intern and was promoted to AI/ML Engineer when the internship ended.</li>
             </ul>
           </div>
         </div>
@@ -1125,9 +1135,9 @@
           <div class="exp-right">
             <div class="exp-role">Founder &amp; Lead Engineer</div>
             <ul class="exp-bullets">
-              <li>Founded and lead a software studio delivering web, backend and AI products for clients.</li>
-              <li>Own the technical lifecycle from requirements and system architecture through implementation, integration and deployment.</li>
-              <li>Designed and built zeploy.tech and Zee, its Gemini-powered AI assistant.</li>
+              <li>Founded a studio that builds websites, software and AI products for clients.</li>
+              <li>Take each project from the first conversation and plan through to launch.</li>
+              <li>Built zeploy.tech and Zee, its AI assistant.</li>
             </ul>
           </div>
         </div>
@@ -1139,8 +1149,8 @@
           <div class="exp-right">
             <div class="exp-role">Co-Founder &amp; COO</div>
             <ul class="exp-bullets">
-              <li>Co-founded a community welfare initiative that connects people in need with verified support through a transparent, accountable process.</li>
-              <li>Lead day-to-day operations: processes for receiving and verifying support requests, team and volunteer coordination, and accountable records.</li>
+              <li>Co-founded a community welfare initiative that connects people in need with verified support.</li>
+              <li>Run day-to-day operations: checking requests, coordinating volunteers and keeping clear records for donors.</li>
             </ul>
           </div>
         </div>
@@ -1207,15 +1217,15 @@
           <div class="stats-grid">
             <div class="stats-item">
               <div class="stats-num">3</div>
-              <div class="stats-lbl">AI models in the MockAI evaluation pipeline (NLP · Speech · Vision)</div>
+              <div class="stats-lbl">AI models working together in MockAI to judge an interview: words, voice and face</div>
             </div>
             <div class="stats-item">
               <div class="stats-num">7.7&times;</div>
-              <div class="stats-lbl">ZePlay throughput gain under load (84 &rarr; 650 req/s, k6 benchmark)</div>
+              <div class="stats-lbl">More traffic ZePlay handled after optimisation, tested with 500 simultaneous users</div>
             </div>
             <div class="stats-item">
               <div class="stats-num">0.97</div>
-              <div class="stats-lbl">RECALL@5 ON THE INTELLIGENCE OS RAG BENCHMARK (50 CASES, CI-GATED)</div>
+              <div class="stats-lbl">Intelligence OS finds the right source in its top 5 results 97% of the time (50-question test)</div>
             </div>
             <div class="stats-item">
               <div class="stats-num">2</div>
@@ -1305,7 +1315,7 @@
       <h2 class="s-title reveal">Let's build something <em>real.</em></h2>
       <div class="contact-grid" style="margin-top:3.5rem">
         <div class="contact-left reveal">
-          <p class="contact-note">Open to AI engineering roles, technical partnerships and client projects through Zeploy Tech.</p>
+          <p class="contact-note">Hiring for AI or backend roles, or have a business task you'd like AI to handle? Send a message and I'll reply within a day.</p>
           <a href="mailto:asjadabbaszaidi@gmail.com" class="contact-email">asjadabbaszaidi@gmail.com</a>
           <div>
             <a href="https://wa.me/923033236878" target="_blank" class="contact-whatsapp-btn">
