@@ -208,7 +208,7 @@ section{padding:clamp(4.5rem,8vw,8rem) clamp(1.25rem,4vw,4rem);position:relative
 /* Project case study fields */
 .proj-case{display:flex;flex-direction:column;gap:0.5rem;width:100%}
 .proj-case-row{display:flex;gap:0.75rem;align-items:baseline;font-size:0.88rem;line-height:1.65}
-.proj-case-key{font-family:'JetBrains Mono',monospace;font-size:0.6rem;font-weight:500;color:var(--brown);letter-spacing:0.1em;text-transform:uppercase;min-width:72px;flex-shrink:0;padding-top:2px}
+.proj-case-key{font-family:'JetBrains Mono',monospace;font-size:0.6rem;font-weight:500;color:var(--brown);letter-spacing:0.1em;text-transform:uppercase;flex:0 0 132px;min-width:132px;white-space:nowrap;padding-top:2px}
 .proj-case-val{color:var(--text-secondary);font-size:0.88rem;overflow-wrap:break-word}
 
 /* Architecture flow strip */
@@ -513,7 +513,7 @@ footer{padding:1.5rem clamp(1.25rem,4vw,4rem);border-top:1px solid var(--rule);d
   .skill-block{padding:1.5rem 1.25rem}
   .skill-block:hover{transform:none;animation:none;border-color:rgba(212,171,122,0.25)}
   .proj-case-row{flex-direction:column;gap:0.25rem}
-  .proj-case-key{min-width:unset}
+  .proj-case-key{flex:none;min-width:unset}
   .proj-arch{padding:10px 12px}
   .arch-node{font-size:0.52rem;padding:2px 6px}
   .arch-arrow{padding:0 4px;font-size:0.5rem}
