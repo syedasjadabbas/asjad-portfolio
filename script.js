@@ -463,3 +463,38 @@ try {
   }
 })();
 
+/* ADDITIONAL WORK TOGGLE */
+(function(){
+  try {
+    const btn = document.getElementById('more-work-toggle');
+    const extra = document.getElementById('more-work-extra');
+    if(!btn || !extra) return;
+
+    btn.addEventListener('click', () => {
+      const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+      if(isExpanded) {
+        extra.hidden = true;
+        btn.setAttribute('aria-expanded', 'false');
+        btn.textContent = 'Show all projects (13)';
+        const wrapper = document.querySelector('.more-work-wrapper');
+        if(wrapper && wrapper.getBoundingClientRect().top < 0){
+          wrapper.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      } else {
+        extra.hidden = false;
+        btn.setAttribute('aria-expanded', 'true');
+        btn.textContent = 'Show fewer';
+        const cards = extra.querySelectorAll('.more-work-card');
+        cards.forEach((card, i) => {
+          card.classList.remove('in');
+          setTimeout(() => {
+            card.classList.add('in');
+          }, i * 40);
+        });
+      }
+    });
+  } catch(e) {
+    console.warn('More work toggle error:', e);
+  }
+})();
+

@@ -47,7 +47,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300;1,9..40,400&family=JetBrains+Mono:wght@400;500&display=swap"
     rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=4" />
+  <link rel="stylesheet" href="style.css?v=5" />
 
   <!-- Structured Data (Schema.org JSON-LD) -->
   <script type="application/ld+json">
@@ -394,6 +394,47 @@
     </div>
   </section>
 
+  <section id="achievements">
+    <div class="container">
+      <div class="s-label reveal">At a Glance</div>
+      <div class="glance-grid">
+        <!-- LEFT COLUMN — "By the Numbers" -->
+        <div class="glance-col-left reveal">
+          <h3 class="glance-subtitle">By the Numbers</h3>
+          <div class="stats-grid">
+            <div class="stats-item">
+              <div class="stats-num">3</div>
+              <div class="stats-lbl">AI models working together in MockAI to judge an interview: words, voice and face</div>
+            </div>
+            <div class="stats-item">
+              <div class="stats-num">7.7&times;</div>
+              <div class="stats-lbl">More traffic ZePlay handled after optimisation, tested with 500 simultaneous users</div>
+            </div>
+            <div class="stats-item">
+              <div class="stats-num">0.97</div>
+              <div class="stats-lbl">Intelligence OS finds the right source in its top 5 results 97% of the time (50-question test)</div>
+            </div>
+            <div class="stats-item">
+              <div class="stats-num">2</div>
+              <div class="stats-lbl">Companies founded or co-founded (Zeploy Tech · 100 Se Support)</div>
+            </div>
+          </div>
+        </div>
+        <!-- RIGHT COLUMN — "Currently Building" -->
+        <div class="glance-col-right reveal">
+          <h3 class="glance-subtitle">Currently Building</h3>
+          <div class="glance-card">
+            <div class="glance-card-header">
+              <h4 class="glance-card-title">What's Next</h4>
+              <span class="pulse-dot" title="Active development"></span>
+            </div>
+            <p class="glance-card-body">Intelligence OS is in active development; a full case study will follow once it reaches production.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section id="skills">
     <div id="skills-grid-bg"></div>
     <div class="container" style="position:relative;z-index:1">
@@ -408,13 +449,8 @@
             <span class="skill-tag">Deep Learning</span>
             <span class="skill-tag">NLP</span>
             <span class="skill-tag">LLM Integration</span>
+            <span class="skill-tag">RAG</span>
             <span class="skill-tag">Gemini API</span>
-            <span class="skill-tag">DistilBERT</span>
-            <span class="skill-tag">Speech-to-Text</span>
-            <span class="skill-tag">FERPlus</span>
-            <span class="skill-tag">scikit-learn</span>
-            <span class="skill-tag">Pandas</span>
-            <span class="skill-tag">NumPy</span>
           </div>
         </div>
         <div class="skill-block reveal">
@@ -424,7 +460,6 @@
             <span class="skill-tag">Node.js</span>
             <span class="skill-tag">Express</span>
             <span class="skill-tag">REST API Design</span>
-            <span class="skill-tag">JWT Auth</span>
             <span class="skill-tag">Redis</span>
             <span class="skill-tag">Background Jobs</span>
           </div>
@@ -437,7 +472,6 @@
             <span class="skill-tag">TypeScript</span>
             <span class="skill-tag">Tailwind CSS</span>
             <span class="skill-tag">Three.js</span>
-            <span class="skill-tag">GSAP</span>
             <span class="skill-tag">Flutter</span>
           </div>
         </div>
@@ -445,6 +479,7 @@
           <div class="skill-name">Databases</div>
           <div class="skill-list">
             <span class="skill-tag">PostgreSQL</span>
+            <span class="skill-tag">pgvector</span>
             <span class="skill-tag">MongoDB</span>
             <span class="skill-tag">Prisma</span>
           </div>
@@ -453,13 +488,10 @@
           <div class="skill-name">Tools</div>
           <div class="skill-list">
             <span class="skill-tag">Git</span>
-            <span class="skill-tag">GitHub</span>
             <span class="skill-tag">GitHub Actions (CI)</span>
             <span class="skill-tag">Docker</span>
             <span class="skill-tag">FFmpeg</span>
-            <span class="skill-tag">Postman</span>
             <span class="skill-tag">Linux</span>
-            <span class="skill-tag">VS Code</span>
           </div>
         </div>
         <div class="skill-block reveal">
@@ -470,7 +502,6 @@
             <span class="skill-tag">JavaScript</span>
             <span class="skill-tag">SQL</span>
             <span class="skill-tag">Dart</span>
-            <span class="skill-tag">Java</span>
             <span class="skill-tag">C#</span>
           </div>
         </div>
@@ -505,25 +536,11 @@
               <div class="proj-case-row"><span class="proj-case-key">How it's built</span><span
                   class="proj-case-val">DistilBERT judges answer quality, speech-to-text measures delivery and facial-expression analysis reads composure, combined 50/30/20. FastAPI and MongoDB backend with separate candidate and admin apps.</span></div>
             </div>
-            <div class="proj-arch">
-              <span class="arch-node">React.js</span>
-              <span class="arch-arrow">&rarr;</span>
-              <span class="arch-node">FastAPI</span>
-              <span class="arch-arrow">&rarr;</span>
-              <span class="arch-node">FFmpeg</span>
-              <span class="arch-arrow">&rarr;</span>
-              <span class="arch-node">DistilBERT · Speech-to-Text · FERPlus</span>
-              <span class="arch-arrow">&rarr;</span>
-              <span class="arch-node">Late fusion</span>
-            </div>
             <div class="proj-tech-stack">
               <span class="proj-tech-pill">Python</span>
               <span class="proj-tech-pill">FastAPI</span>
-              <span class="proj-tech-pill">React.js</span>
-              <span class="proj-tech-pill">MongoDB</span>
+              <span class="proj-tech-pill">React</span>
               <span class="proj-tech-pill">DistilBERT</span>
-              <span class="proj-tech-pill">FERPlus</span>
-              <span class="proj-tech-pill">FFmpeg</span>
             </div>
             <div class="proj-actions">
               <a href="assets/case-studies/mockai-case-study.pdf" target="_blank" rel="noopener" class="proj-link proj-link-primary">Read Case Study &rarr;</a>
@@ -552,26 +569,11 @@
               <div class="proj-case-row"><span class="proj-case-key">How it's built</span><span
                   class="proj-case-val">FFmpeg converts uploads to 1080p, 720p and 480p HLS in the background; FastAPI backend with Redis caching and PostgreSQL; 59 of 59 automated tests pass.</span></div>
             </div>
-            <div class="proj-arch">
-              <span class="arch-node">React + TS</span>
-              <span class="arch-arrow">&rarr;</span>
-              <span class="arch-node">FastAPI</span>
-              <span class="arch-arrow">&rarr;</span>
-              <span class="arch-node">HLS.js / FFmpeg</span>
-              <span class="arch-arrow">&rarr;</span>
-              <span class="arch-node">Redis</span>
-              <span class="arch-arrow">&rarr;</span>
-              <span class="arch-node">PostgreSQL</span>
-            </div>
             <div class="proj-tech-stack">
-              <span class="proj-tech-pill">React</span>
-              <span class="proj-tech-pill">TypeScript</span>
               <span class="proj-tech-pill">FastAPI</span>
               <span class="proj-tech-pill">PostgreSQL</span>
               <span class="proj-tech-pill">Redis</span>
-              <span class="proj-tech-pill">HLS.js</span>
               <span class="proj-tech-pill">FFmpeg</span>
-              <span class="proj-tech-pill">Docker</span>
             </div>
             <div class="proj-actions">
               <a href="assets/case-studies/zeplay-case-study.pdf" target="_blank" rel="noopener" class="proj-link proj-link-primary">Read Case Study &rarr;</a>
@@ -600,23 +602,9 @@
               <div class="proj-case-row"><span class="proj-case-key">How it's built</span><span
                   class="proj-case-val">Next.js and React front end, Express API with Prisma and PostgreSQL. The AI turns requests into structured trip details; the server computes every fare.</span></div>
             </div>
-            <div class="proj-arch">
-              <span class="arch-node">Next.js Web</span>
-              <span class="arch-arrow">&rarr;</span>
-              <span class="arch-node">React Client</span>
-              <span class="arch-arrow">&rarr;</span>
-              <span class="arch-node">Express API</span>
-              <span class="arch-arrow">&rarr;</span>
-              <span class="arch-node">AI Agent</span>
-              <span class="arch-arrow">&rarr;</span>
-              <span class="arch-node">PostgreSQL</span>
-            </div>
             <div class="proj-tech-stack">
               <span class="proj-tech-pill">Next.js</span>
-              <span class="proj-tech-pill">React</span>
-              <span class="proj-tech-pill">TypeScript</span>
               <span class="proj-tech-pill">Express</span>
-              <span class="proj-tech-pill">Prisma</span>
               <span class="proj-tech-pill">PostgreSQL</span>
               <span class="proj-tech-pill">AI Assistant</span>
             </div>
@@ -646,21 +634,11 @@
               <div class="proj-case-row"><span class="proj-case-key">How it's built</span><span
                   class="proj-case-val">Next.js, Prisma and PostgreSQL; 12 staff roles with permissions checked on the server, each property's data kept separate, and a full audit trail of every change.</span></div>
             </div>
-            <div class="proj-arch">
-              <span class="arch-node">Next.js</span>
-              <span class="arch-arrow">&rarr;</span>
-              <span class="arch-node">Server-side permissions</span>
-              <span class="arch-arrow">&rarr;</span>
-              <span class="arch-node">Prisma</span>
-              <span class="arch-arrow">&rarr;</span>
-              <span class="arch-node">PostgreSQL</span>
-            </div>
             <div class="proj-tech-stack">
               <span class="proj-tech-pill">Next.js</span>
-              <span class="proj-tech-pill">React</span>
               <span class="proj-tech-pill">TypeScript</span>
               <span class="proj-tech-pill">Prisma</span>
-              <span class="proj-tech-pill">GitHub Actions CI</span>
+              <span class="proj-tech-pill">PostgreSQL</span>
             </div>
             <div class="proj-actions">
               <a href="assets/case-studies/serene-management-case-study.pdf" target="_blank" rel="noopener" class="proj-link proj-link-primary">Read Case Study &rarr;</a>
@@ -688,20 +666,10 @@
               <div class="proj-case-row"><span class="proj-case-key">How it's built</span><span
                   class="proj-case-val">React front end, a TypeScript server route and Google's Gemini API, with streaming replies and automatic model fallback.</span></div>
             </div>
-            <div class="proj-arch">
-              <span class="arch-node">React</span>
-              <span class="arch-arrow">&rarr;</span>
-              <span class="arch-node">Server route</span>
-              <span class="arch-arrow">&rarr;</span>
-              <span class="arch-node">Gemini API (streaming)</span>
-              <span class="arch-arrow">&rarr;</span>
-              <span class="arch-node">Fallback model</span>
-            </div>
             <div class="proj-tech-stack">
-              <span class="proj-tech-pill">TypeScript</span>
               <span class="proj-tech-pill">React</span>
+              <span class="proj-tech-pill">TypeScript</span>
               <span class="proj-tech-pill">Gemini API</span>
-              <span class="proj-tech-pill">Streaming</span>
               <span class="proj-tech-pill">LLM Integration</span>
             </div>
             <div class="proj-actions">
@@ -733,25 +701,11 @@
               <div class="proj-case-row"><span class="proj-case-key">How it's built</span><span
                   class="proj-case-val">Hybrid search (pgvector plus PostgreSQL full-text) with reranking and page-level citations; FastAPI, Next.js and an automated evaluation gate on GitHub Actions.</span></div>
             </div>
-            <div class="proj-arch">
-              <span class="arch-node">Next.js</span>
-              <span class="arch-arrow">&rarr;</span>
-              <span class="arch-node">FastAPI</span>
-              <span class="arch-arrow">&rarr;</span>
-              <span class="arch-node">Hybrid retrieval</span>
-              <span class="arch-arrow">&rarr;</span>
-              <span class="arch-node">Reranker</span>
-              <span class="arch-arrow">&rarr;</span>
-              <span class="arch-node">Cited answer</span>
-            </div>
             <div class="proj-tech-stack">
               <span class="proj-tech-pill">Python</span>
               <span class="proj-tech-pill">FastAPI</span>
-              <span class="proj-tech-pill">PostgreSQL</span>
               <span class="proj-tech-pill">pgvector</span>
-              <span class="proj-tech-pill">Redis</span>
               <span class="proj-tech-pill">Next.js</span>
-              <span class="proj-tech-pill">GitHub Actions</span>
             </div>
             <div class="proj-actions">
               <a href="https://github.com/syedasjadabbas/intelligence-os" target="_blank" class="proj-link proj-link-primary">GITHUB &#8599;</a>
@@ -766,7 +720,7 @@
         <h3 class="s-title reveal" style="font-size: clamp(1.6rem, 3vw, 2.2rem); margin-bottom: 0.75rem;">Additional <em>Work</em></h3>
         <p class="s-sub reveal" style="margin-bottom: 0;">Selected web applications, client websites and earlier projects.</p>
 
-        <div class="more-work-grid">
+        <div class="more-work-grid" id="more-work-grid">
           <!-- Additional 1: Serene Heights Nathia Gali -->
           <div class="more-work-card reveal">
             <div class="more-work-top">
@@ -782,9 +736,6 @@
                 <span class="proj-tech-pill">TypeScript</span>
                 <span class="proj-tech-pill">Vite</span>
                 <span class="proj-tech-pill">React Three Fiber</span>
-                <span class="proj-tech-pill">Three.js</span>
-                <span class="proj-tech-pill">GSAP</span>
-                <span class="proj-tech-pill">Lenis</span>
               </div>
               <div class="more-work-actions">
                 <a href="https://serene-nathiagali.vercel.app" target="_blank" class="proj-link proj-link-primary">Live Site &#8599;</a>
@@ -792,7 +743,107 @@
             </div>
           </div>
 
-          <!-- Additional 2: TuneBox -->
+          <!-- Additional 2: Inventory System -->
+          <div class="more-work-card reveal">
+            <div class="more-work-top">
+              <div class="more-work-meta">
+                <span class="proj-meta-label">OFFLINE-FIRST PWA</span>
+                <a href="https://github.com/syedasjadabbas/inventory-system" target="_blank" class="more-work-icon-link" aria-label="Inventory System on GitHub" title="GitHub Repository">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                  </svg>
+                </a>
+              </div>
+              <h4 class="more-work-title">Inventory System</h4>
+              <p class="more-work-desc">Stock and sales software for small shops that keeps working without internet and installs like an app.</p>
+            </div>
+            <div class="more-work-bottom">
+              <div class="proj-tech-stack">
+                <span class="proj-tech-pill">HTML5</span>
+                <span class="proj-tech-pill">CSS3</span>
+                <span class="proj-tech-pill">JavaScript</span>
+                <span class="proj-tech-pill">IndexedDB</span>
+              </div>
+              <div class="more-work-actions">
+                <a href="https://github.com/syedasjadabbas/inventory-system" target="_blank" class="proj-link proj-link-primary">GitHub &#8599;</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Additional 3: EduCart -->
+          <div class="more-work-card reveal">
+            <div class="more-work-top">
+              <div class="more-work-meta">
+                <span class="proj-meta-label">Academic Project</span>
+                <a href="https://github.com/syedasjadabbas/EduCart" target="_blank" class="more-work-icon-link" aria-label="EduCart on GitHub" title="GitHub Repository">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                  </svg>
+                </a>
+              </div>
+              <h4 class="more-work-title">EduCart</h4>
+              <p class="more-work-desc">An online shop for students, with secure login, PayPal checkout and a dashboard for the store owner.</p>
+            </div>
+            <div class="more-work-bottom">
+              <div class="proj-tech-stack">
+                <span class="proj-tech-pill">React.js</span>
+                <span class="proj-tech-pill">Node.js</span>
+                <span class="proj-tech-pill">Express</span>
+                <span class="proj-tech-pill">MongoDB</span>
+              </div>
+              <div class="more-work-actions">
+                <a href="case-study/educart/" class="proj-link proj-link-primary">Read Case Study &rarr;</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Additional 4: Salon CRM -->
+          <div class="more-work-card reveal">
+            <div class="more-work-top">
+              <div class="more-work-meta">
+                <span class="proj-meta-label">CLIENT PROJECT · PROTOTYPE</span>
+              </div>
+              <h4 class="more-work-title">Salon CRM</h4>
+              <p class="more-work-desc">A clickable prototype of salon management software (appointments, clients and services across 14 modules), built for the client to review before full development.</p>
+            </div>
+            <div class="more-work-bottom">
+              <div class="proj-tech-stack">
+                <span class="proj-tech-pill">React</span>
+                <span class="proj-tech-pill">TypeScript</span>
+                <span class="proj-tech-pill">Tailwind CSS</span>
+                <span class="proj-tech-pill">Vite</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Additional 5: KitabGhar Digital -->
+          <div class="more-work-card reveal">
+            <div class="more-work-top">
+              <div class="more-work-meta">
+                <span class="proj-meta-label">WEB PLATFORM</span>
+                <a href="https://github.com/syedasjadabbas/Kitaab-Ghar" target="_blank" class="more-work-icon-link" aria-label="KitabGhar Digital on GitHub" title="GitHub Repository">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                  </svg>
+                </a>
+              </div>
+              <h4 class="more-work-title">KitabGhar Digital</h4>
+              <p class="more-work-desc">An online Urdu bookstore with a built-in reader and audiobook player.</p>
+            </div>
+            <div class="more-work-bottom">
+              <div class="proj-tech-stack">
+                <span class="proj-tech-pill">React</span>
+                <span class="proj-tech-pill">Tailwind CSS</span>
+                <span class="proj-tech-pill">Vite</span>
+                <span class="proj-tech-pill">REST API</span>
+              </div>
+              <div class="more-work-actions">
+                <a href="https://github.com/syedasjadabbas/Kitaab-Ghar" target="_blank" class="proj-link proj-link-primary">GitHub &#8599;</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Additional 6: TuneBox -->
           <div class="more-work-card reveal">
             <div class="more-work-top">
               <div class="more-work-meta">
@@ -820,288 +871,181 @@
             </div>
           </div>
 
-          <!-- Additional 3: EduCart -->
-          <div class="more-work-card reveal">
-            <div class="more-work-top">
-              <div class="more-work-meta">
-                <span class="proj-meta-label">Academic Project</span>
-                <a href="https://github.com/syedasjadabbas/EduCart" target="_blank" class="more-work-icon-link" aria-label="EduCart on GitHub" title="GitHub Repository">
-                  <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
-                    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
-                  </svg>
-                </a>
+          <div id="more-work-extra" class="more-work-extra" hidden>
+            <!-- Additional 7: Gym Management System -->
+            <div class="more-work-card reveal">
+              <div class="more-work-top">
+                <div class="more-work-meta">
+                  <span class="proj-meta-label">Academic Project</span>
+                  <a href="https://github.com/syedasjadabbas/Gym-Management-System" target="_blank" class="more-work-icon-link" aria-label="GitHub Repository" title="GitHub Repository">
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                      <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                    </svg>
+                  </a>
+                </div>
+                <h4 class="more-work-title">Gym Management System</h4>
+                <p class="more-work-desc">Desktop software for running a gym: members, payments, body measurements and an in-house store.</p>
               </div>
-              <h4 class="more-work-title">EduCart</h4>
-              <p class="more-work-desc">An online shop for students, with secure login, PayPal checkout and a dashboard for the store owner.</p>
+              <div class="more-work-bottom">
+                <div class="proj-tech-stack">
+                  <span class="proj-tech-pill">C#</span>
+                  <span class="proj-tech-pill">Windows Forms</span>
+                  <span class="proj-tech-pill">SQL Server</span>
+                </div>
+                <div class="more-work-actions">
+                  <a href="case-study/gym-system/" class="proj-link proj-link-primary">Read Case Study &rarr;</a>
+                  <a href="https://github.com/syedasjadabbas/Gym-Management-System" target="_blank" class="proj-link">GitHub &#8599;</a>
+                </div>
+              </div>
             </div>
-            <div class="more-work-bottom">
-              <div class="proj-tech-stack">
-                <span class="proj-tech-pill">React.js</span>
-                <span class="proj-tech-pill">Node.js</span>
-                <span class="proj-tech-pill">Express</span>
-                <span class="proj-tech-pill">MongoDB</span>
-                <span class="proj-tech-pill">JWT</span>
-                <span class="proj-tech-pill">Tailwind CSS</span>
-              </div>
-              <div class="more-work-actions">
-                <a href="case-study/educart/" class="proj-link proj-link-primary">Read Case Study &rarr;</a>
-              </div>
-            </div>
-          </div>
 
-          <!-- Additional 4: Gym Management System -->
-          <div class="more-work-card reveal">
-            <div class="more-work-top">
-              <div class="more-work-meta">
-                <span class="proj-meta-label">Academic Project</span>
-                <a href="https://github.com/syedasjadabbas/Gym-Management-System" target="_blank" class="more-work-icon-link" aria-label="GitHub Repository" title="GitHub Repository">
-                  <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
-                    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
-                  </svg>
-                </a>
+            <!-- Additional 8: FrameGrill -->
+            <div class="more-work-card reveal">
+              <div class="more-work-top">
+                <div class="more-work-meta">
+                  <span class="proj-meta-label">Commercial Website</span>
+                  <a href="https://github.com/syedasjadabbas/framegrill-restaurant-website" target="_blank" class="more-work-icon-link" aria-label="FrameGrill on GitHub" title="GitHub Repository">
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                      <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                    </svg>
+                  </a>
+                </div>
+                <h4 class="more-work-title">FrameGrill</h4>
+                <p class="more-work-desc">A restaurant website with a browsable menu, a cart and ordering through WhatsApp.</p>
               </div>
-              <h4 class="more-work-title">Gym Management System</h4>
-              <p class="more-work-desc">Desktop software for running a gym: members, payments, body measurements and an in-house store.</p>
+              <div class="more-work-bottom">
+                <div class="proj-tech-stack">
+                  <span class="proj-tech-pill">React</span>
+                  <span class="proj-tech-pill">Tailwind CSS</span>
+                  <span class="proj-tech-pill">Vite</span>
+                  <span class="proj-tech-pill">Express</span>
+                </div>
+                <div class="more-work-actions">
+                  <a href="case-study/framegrill/" class="proj-link proj-link-primary">Read Case Study &rarr;</a>
+                </div>
+              </div>
             </div>
-            <div class="more-work-bottom">
-              <div class="proj-tech-stack">
-                <span class="proj-tech-pill">C#</span>
-                <span class="proj-tech-pill">Windows Forms</span>
-                <span class="proj-tech-pill">SQL Server</span>
-              </div>
-              <div class="more-work-actions">
-                <a href="case-study/gym-system/" class="proj-link proj-link-primary">Read Case Study &rarr;</a>
-                <a href="https://github.com/syedasjadabbas/Gym-Management-System" target="_blank" class="proj-link">GitHub &#8599;</a>
-              </div>
-            </div>
-          </div>
 
-          <!-- Additional 5: FrameGrill -->
-          <div class="more-work-card reveal">
-            <div class="more-work-top">
-              <div class="more-work-meta">
-                <span class="proj-meta-label">Commercial Website</span>
-                <a href="https://github.com/syedasjadabbas/framegrill-restaurant-website" target="_blank" class="more-work-icon-link" aria-label="FrameGrill on GitHub" title="GitHub Repository">
-                  <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
-                    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
-                  </svg>
-                </a>
+            <!-- Additional 9: Serene Vantage -->
+            <div class="more-work-card reveal">
+              <div class="more-work-top">
+                <div class="more-work-meta">
+                  <span class="proj-meta-label">Corporate Platform</span>
+                </div>
+                <h4 class="more-work-title">Serene Vantage</h4>
+                <p class="more-work-desc">Corporate website for a development group working across technology, energy and property.</p>
               </div>
-              <h4 class="more-work-title">FrameGrill</h4>
-              <p class="more-work-desc">A restaurant website with a browsable menu, a cart and ordering through WhatsApp.</p>
-            </div>
-            <div class="more-work-bottom">
-              <div class="proj-tech-stack">
-                <span class="proj-tech-pill">React</span>
-                <span class="proj-tech-pill">Tailwind CSS</span>
-                <span class="proj-tech-pill">Vite</span>
-                <span class="proj-tech-pill">Express</span>
-                <span class="proj-tech-pill">MongoDB</span>
-              </div>
-              <div class="more-work-actions">
-                <a href="case-study/framegrill/" class="proj-link proj-link-primary">Read Case Study &rarr;</a>
+              <div class="more-work-bottom">
+                <div class="proj-tech-stack">
+                  <span class="proj-tech-pill">Next.js 15</span>
+                  <span class="proj-tech-pill">React 19</span>
+                  <span class="proj-tech-pill">TypeScript</span>
+                  <span class="proj-tech-pill">Tailwind CSS</span>
+                </div>
+                <div class="more-work-actions">
+                  <a href="case-study/serene-vantage/" class="proj-link proj-link-primary">Read Case Study &rarr;</a>
+                </div>
               </div>
             </div>
-          </div>
 
-          <!-- Additional 6: Serene Vantage -->
-          <div class="more-work-card reveal">
-            <div class="more-work-top">
-              <div class="more-work-meta">
-                <span class="proj-meta-label">Corporate Platform</span>
+            <!-- Additional 10: Italian Construction Website -->
+            <div class="more-work-card reveal">
+              <div class="more-work-top">
+                <div class="more-work-meta">
+                  <span class="proj-meta-label">Commercial Website</span>
+                  <a href="https://github.com/syedasjadabbas/italian-construction-website" target="_blank" class="more-work-icon-link" aria-label="Italian Construction Website on GitHub" title="GitHub Repository">
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                      <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                    </svg>
+                  </a>
+                </div>
+                <h4 class="more-work-title">Italian Construction Website</h4>
+                <p class="more-work-desc">A premium website for a construction company, built to show its projects and turn visitors into enquiries.</p>
               </div>
-              <h4 class="more-work-title">Serene Vantage</h4>
-              <p class="more-work-desc">Corporate website for a development group working across technology, energy and property.</p>
+              <div class="more-work-bottom">
+                <div class="proj-tech-stack">
+                  <span class="proj-tech-pill">React</span>
+                  <span class="proj-tech-pill">TypeScript</span>
+                  <span class="proj-tech-pill">Tailwind CSS</span>
+                  <span class="proj-tech-pill">Framer Motion</span>
+                </div>
+                <div class="more-work-actions">
+                  <a href="case-study/italian-construction/" class="proj-link proj-link-primary">Read Case Study &rarr;</a>
+                </div>
+              </div>
             </div>
-            <div class="more-work-bottom">
-              <div class="proj-tech-stack">
-                <span class="proj-tech-pill">Next.js 15</span>
-                <span class="proj-tech-pill">React 19</span>
-                <span class="proj-tech-pill">TypeScript</span>
-                <span class="proj-tech-pill">Tailwind CSS</span>
-                <span class="proj-tech-pill">Framer Motion</span>
-              </div>
-              <div class="more-work-actions">
-                <a href="case-study/serene-vantage/" class="proj-link proj-link-primary">Read Case Study &rarr;</a>
-              </div>
-            </div>
-          </div>
 
-          <!-- Additional 8: Italian Construction Website -->
-          <div class="more-work-card reveal">
-            <div class="more-work-top">
-              <div class="more-work-meta">
-                <span class="proj-meta-label">Commercial Website</span>
-                <a href="https://github.com/syedasjadabbas/italian-construction-website" target="_blank" class="more-work-icon-link" aria-label="Italian Construction Website on GitHub" title="GitHub Repository">
-                  <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
-                    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
-                  </svg>
-                </a>
+            <!-- Additional 11: Serene Heights Lahore -->
+            <div class="more-work-card reveal">
+              <div class="more-work-top">
+                <div class="more-work-meta">
+                  <span class="proj-meta-label">CLIENT WEBSITE</span>
+                </div>
+                <h4 class="more-work-title">Serene Heights Lahore</h4>
+                <p class="more-work-desc">A real estate website with smooth scroll-driven storytelling and a spam-protected enquiry form.</p>
               </div>
-              <h4 class="more-work-title">Italian Construction Website</h4>
-              <p class="more-work-desc">A premium website for a construction company, built to show its projects and turn visitors into enquiries.</p>
-            </div>
-            <div class="more-work-bottom">
-              <div class="proj-tech-stack">
-                <span class="proj-tech-pill">React</span>
-                <span class="proj-tech-pill">TypeScript</span>
-                <span class="proj-tech-pill">Tailwind CSS</span>
-                <span class="proj-tech-pill">Framer Motion</span>
-                <span class="proj-tech-pill">Vite</span>
-              </div>
-              <div class="more-work-actions">
-                <a href="case-study/italian-construction/" class="proj-link proj-link-primary">Read Case Study &rarr;</a>
+              <div class="more-work-bottom">
+                <div class="proj-tech-stack">
+                  <span class="proj-tech-pill">Next.js 16</span>
+                  <span class="proj-tech-pill">React 19</span>
+                  <span class="proj-tech-pill">TypeScript</span>
+                  <span class="proj-tech-pill">GSAP</span>
+                </div>
+                <div class="more-work-actions">
+                  <a href="https://serene-heights-lahore-five.vercel.app" target="_blank" class="proj-link proj-link-primary">Live Site &#8599;</a>
+                </div>
               </div>
             </div>
-          </div>
 
-          <!-- Additional 9: Inventory System -->
-          <div class="more-work-card reveal">
-            <div class="more-work-top">
-              <div class="more-work-meta">
-                <span class="proj-meta-label">OFFLINE-FIRST PWA</span>
-                <a href="https://github.com/syedasjadabbas/inventory-system" target="_blank" class="more-work-icon-link" aria-label="Inventory System on GitHub" title="GitHub Repository">
-                  <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
-                    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
-                  </svg>
-                </a>
+            <!-- Additional 12: VRTX Tradez -->
+            <div class="more-work-card reveal">
+              <div class="more-work-top">
+                <div class="more-work-meta">
+                  <span class="proj-meta-label">CLIENT WEBSITE</span>
+                </div>
+                <h4 class="more-work-title">VRTX Tradez</h4>
+                <p class="more-work-desc">A website for a gold-trading community and its 1-on-1 mentorship programme.</p>
               </div>
-              <h4 class="more-work-title">Inventory System</h4>
-              <p class="more-work-desc">Stock and sales software for small shops that keeps working without internet and installs like an app.</p>
-            </div>
-            <div class="more-work-bottom">
-              <div class="proj-tech-stack">
-                <span class="proj-tech-pill">HTML5</span>
-                <span class="proj-tech-pill">CSS3</span>
-                <span class="proj-tech-pill">JavaScript</span>
-                <span class="proj-tech-pill">IndexedDB</span>
-                <span class="proj-tech-pill">Service Worker</span>
-                <span class="proj-tech-pill">PWA</span>
-              </div>
-              <div class="more-work-actions">
-                <a href="https://github.com/syedasjadabbas/inventory-system" target="_blank" class="proj-link proj-link-primary">GitHub &#8599;</a>
+              <div class="more-work-bottom">
+                <div class="proj-tech-stack">
+                  <span class="proj-tech-pill">React</span>
+                  <span class="proj-tech-pill">TypeScript</span>
+                  <span class="proj-tech-pill">Vite</span>
+                  <span class="proj-tech-pill">CSS3</span>
+                </div>
+                <div class="more-work-actions">
+                  <a href="https://vrtx-tradez.vercel.app" target="_blank" class="proj-link proj-link-primary">Live Site &#8599;</a>
+                </div>
               </div>
             </div>
-          </div>
 
-          <!-- Additional 10: Kitaab-Ghar -->
-          <div class="more-work-card reveal">
-            <div class="more-work-top">
-              <div class="more-work-meta">
-                <span class="proj-meta-label">WEB PLATFORM</span>
-                <a href="https://github.com/syedasjadabbas/Kitaab-Ghar" target="_blank" class="more-work-icon-link" aria-label="KitabGhar Digital on GitHub" title="GitHub Repository">
-                  <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
-                    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
-                  </svg>
-                </a>
+            <!-- Additional 13: Zakia Batool Najafi -->
+            <div class="more-work-card reveal">
+              <div class="more-work-top">
+                <div class="more-work-meta">
+                  <span class="proj-meta-label">CLIENT WEBSITE</span>
+                </div>
+                <h4 class="more-work-title">Zakia Batool Najafi</h4>
+                <p class="more-work-desc">A personal website where students can learn about Zakia Batool Najafi and register for her paid live lectures.</p>
               </div>
-              <h4 class="more-work-title">KitabGhar Digital</h4>
-              <p class="more-work-desc">An online Urdu bookstore with a built-in reader and audiobook player.</p>
-            </div>
-            <div class="more-work-bottom">
-              <div class="proj-tech-stack">
-                <span class="proj-tech-pill">React</span>
-                <span class="proj-tech-pill">Tailwind CSS</span>
-                <span class="proj-tech-pill">Vite</span>
-                <span class="proj-tech-pill">REST API</span>
-              </div>
-              <div class="more-work-actions">
-                <a href="https://github.com/syedasjadabbas/Kitaab-Ghar" target="_blank" class="proj-link proj-link-primary">GitHub &#8599;</a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Additional 11: salon-CRM -->
-          <div class="more-work-card reveal">
-            <div class="more-work-top">
-              <div class="more-work-meta">
-                <span class="proj-meta-label">CLIENT PROJECT · PROTOTYPE</span>
-              </div>
-              <h4 class="more-work-title">Salon CRM</h4>
-              <p class="more-work-desc">A clickable prototype of salon management software (appointments, clients and services across 14 modules), built for the client to review before full development.</p>
-            </div>
-            <div class="more-work-bottom">
-              <div class="proj-tech-stack">
-                <span class="proj-tech-pill">React</span>
-                <span class="proj-tech-pill">TypeScript</span>
-                <span class="proj-tech-pill">Tailwind CSS</span>
-                <span class="proj-tech-pill">Vite</span>
-                <span class="proj-tech-pill">FullCalendar</span>
-                <span class="proj-tech-pill">shadcn/ui</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Additional 12: serene-heights-lahore -->
-          <div class="more-work-card reveal">
-            <div class="more-work-top">
-              <div class="more-work-meta">
-                <span class="proj-meta-label">CLIENT WEBSITE</span>
-              </div>
-              <h4 class="more-work-title">Serene Heights Lahore</h4>
-              <p class="more-work-desc">A real estate website with smooth scroll-driven storytelling and a spam-protected enquiry form.</p>
-            </div>
-            <div class="more-work-bottom">
-              <div class="proj-tech-stack">
-                <span class="proj-tech-pill">Next.js 16</span>
-                <span class="proj-tech-pill">React 19</span>
-                <span class="proj-tech-pill">TypeScript</span>
-                <span class="proj-tech-pill">GSAP</span>
-                <span class="proj-tech-pill">Lenis</span>
-                <span class="proj-tech-pill">Nodemailer</span>
-              </div>
-              <div class="more-work-actions">
-                <a href="https://serene-heights-lahore-five.vercel.app" target="_blank" class="proj-link proj-link-primary">Live Site &#8599;</a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Additional 13: vrtx-tradez -->
-          <div class="more-work-card reveal">
-            <div class="more-work-top">
-              <div class="more-work-meta">
-                <span class="proj-meta-label">CLIENT WEBSITE</span>
-              </div>
-              <h4 class="more-work-title">VRTX Tradez</h4>
-              <p class="more-work-desc">A website for a gold-trading community and its 1-on-1 mentorship programme.</p>
-            </div>
-            <div class="more-work-bottom">
-              <div class="proj-tech-stack">
-                <span class="proj-tech-pill">React</span>
-                <span class="proj-tech-pill">TypeScript</span>
-                <span class="proj-tech-pill">Vite</span>
-                <span class="proj-tech-pill">CSS3</span>
-              </div>
-              <div class="more-work-actions">
-                <a href="https://vrtx-tradez.vercel.app" target="_blank" class="proj-link proj-link-primary">Live Site &#8599;</a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Additional 14: zakia-najafi-portfolio -->
-          <div class="more-work-card reveal">
-            <div class="more-work-top">
-              <div class="more-work-meta">
-                <span class="proj-meta-label">CLIENT WEBSITE</span>
-              </div>
-              <h4 class="more-work-title">Zakia Batool Najafi</h4>
-              <p class="more-work-desc">A personal website where students can learn about Zakia Batool Najafi and register for her paid live lectures.</p>
-            </div>
-            <div class="more-work-bottom">
-              <div class="proj-tech-stack">
-                <span class="proj-tech-pill">Next.js 16</span>
-                <span class="proj-tech-pill">React</span>
-                <span class="proj-tech-pill">TypeScript</span>
-                <span class="proj-tech-pill">Tailwind CSS</span>
-                <span class="proj-tech-pill">PostgreSQL</span>
-                <span class="proj-tech-pill">Stripe</span>
-              </div>
-              <div class="more-work-actions">
-                <a href="https://zakia-najafi-portfolio.vercel.app" target="_blank" class="proj-link proj-link-primary">Live Site &#8599;</a>
+              <div class="more-work-bottom">
+                <div class="proj-tech-stack">
+                  <span class="proj-tech-pill">Next.js 16</span>
+                  <span class="proj-tech-pill">React</span>
+                  <span class="proj-tech-pill">TypeScript</span>
+                  <span class="proj-tech-pill">Tailwind CSS</span>
+                </div>
+                <div class="more-work-actions">
+                  <a href="https://zakia-najafi-portfolio.vercel.app" target="_blank" class="proj-link proj-link-primary">Live Site &#8599;</a>
+                </div>
               </div>
             </div>
           </div>
         </div>
+
+        <div class="more-work-btn-wrap" style="display: flex; justify-content: center; margin-top: 2.5rem;">
+          <button type="button" class="proj-link more-work-btn" id="more-work-toggle" aria-expanded="false" aria-controls="more-work-extra">Show all projects (13)</button>
+        </div></div>
       </div>
     </div>
   </section>
@@ -1207,46 +1151,7 @@
     </div>
   </section>
 
-  <section id="achievements">
-    <div class="container">
-      <div class="s-label reveal">At a Glance</div>
-      <div class="glance-grid">
-        <!-- LEFT COLUMN — "By the Numbers" -->
-        <div class="glance-col-left reveal">
-          <h3 class="glance-subtitle">By the Numbers</h3>
-          <div class="stats-grid">
-            <div class="stats-item">
-              <div class="stats-num">3</div>
-              <div class="stats-lbl">AI models working together in MockAI to judge an interview: words, voice and face</div>
-            </div>
-            <div class="stats-item">
-              <div class="stats-num">7.7&times;</div>
-              <div class="stats-lbl">More traffic ZePlay handled after optimisation, tested with 500 simultaneous users</div>
-            </div>
-            <div class="stats-item">
-              <div class="stats-num">0.97</div>
-              <div class="stats-lbl">Intelligence OS finds the right source in its top 5 results 97% of the time (50-question test)</div>
-            </div>
-            <div class="stats-item">
-              <div class="stats-num">2</div>
-              <div class="stats-lbl">Companies founded or co-founded (Zeploy Tech · 100 Se Support)</div>
-            </div>
-          </div>
-        </div>
-        <!-- RIGHT COLUMN — "Currently Building" -->
-        <div class="glance-col-right reveal">
-          <h3 class="glance-subtitle">Currently Building</h3>
-          <div class="glance-card">
-            <div class="glance-card-header">
-              <h4 class="glance-card-title">What's Next</h4>
-              <span class="pulse-dot" title="Active development"></span>
-            </div>
-            <p class="glance-card-body">Intelligence OS is in active development; a full case study will follow once it reaches production.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+
 
   <!--
     TODO(Asjad): only restore reviews written by real, named people who approved publication. Do not restore any of the previous reviews unless confirmed real.
