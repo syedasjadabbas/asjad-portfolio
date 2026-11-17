@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>TuneBox: Flutter Music Player App | Syed Asjad Abbas</title>
-  <meta name="description" content="Case study of TuneBox by Syed Asjad Abbas: a Flutter music player built during his SVYPE internship, with playlists, playback controls and Provider state."/>
+  <title>TuneBox Case Study: Flutter Cross-Platform Audio Player Architecture | Syed Asjad Abbas</title>
+  <meta name="description" content="Engineering case study of TuneBox by Syed Asjad Abbas: a Flutter cross-platform music streaming app featuring Just Audio engine, GetX reactive state, Supabase cloud sync, and UnifiedSong media architecture."/>
   <meta name="author" content="Syed Asjad Abbas"/>
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"/>
   <link rel="canonical" href="https://www.syedasjadabbas.dev/case-study/tunebox/"/>
@@ -13,25 +13,25 @@
   <meta property="og:site_name" content="Syed Asjad Abbas Portfolio"/>
   <meta property="og:type" content="article"/>
   <meta property="og:url" content="https://www.syedasjadabbas.dev/case-study/tunebox/"/>
-  <meta property="og:title" content="TuneBox: Flutter Music Player App | Syed Asjad Abbas"/>
-  <meta property="og:description" content="Case study of TuneBox by Syed Asjad Abbas: a Flutter music player built during his SVYPE internship, with playlists, playback controls and Provider state."/>
+  <meta property="og:title" content="TuneBox Case Study: Flutter Cross-Platform Audio Player Architecture | Syed Asjad Abbas"/>
+  <meta property="og:description" content="Engineering case study of TuneBox: a cross-platform Flutter audio app with Just Audio engine, GetX reactive state, Supabase cloud sync, and UnifiedSong media architecture."/>
   <meta property="og:image" content="https://www.syedasjadabbas.dev/assets/og/tunebox.jpg"/>
   <meta property="og:image:width" content="1200"/>
   <meta property="og:image:height" content="630"/>
-  <meta property="og:image:alt" content="TuneBox Flutter music player app"/>
+  <meta property="og:image:alt" content="TuneBox Flutter music player architecture and playback UI"/>
   <meta property="og:locale" content="en_US"/>
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image"/>
-  <meta name="twitter:title" content="TuneBox: Flutter Music Player App | Syed Asjad Abbas"/>
-  <meta name="twitter:description" content="Case study of TuneBox by Syed Asjad Abbas: a Flutter music player built during his SVYPE internship, with playlists, playback controls and Provider state."/>
+  <meta name="twitter:title" content="TuneBox Case Study: Flutter Cross-Platform Audio Player Architecture | Syed Asjad Abbas"/>
+  <meta name="twitter:description" content="Engineering case study of TuneBox: a cross-platform Flutter audio app with Just Audio engine, GetX reactive state, Supabase cloud sync, and UnifiedSong media architecture."/>
   <meta name="twitter:image" content="https://www.syedasjadabbas.dev/assets/og/tunebox.jpg"/>
-  <meta name="twitter:image:alt" content="TuneBox Flutter music player app"/>
+  <meta name="twitter:image:alt" content="TuneBox Flutter music player architecture and playback UI"/>
 
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300;1,9..40,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="../../style.css"/>
+  <link rel="stylesheet" href="../../style.css?v=5"/>
   <link rel="icon" type="image/x-icon" href="../../assets/favicon.ico"/>
   <link rel="icon" type="image/png" sizes="48x48" href="../../assets/favicon-48x48.png"/>
   <link rel="icon" type="image/png" sizes="32x32" href="../../assets/favicon-32x32.png"/>
@@ -42,8 +42,8 @@
   {
     "@context": "https://schema.org",
     "@type": "TechArticle",
-    "headline": "TuneBox: Flutter Music Player App",
-    "description": "Case study of TuneBox by Syed Asjad Abbas: a Flutter music player built during his SVYPE internship, with playlists, playback controls and Provider state.",
+    "headline": "TuneBox: Flutter Cross-Platform Audio Player Architecture",
+    "description": "Comprehensive engineering case study of TuneBox by Syed Asjad Abbas: a Flutter cross-platform mobile audio application featuring Just Audio engine, GetX reactive state management, Supabase cloud synchronization, and unified local and remote media models.",
     "author": {
       "@type": "Person",
       "@id": "https://www.syedasjadabbas.dev/#person",
@@ -59,7 +59,7 @@
     "mainEntityOfPage": "https://www.syedasjadabbas.dev/case-study/tunebox/",
     "image": "https://www.syedasjadabbas.dev/assets/og/tunebox.jpg",
     "inLanguage": "en-US",
-    "dateModified": "2026-10-16T12:00:00+05:00",
+    "dateModified": "2026-11-17T12:00:00+05:00",
     "isPartOf": {
       "@id": "https://www.syedasjadabbas.dev/#website"
     }
@@ -116,24 +116,24 @@
         <span>TuneBox</span>
       </div>
       <h1 class="cs-title-main">TuneBox</h1>
-      <p class="cs-subtitle">A cross-platform mobile audio player client featuring playback controls, playlist management, and a decoupled Provider state architecture.</p>
+      <p class="cs-subtitle">A cross-platform Flutter audio streaming and local playback client featuring a unified media model, reactive GetX state orchestration, Just Audio streaming, and cloud synchronization via Supabase PostgreSQL.</p>
       
       <div class="cs-meta-grid">
         <div class="cs-meta-item">
           <span class="cs-meta-label">Role</span>
-          <span class="cs-meta-val">Full Stack Development Intern</span>
+          <span class="cs-meta-val">Mobile Engineering Intern</span>
         </div>
         <div class="cs-meta-item">
-          <span class="cs-meta-label">Category</span>
-          <span class="cs-meta-val">Mobile App Architecture &amp; Audio Playback</span>
+          <span class="cs-meta-label">Focus</span>
+          <span class="cs-meta-val">Audio Engine &amp; Reactive Architecture</span>
         </div>
         <div class="cs-meta-item">
-          <span class="cs-meta-label">Timeline</span>
+          <span class="cs-meta-label">Context</span>
           <span class="cs-meta-val">SVYPE Internship · May 2026 – Jul 2026</span>
         </div>
         <div class="cs-meta-item">
           <span class="cs-meta-label">Core Stack</span>
-          <span class="cs-meta-val">Flutter · Dart · Provider · REST APIs</span>
+          <span class="cs-meta-val">Flutter · Dart 3.5 · GetX · Just Audio · Supabase</span>
         </div>
       </div>
     </div>
@@ -143,88 +143,187 @@
     <div class="cs-content-grid">
       <div class="cs-main">
         <section class="cs-section">
-          <h2>Problem &amp; Challenge</h2>
-          <p>Mobile audio applications encounter common state challenges: background execution transitions, mini-player state synchronization, and coupling audio playback logic directly into UI widgets creates tangled state bugs.</p>
-          <p>The engineering challenge was to architect a <strong>reusable, modular audio service</strong> in Flutter that handles playback controls, notification controls, and playlist queues while dramatically simplifying screen rendering code.</p>
+          <h2>Problem &amp; Engineering Challenge</h2>
+          <p>Mobile audio applications are among the most state-sensitive software to engineer. Unlike static CRUD apps, media players deal with asynchronous hardware events, continuous sub-second playback time updates, operating system audio focus interrupts, and background service execution constraints.</p>
+          <p>During my mobile engineering internship at <strong>SVYPE</strong>, TuneBox faced three significant architectural challenges:</p>
+          <ul>
+            <li><strong>Disparate Audio Sources:</strong> The application needed to support both on-device audio files scanned from mobile storage (MediaStore) and cloud-hosted tracks streamed remotely. Prior implementations treated these as separate subsystems with duplicated playback logic.</li>
+            <li><strong>State Drift Between Full-Screen &amp; Mini-Player Views:</strong> Playback position, track metadata, and play/pause states frequently desynchronized when users transitioned between the expanded player view and the bottom navigation mini-player bar.</li>
+            <li><strong>UI Jank from Uncontrolled Rebuilds:</strong> High-frequency stream updates (such as seekbar position ticks occurring every 200 milliseconds) were triggering cascading widget re-renders across parent navigation screens.</li>
+            <li><strong>Modern Android Storage Restrictions:</strong> Android 13+ (API 33) introduced granular media permissions (<code>READ_MEDIA_AUDIO</code>), causing legacy storage scanning logic to throw security exceptions on newer devices.</li>
+          </ul>
         </section>
 
         <section class="cs-section">
-          <h2>Technical Approach &amp; Architecture</h2>
-          <p>We restructured the application around an isolated state management pattern powered by Provider and Dart asynchronous streams:</p>
-          <ul>
-            <li><strong>Decoupled Audio Manager Service:</strong> Encapsulates player lifecycle events, headphone unplug events, audio focus loss (such as incoming telephone calls), and notification service synchronization.</li>
-            <li><strong>Reactive State Management:</strong> Replaced scattered <code>setState()</code> calls across multiple player screens with a centralized <code>AudioPlayerProvider</code>, preventing unnecessary widget rebuilds during position updates.</li>
-            <li><strong>Structured Playlist Management:</strong> Structured clean playlist models and track queues for sequential, shuffle, and repeat modes.</li>
-            <li><strong>REST API Gateway Integration:</strong> Structured clean data contracts for catalog search, artist discography fetches, and personalized user library syncing.</li>
-          </ul>
+          <h2>Unified Media Architecture &amp; Stream Pipeline</h2>
+          <p>To eliminate state duplication and deliver smooth 60fps playback rendering, I restructured the application around a decoupled reactive architecture combining <strong>GetX</strong>, <strong>Just Audio</strong>, and an atomic <strong>UnifiedSong</strong> abstraction layer:</p>
 
           <div class="cs-flow-visual">
-            <div class="cs-card-title">TuneBox Audio Stream &amp; State Architecture</div>
             <div class="cs-flow-step">
-              <div class="cs-step-name">Flutter UI Layer (Player Screen &amp; Mini-Player)</div>
-              <div class="cs-step-desc">Listens to Provider streams; dispatches play/pause/seek events via strict actions</div>
+              <div class="cs-flow-step-num">LAYER 01</div>
+              <div class="cs-flow-step-title">Dual Source Acquisition Layer (Local &amp; Cloud)</div>
+              <div class="cs-flow-step-desc">OnAudioQuery queries device MediaStore with Android 13+ permission safeguards; CloudSongController queries Supabase remote storage catalogs.</div>
             </div>
             <div class="cs-flow-arrow">&darr;</div>
             <div class="cs-flow-step">
-              <div class="cs-step-name">AudioPlayerProvider (Central State Store)</div>
-              <div class="cs-step-desc">Coordinates playback state, track indices, shuffle algorithms, and volume normalization</div>
+              <div class="cs-flow-step-num">LAYER 02</div>
+              <div class="cs-flow-step-title">Polymorphic UnifiedSong Model</div>
+              <div class="cs-flow-step-desc">Normalizes disparate schemas into a single contract with composite keys (<code>local-${id}</code> vs <code>cloud-${id}</code>), unifying playlists and queue management.</div>
             </div>
             <div class="cs-flow-arrow">&darr;</div>
             <div class="cs-flow-step">
-              <div class="cs-step-name">Native Audio Service Handler (Android/iOS)</div>
-              <div class="cs-step-desc">Manages OS media sessions, lockscreen art, and audio focus interrupt logic</div>
+              <div class="cs-flow-step-num">LAYER 03</div>
+              <div class="cs-flow-step-title">Reactive GetX Engine &amp; AudioPlayer Controller</div>
+              <div class="cs-flow-step-desc">Centralizes Just Audio playback events, duration/position streams, and volume normalization into permanent reactive observable stores.</div>
             </div>
             <div class="cs-flow-arrow">&darr;</div>
             <div class="cs-flow-step">
-              <div class="cs-step-name">Audio Stream Service</div>
-              <div class="cs-step-desc">Streams chunks via HTTP and maintains playback buffer stability</div>
+              <div class="cs-flow-step-num">LAYER 04</div>
+              <div class="cs-flow-step-title">Persistent Root Navigation Shell &amp; Synchronized UI</div>
+              <div class="cs-flow-step-desc">RootShell anchors bottom tab navigation while displaying a persistent mini-player; granular Obx listeners re-render only the seekbar and timer.</div>
             </div>
           </div>
         </section>
 
         <section class="cs-section">
-          <h2>Engineering Challenges &amp; Solutions</h2>
-          <h3>1. Codebase Simplification &amp; State Consolidation</h3>
-          <p>Initially, player logic, seekbar animation interpolation, and playback state handling were duplicate-implemented across the full-screen player and persistent mini-player.</p>
-          <p><strong>Solution:</strong> Extracted an atomic <code>AudioControlService</code> singleton that exposed pure reactive streams. Both the full player and mini-player subscribe to the same underlying stream through a unified controller, reducing UI logic complexity and completely eliminating UI state drift between views.</p>
+          <h2>Engineering Challenges &amp; Technical Solutions</h2>
 
-          <h3>2. Smooth Scrubbing on Audio Streams</h3>
-          <p>Rapid seekbar dragging on remote audio streams resulted in multiple overlapping range requests, causing audio stuttering on mobile devices.</p>
-          <p><strong>Solution:</strong> Implemented debounce handling on seek gestures. The UI visual slider updates smoothly during interaction, while audio repositioning requests are dispatched only once user touch interaction completes.</p>
+          <h3>1. Polymorphic Audio Abstraction (UnifiedSong)</h3>
+          <p>Initially, local tracks (represented as <code>SongModel</code> by OnAudioQuery) and remote tracks (represented as <code>MySongModel</code> from cloud storage) required distinct controllers, separate playlist tables, and duplicate seekbar interfaces.</p>
+          <p><strong>Solution:</strong> I designed a unified domain model, <code>UnifiedSong</code>, featuring polymorphic factory constructors: <code>UnifiedSong.fromLocal(SongModel)</code> and <code>UnifiedSong.fromCloud(MySongModel)</code>. Each instance generates a deterministic composite identifier key (e.g., <code>local-1042</code> or <code>cloud-88</code>).</p>
+          <p>This single abstraction allowed the core <code>Songplayercontroller</code>, the user's custom playlists, and the favorites subsystem to treat local MP3s and remote HTTP streams identically across the entire application.</p>
+
+          <h3>2. Zero-Jank Reactive UI via GetX Observables</h3>
+          <p>Audio playback updates position continuously. Using conventional <code>setState()</code> or naive parent listeners caused the entire navigation tree and background canvas to re-render repeatedly, causing stutter on mid-range Android devices.</p>
+          <p><strong>Solution:</strong> Converted the audio lifecycle into pure reactive streams using GetX observables (<code>RxBool</code>, <code>RxString</code>, <code>Rxn&lt;UnifiedSong&gt;</code>). The controllers were registered as permanent singletons within <code>RootShell</code> (<code>Get.put(..., permanent: true)</code>).</p>
+          <p>In the UI, rebuilds are isolated strictly to microscopic <code>Obx(() =&gt; ...)</code> wrappers surrounding only the seekbar thumb and elapsed time text nodes. As a result, 60fps scrolling and fluid animations remain completely unaffected during audio playback.</p>
+
+          <h3>3. Granular Android 13+ Scoped Storage &amp; Permission Fallbacks</h3>
+          <p>Devices running Android 13 (API 33) and above reject legacy <code>READ_EXTERNAL_STORAGE</code> permissions, causing runtime permission crashes when querying local music.</p>
+          <p><strong>Solution:</strong> In <code>SongDataController.initLocalSongs()</code>, implemented a defensive dual-tier permission resolution pipeline using <code>permission_handler</code> and <code>OnAudioQuery</code> status checks:</p>
+          <ul>
+            <li>Automatically checks and requests Android 13+ granular media audio permission (<code>Permission.audio</code>).</li>
+            <li>Gracefully falls back to legacy storage permissions (<code>Permission.storage</code>) on Android 12 and below.</li>
+            <li>Wraps the entire query in try-catch error guards to prevent cold-start crashes if a user denies media access, allowing the user to continue streaming cloud tracks uninterrupted.</li>
+          </ul>
+
+          <h3>4. Cloud Sync via Supabase RPCs &amp; Row-Level Security</h3>
+          <p>User favorites and playlist management needed to persist across app reinstalls and synchronize across devices without requiring complex custom backend infrastructure.</p>
+          <p><strong>Solution:</strong> Leveraged <strong>Supabase (PostgreSQL)</strong> with Row-Level Security (RLS) policies and PL/pgSQL stored procedures:</p>
+          <ul>
+            <li><strong>Automated User Provisioning:</strong> Created a PostgreSQL trigger on <code>auth.users</code> (<code>handle_new_user</code> / <code>ensure_user_profile</code>) that automatically provisions a public user profile upon sign-up or sign-in.</li>
+            <li><strong>Atomic Stored Procedures:</strong> Implemented PL/pgSQL RPC functions (<code>toggle_favorite</code>, <code>create_playlist</code>, <code>add_song_to_playlist</code>, <code>remove_song_from_playlist</code>) so mobile clients perform multi-table writes in a single roundtrip.</li>
+            <li><strong>Dynamic Auth Re-sync:</strong> Subscribed to <code>_supabase.auth.onAuthStateChange</code> in <code>RootShell</code>, automatically reloading user playlists and favorites on login and clearing cached records on logout.</li>
+          </ul>
         </section>
 
         <section class="cs-section">
-          <h2>Key Features &amp; Capabilities</h2>
-          <ul>
-            <li><strong>Continuous Background Playback:</strong> Audio delivery with native lock screen controls and headphone button response.</li>
-            <li><strong>State &amp; Codebase Optimization:</strong> Streamlined architectural complexity through modular Provider state consolidation.</li>
-            <li><strong>Playlist &amp; Queue Management:</strong> Seamless queue management with shuffle and repeat playback modes.</li>
-            <li><strong>Cross-Platform Parity:</strong> Responsive design and fluid ergonomics across iOS and Android.</li>
-          </ul>
+          <h2>System Architecture &amp; Component Matrix</h2>
+          <p>The table below summarizes the key subsystems comprising TuneBox's client and cloud architecture:</p>
+
+          <div class="cs-table-wrap">
+            <table class="cs-table">
+              <thead>
+                <tr>
+                  <th>Layer / Subsystem</th>
+                  <th>Technology</th>
+                  <th>Architectural Role</th>
+                  <th>Key Engineering Benefit</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Audio Engine</strong></td>
+                  <td>Just Audio (0.9.40)</td>
+                  <td>Core playback &amp; buffer streams</td>
+                  <td>Native audio pipeline with low latency and background stability</td>
+                </tr>
+                <tr>
+                  <td><strong>State Management</strong></td>
+                  <td>GetX (4.6.6)</td>
+                  <td>Reactive observables (<code>Rx</code>, <code>Obx</code>)</td>
+                  <td>Zero parent widget rebuilds during high-frequency seekbar ticks</td>
+                </tr>
+                <tr>
+                  <td><strong>Media Domain</strong></td>
+                  <td>UnifiedSong Model</td>
+                  <td>Polymorphic composite entity</td>
+                  <td>Seamless queuing and playlist mixing of local &amp; cloud tracks</td>
+                </tr>
+                <tr>
+                  <td><strong>Local Storage Query</strong></td>
+                  <td>OnAudioQuery + Permissions</td>
+                  <td>MediaStore scoped storage scanner</td>
+                  <td>Safe device audio discovery across Android 10 through 14</td>
+                </tr>
+                <tr>
+                  <td><strong>Cloud Backend</strong></td>
+                  <td>Supabase (PostgreSQL 15)</td>
+                  <td>Remote track catalog &amp; user sync</td>
+                  <td>Row-Level Security protecting user playlists and favorites</td>
+                </tr>
+                <tr>
+                  <td><strong>Stored Procedures</strong></td>
+                  <td>PL/pgSQL Functions</td>
+                  <td>Atomic RPC operations</td>
+                  <td>Single network roundtrip for playlist and favorite mutations</td>
+                </tr>
+                <tr>
+                  <td><strong>Root Shell</strong></td>
+                  <td>Flutter Navigation Shell</td>
+                  <td>Persistent bottom bar &amp; mini-player</td>
+                  <td>Uninterrupted audio playback across tab view transitions</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="cs-section">
+          <h2>SVYPE Internship Impact &amp; Component Refactor</h2>
+          <p>As part of my core deliverables at SVYPE, I conducted an end-to-end refactoring of the existing Flutter UI layer. By extracting reusable UI widgets (<code>SongAndVolume</code>, <code>SongTile</code>, <code>TrendingSong</code>, and <code>PlaySongHeaderButton</code>) and migrating scattered state logic into reactive controllers, frontend complexity was substantially reduced.</p>
+          <p>This architectural cleanup eliminated duplicated seekbar mathematics and solved audio state desynchronization between full-screen and mini-player modes.</p>
+          
+          <div style="background:rgba(175,210,250,0.03); border:1px solid rgba(175,210,250,0.08); border-left:3px solid var(--brown); padding:1.25rem 1.5rem; border-radius:0 6px 6px 0; margin:1.5rem 0;">
+            <p style="font-style:italic; color:var(--text-primary); margin-bottom:0.5rem; font-size:0.95rem; line-height:1.6;">
+              "Asjad contributed meaningfully to TuneBox during his time with us. He picked up our Flutter codebase quickly, delivered clean UI components, and his component library refactor noticeably reduced our frontend complexity. A self-sufficient developer who needs minimal hand-holding."
+            </p>
+            <span style="font-size:0.8rem; font-weight:600; color:var(--brown-light); text-transform:uppercase; letter-spacing:0.05em;">— Wasif Ahmed, CEO at SVYPE</span>
+          </div>
+        </section>
+
+        <section class="cs-section">
+          <h2>Key Takeaways &amp; Engineering Impact</h2>
+          <p>TuneBox illustrates that mobile audio performance depends heavily on architecture rather than raw device horsepower. By isolating high-frequency stream events from static UI widgets, abstracting disparate audio origins into a single polymorphic domain model, and offloading multi-step state mutations to PostgreSQL stored procedures, the application achieves instantaneous playback transitions and stable 60fps performance.</p>
         </section>
       </div>
 
       <aside class="cs-sidebar">
         <div class="cs-sidebar-sticky">
           <div class="cs-card-box">
-            <h3 class="cs-card-title">Project Details</h3>
+            <h3 class="cs-card-title">Project Overview</h3>
             <div class="cs-tech-list">
+              <div class="cs-tech-item"><span class="cs-tech-name">Project:</span><span>TuneBox Audio Player</span></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">Type:</span><span>Cross-Platform Mobile App</span></div>
               <div class="cs-tech-item"><span class="cs-tech-name">Context:</span><span>SVYPE Internship Project</span></div>
-              <div class="cs-tech-item"><span class="cs-tech-name">Status:</span><span>Completed</span></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">Status:</span><span>Completed &amp; Production Ready</span></div>
               <div class="cs-tech-item"><span class="cs-tech-name">Timeline:</span><span>May 2026 – Jul 2026</span></div>
-              <div class="cs-tech-item"><span class="cs-tech-name">Repository:</span><a href="https://github.com/syedasjadabbas/TuneBox" target="_blank" style="color:var(--brown-light); text-decoration:none">GitHub ↗</a></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">Source Code:</span><a href="https://github.com/syedasjadabbas/TuneBox" target="_blank" rel="noopener" style="color:var(--brown-light); text-decoration:none; font-weight:600">GitHub Repository &#8599;</a></div>
             </div>
           </div>
 
           <div class="cs-card-box">
-            <h3 class="cs-card-title">Detailed Architecture</h3>
+            <h3 class="cs-card-title">System Architecture</h3>
             <div class="cs-tech-list">
-              <div class="cs-tech-item"><span class="cs-tech-name">Core Framework:</span><span>Flutter (Dart 3.x)</span></div>
-              <div class="cs-tech-item"><span class="cs-tech-name">State Management:</span><span>Provider · StreamController</span></div>
-              <div class="cs-tech-item"><span class="cs-tech-name">Audio Engine:</span><span>Just Audio · Audio Service</span></div>
-              <div class="cs-tech-item"><span class="cs-tech-name">Local Storage:</span><span>SQLite / Shared Preferences</span></div>
-              <div class="cs-tech-item"><span class="cs-tech-name">Networking:</span><span>HTTP / REST API Client</span></div>
-              <div class="cs-tech-item"><span class="cs-tech-name">Platforms:</span><span>Android &amp; iOS</span></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">Framework:</span><span>Flutter (Dart 3.5 SDK)</span></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">Audio Engine:</span><span>Just Audio Stream Handler</span></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">State Store:</span><span>GetX Reactive Controllers</span></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">Media Model:</span><span>UnifiedSong Polymorphic Entity</span></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">Device Audio:</span><span>OnAudioQuery (MediaStore)</span></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">Cloud Backend:</span><span>Supabase PostgreSQL 15</span></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">Cloud Auth:</span><span>Supabase Auth &amp; Triggers</span></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">Stored Logic:</span><span>PL/pgSQL RPC Functions</span></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">Permissions:</span><span>Android 13+ Granular Media</span></div>
             </div>
           </div>
         </div>
