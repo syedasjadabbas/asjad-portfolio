@@ -630,9 +630,9 @@
               <div class="proj-case-row"><span class="proj-case-key">What it does</span><span
                   class="proj-case-val">Software that runs a hotel's day: bookings, check-in, housekeeping, billing and the nightly closing of accounts, for one hotel or several.</span></div>
               <div class="proj-case-row"><span class="proj-case-key">Result</span><span
-                  class="proj-case-val">Guests can never be charged twice, and searches that took 8 seconds now take under half a second. Handles 50 requests per second with zero errors in testing.</span></div>
+                  class="proj-case-val">The database itself stops a room being booked twice for the same night, and money records can't be edited once saved: corrections are added as new entries. 1,152 automated tests check the system.</span></div>
               <div class="proj-case-row"><span class="proj-case-key">How it's built</span><span
-                  class="proj-case-val">Next.js, Prisma and PostgreSQL; 12 staff roles with permissions checked on the server, each property's data kept separate, and a full audit trail of every change.</span></div>
+                  class="proj-case-val">Express API and Next.js app sharing one set of validation rules, with Prisma and PostgreSQL. 13 staff role templates with 78 permissions checked on the server, each property's data kept separate, and live updates on staff screens.</span></div>
             </div>
             <div class="proj-tech-stack">
               <span class="proj-tech-pill">Next.js</span>

@@ -4,7 +4,7 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Serene Management: Hotel PMS Case Study | Syed Asjad Abbas</title>
-  <meta name="description" content="Case study of Serene Management by Syed Asjad Abbas: a multi-property hotel PMS with idempotent payments, a worker-run night audit and measured speedups."/>
+  <meta name="description" content="Case study of Serene Management by Syed Asjad Abbas: a multi-property hotel PMS with 13 staff role templates, 78 permissions, append-only ledgers and 1,152 automated tests."/>
   <meta name="author" content="Syed Asjad Abbas"/>
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"/>
   <link rel="canonical" href="https://www.syedasjadabbas.dev/case-study/serene-management/"/>
@@ -14,7 +14,7 @@
   <meta property="og:type" content="article"/>
   <meta property="og:url" content="https://www.syedasjadabbas.dev/case-study/serene-management/"/>
   <meta property="og:title" content="Serene Management: Hotel PMS Case Study | Syed Asjad Abbas"/>
-  <meta property="og:description" content="Case study of Serene Management by Syed Asjad Abbas: a multi-property hotel PMS with idempotent payments, a worker-run night audit and measured speedups."/>
+  <meta property="og:description" content="Case study of Serene Management by Syed Asjad Abbas: a multi-property hotel PMS with 13 staff role templates, 78 permissions, append-only ledgers and 1,152 automated tests."/>
   <meta property="og:image" content="https://www.syedasjadabbas.dev/assets/og/serene-management.jpg"/>
   <meta property="og:image:width" content="1200"/>
   <meta property="og:image:height" content="630"/>
@@ -24,14 +24,14 @@
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image"/>
   <meta name="twitter:title" content="Serene Management: Hotel PMS Case Study | Syed Asjad Abbas"/>
-  <meta name="twitter:description" content="Case study of Serene Management by Syed Asjad Abbas: a multi-property hotel PMS with idempotent payments, a worker-run night audit and measured speedups."/>
+  <meta name="twitter:description" content="Case study of Serene Management by Syed Asjad Abbas: a multi-property hotel PMS with 13 staff role templates, 78 permissions, append-only ledgers and 1,152 automated tests."/>
   <meta name="twitter:image" content="https://www.syedasjadabbas.dev/assets/og/serene-management.jpg"/>
   <meta name="twitter:image:alt" content="Serene Management hotel PMS dashboard and housekeeping board"/>
 
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300;1,9..40,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="../../style.css"/>
+  <link rel="stylesheet" href="../../style.css?v=5"/>
   <link rel="icon" type="image/x-icon" href="../../assets/favicon.ico"/>
   <link rel="icon" type="image/png" sizes="48x48" href="../../assets/favicon-48x48.png"/>
   <link rel="icon" type="image/png" sizes="32x32" href="../../assets/favicon-32x32.png"/>
@@ -43,7 +43,7 @@
     "@context": "https://schema.org",
     "@type": "TechArticle",
     "headline": "Serene Management: Hotel PMS Case Study",
-    "description": "Case study of Serene Management by Syed Asjad Abbas: a multi-property hotel PMS with idempotent payments, a worker-run night audit and measured speedups.",
+    "description": "Case study of Serene Management by Syed Asjad Abbas: a multi-property hotel PMS with 13 staff role templates, 78 permissions, append-only ledgers and 1,152 automated tests.",
     "author": {
       "@type": "Person",
       "@id": "https://www.syedasjadabbas.dev/#person",
@@ -59,7 +59,7 @@
     "mainEntityOfPage": "https://www.syedasjadabbas.dev/case-study/serene-management/",
     "image": "https://www.syedasjadabbas.dev/assets/og/serene-management.jpg",
     "inLanguage": "en-US",
-    "dateModified": "2026-10-16T12:00:00+05:00",
+    "dateModified": "2026-11-18T12:00:00+05:00",
     "isPartOf": {
       "@id": "https://www.syedasjadabbas.dev/#website"
     }
@@ -133,7 +133,7 @@
         </div>
         <div class="cs-meta-item">
           <span class="cs-meta-label">Core Stack</span>
-          <span class="cs-meta-val">Next.js · TypeScript · PostgreSQL · Prisma · Zod</span>
+          <span class="cs-meta-val">Next.js 16 · Express 5 · PostgreSQL 18 · Prisma 7 · Zod</span>
         </div>
       </div>
     </div>
@@ -145,7 +145,7 @@
         <section class="cs-section">
           <h2>Problem &amp; Challenge</h2>
           <p>Bugs in hotel software cost real money. A guest billed twice means refunds and complaints, a room sold twice means an overbooked night, and one property seeing another's data is a privacy breach.</p>
-          <p>Serene Management serves 12 staff roles across one or more hotels, and every night an audit has to close the books correctly.</p>
+          <p>Serene Management covers 13 staff role templates and 78 permissions across one or more hotels, and every night an audit has to close the books correctly.</p>
         </section>
 
         <section class="cs-section">
@@ -166,7 +166,7 @@
             <div class="cs-card-title">Request Path</div>
             <div class="cs-flow-step">
               <div class="cs-step-name">Staff browser</div>
-              <div class="cs-step-desc">Next.js with RTK Query</div>
+              <div class="cs-step-desc">Next.js 16 client</div>
             </div>
             <div class="cs-flow-arrow">&darr;</div>
             <div class="cs-flow-step">
@@ -175,33 +175,41 @@
             </div>
             <div class="cs-flow-arrow">&darr;</div>
             <div class="cs-flow-step">
-              <div class="cs-step-name">Route handler</div>
-              <div class="cs-step-desc">Authorize, validate with Zod, scope to the property</div>
+              <div class="cs-step-name">Express 5 API route</div>
+              <div class="cs-step-desc">Authorize, validate with the shared Zod package, scope to the property</div>
             </div>
             <div class="cs-flow-arrow">&darr;</div>
             <div class="cs-flow-step">
-              <div class="cs-step-name">Domain services &rarr; PostgreSQL</div>
-              <div class="cs-step-desc">Business rules applied, then persisted through Prisma</div>
+              <div class="cs-step-name">Domain services &rarr; PostgreSQL 18</div>
+              <div class="cs-step-desc">Business rules applied, then persisted through Prisma 7</div>
             </div>
           </div>
-          <p>A second, background path handles night audit: the job is queued as a row in PostgreSQL, a worker claims it, the business date rolls over, charges are posted once, and room boards refresh through database notifications. A hidden button is never the only protection; every action is authorized on the server.</p>
+          <p>Night audit closes the business day in three phases. The final phase runs as a single database transaction, and while the date is closing, any posting to it is refused with a "business date locked" error. Staff screens update live through server-sent events. A hidden button is never the only protection; every action is authorized on the server.</p>
         </section>
 
         <section class="cs-section">
           <h2>Key Decisions</h2>
-          <h3>1. Retries can't double-charge</h3>
+          <h3>1. Money that can't be rewritten</h3>
+          <p>Amounts are stored as exact decimals (numeric(19,4)). Database triggers make folio items, cash movements, audit logs and room status history append-only, so a correction is always a new row and the history stays complete.</p>
+
+          <h3>2. The books close safely</h3>
+          <p>Night audit runs in phases A, B and C. Phase C is a single transaction, and the business date is locked while it runs (HTTP 423 BUSINESS_DATE_LOCKED), so no charge can land on a day that is being closed.</p>
+
+          <h3>3. No double-booked rooms</h3>
+          <p>Room holds expire after a configurable time, and a database exclusion constraint rejects overlapping assignments.</p>
+
+          <h3>4. Retries can't double-charge</h3>
           <p>Payments and other financial actions carry an idempotency key. If a response is lost and the client retries, the server returns the first result instead of recording a second payment. An acceptance test sends the same payment twice and checks that one is recorded.</p>
-
-          <h3>2. The books close in a worker</h3>
-          <p>A worker claims the night-audit job with <code>FOR UPDATE SKIP LOCKED</code>, runs it under a lease and retries up to three times. Postings are held while the date closes. Duplicate night charges in testing: zero.</p>
-
-          <h3>3. Offline is read-only, on purpose</h3>
-          <p>When the connection drops, the front desk can still see arrivals, in-house guests and departures, but cannot book, check in or take payment. That avoids the hardest problem in hotel software: merging conflicting offline bookings.</p>
         </section>
 
         <section class="cs-section">
-          <h2>Performance Results</h2>
-          <p>Measured before optimizing. One innocent-looking ORM count was scanning every reservation room on each request.</p>
+          <h2>Testing</h2>
+          <p>1,152 automated tests: 326 server unit tests, 360 client tests and 466 integration tests against a real PostgreSQL database.</p>
+        </section>
+
+        <section class="cs-section">
+          <h2>Performance (earlier build)</h2>
+          <p>Measured on an earlier version of the system on one instance on a 4-core laptop. The current build has not been re-benchmarked yet.</p>
           <div class="cs-table-wrap">
             <table class="cs-table">
               <thead><tr><th>Bottleneck</th><th>Before</th><th>After</th></tr></thead>
@@ -225,6 +233,11 @@
             <li><strong>P1:</strong> the offline page exposed guest lists, now fixed.</li>
           </ul>
         </section>
+
+        <section class="cs-section">
+          <h2>What's Not Built Yet</h2>
+          <p>Payment gateway, channel manager, invoices and cashier shifts are planned, not built.</p>
+        </section>
       </div>
 
       <aside class="cs-sidebar">
@@ -235,18 +248,19 @@
               <div class="cs-tech-item"><span class="cs-tech-name">Type:</span><span>Hotel PMS (multi-property)</span></div>
               <div class="cs-tech-item"><span class="cs-tech-name">Status:</span><span>Built &amp; Tested</span></div>
               <div class="cs-tech-item"><span class="cs-tech-name">Release:</span><span>2026</span></div>
-              <div class="cs-tech-item"><span class="cs-tech-name">Slides:</span><a href="../../assets/case-studies/serene-management-case-study.pdf" target="_blank" style="color:var(--brown-light); text-decoration:none">Case study PDF ↗</a></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">Slides:</span><a href="../../assets/case-studies/serene-management-case-study.pdf" target="_blank" style="color:var(--brown-light); text-decoration:none">Case study PDF &#8599;</a></div>
             </div>
           </div>
 
           <div class="cs-card-box">
             <h3 class="cs-card-title">Detailed Architecture</h3>
             <div class="cs-tech-list">
-              <div class="cs-tech-item"><span class="cs-tech-name">Frontend:</span><span>Next.js · React · RTK Query</span></div>
-              <div class="cs-tech-item"><span class="cs-tech-name">Language:</span><span>TypeScript</span></div>
-              <div class="cs-tech-item"><span class="cs-tech-name">Database:</span><span>PostgreSQL · Prisma</span></div>
-              <div class="cs-tech-item"><span class="cs-tech-name">Validation:</span><span>Zod</span></div>
-              <div class="cs-tech-item"><span class="cs-tech-name">Background jobs:</span><span>PostgreSQL job queue · SKIP LOCKED</span></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">Backend:</span><span>Express 5 · Node.js</span></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">Frontend:</span><span>Next.js 16 · React · RTK Query</span></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">Database:</span><span>PostgreSQL 18 · Prisma 7</span></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">Validation:</span><span>Zod (shared package)</span></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">Realtime:</span><span>Server-sent events</span></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">Background jobs:</span><span>PostgreSQL worker</span></div>
               <div class="cs-tech-item"><span class="cs-tech-name">CI:</span><span>GitHub Actions</span></div>
             </div>
           </div>
