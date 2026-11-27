@@ -4,7 +4,7 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>FlightOne: AI Travel Platform Case Study | Syed Asjad Abbas</title>
-  <meta name="description" content="Case study of FlightOne by Syed Asjad Abbas: an AI travel platform where the assistant Ava plans trips and an Express/Prisma server calculates every fare."/>
+  <meta name="description" content="FlightOne case study: an AI travel platform connected to real airline and hotel suppliers, with server-owned pricing and one AI consultant for web and mobile."/>
   <meta name="author" content="Syed Asjad Abbas"/>
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"/>
   <link rel="canonical" href="https://www.syedasjadabbas.dev/case-study/flightone/"/>
@@ -14,7 +14,7 @@
   <meta property="og:type" content="article"/>
   <meta property="og:url" content="https://www.syedasjadabbas.dev/case-study/flightone/"/>
   <meta property="og:title" content="FlightOne: AI Travel Platform Case Study | Syed Asjad Abbas"/>
-  <meta property="og:description" content="Case study of FlightOne by Syed Asjad Abbas: an AI travel platform where the assistant Ava plans trips and an Express/Prisma server calculates every fare."/>
+  <meta property="og:description" content="FlightOne case study: an AI travel platform connected to real airline and hotel suppliers, with server-owned pricing and one AI consultant for web and mobile."/>
   <meta property="og:image" content="https://www.syedasjadabbas.dev/assets/og/flightone.jpg"/>
   <meta property="og:image:width" content="1200"/>
   <meta property="og:image:height" content="630"/>
@@ -24,7 +24,7 @@
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image"/>
   <meta name="twitter:title" content="FlightOne: AI Travel Platform Case Study | Syed Asjad Abbas"/>
-  <meta name="twitter:description" content="Case study of FlightOne by Syed Asjad Abbas: an AI travel platform where the assistant Ava plans trips and an Express/Prisma server calculates every fare."/>
+  <meta name="twitter:description" content="FlightOne case study: an AI travel platform connected to real airline and hotel suppliers, with server-owned pricing and one AI consultant for web and mobile."/>
   <meta name="twitter:image" content="https://www.syedasjadabbas.dev/assets/og/flightone.jpg"/>
   <meta name="twitter:image:alt" content="FlightOne AI travel platform with the Ava assistant"/>
 
@@ -43,7 +43,7 @@
     "@context": "https://schema.org",
     "@type": "TechArticle",
     "headline": "FlightOne: AI Travel Platform Case Study",
-    "description": "Case study of FlightOne by Syed Asjad Abbas: an AI travel platform where the assistant Ava plans trips and an Express/Prisma server calculates every fare.",
+    "description": "FlightOne case study: an AI travel platform connected to real airline and hotel suppliers, with server-owned pricing and one AI consultant for web and mobile.",
     "author": {
       "@type": "Person",
       "@id": "https://www.syedasjadabbas.dev/#person",
@@ -59,7 +59,7 @@
     "mainEntityOfPage": "https://www.syedasjadabbas.dev/case-study/flightone/",
     "image": "https://www.syedasjadabbas.dev/assets/og/flightone.jpg",
     "inLanguage": "en-US",
-    "dateModified": "2026-10-16T12:00:00+05:00",
+    "dateModified": "2026-11-27T12:00:00+05:00",
     "isPartOf": {
       "@id": "https://www.syedasjadabbas.dev/#website"
     }
@@ -116,7 +116,7 @@
         <span>FlightOne</span>
       </div>
       <h1 class="cs-title-main">FlightOne</h1>
-      <p class="cs-subtitle">An AI travel platform combining an agency portal, an interactive conversational AI travel consultant (Ava), and a modular Express/Prisma server backend.</p>
+      <p class="cs-subtitle">An AI travel platform where Ava, the AI travel consultant, takes a traveller from one sentence to a booking, now connected to real airline and hotel suppliers.</p>
       
       <div class="cs-meta-grid">
         <div class="cs-meta-item">
@@ -125,15 +125,15 @@
         </div>
         <div class="cs-meta-item">
           <span class="cs-meta-label">Category</span>
-          <span class="cs-meta-val">AI Travel Systems &amp; Platform Architecture</span>
+          <span class="cs-meta-val">AI Travel Platform · Client Project</span>
         </div>
         <div class="cs-meta-item">
           <span class="cs-meta-label">Timeline</span>
-          <span class="cs-meta-val">Platform Project · 2026</span>
+          <span class="cs-meta-val">2026 · Updated Nov 2026</span>
         </div>
         <div class="cs-meta-item">
           <span class="cs-meta-label">Core Stack</span>
-          <span class="cs-meta-val">Next.js · React · Node.js · Express · Prisma · PostgreSQL</span>
+          <span class="cs-meta-val">Next.js · React · Express · Prisma · PostgreSQL · Gemini</span>
         </div>
       </div>
     </div>
@@ -144,62 +144,67 @@
       <div class="cs-main">
         <section class="cs-section">
           <h2>Problem &amp; Challenge</h2>
-          <p>Traditional travel agencies often operate through fragmented communication channels: customer discovery occurs through manual chats, tour pricing relies on unstructured spreadsheets, and package curation requires days of back-and-forth consultation with airline and hotel supplier portals.</p>
-          <p>FlightOne was conceptualized as an <strong>integrated AI travel platform</strong> designed to automate this lifecycle. The platform needed to fulfill two critical mandates simultaneously: deliver a bespoke web portal that showcases international tours (Maldives, Dubai, Turkey, Thailand), while providing a dedicated conversational AI consultant (Ava) capable of flight search, hotel tier pricing (3★, 4★, 5★), and booking orchestration.</p>
+          <p>Travel booking is usually split across chats, spreadsheets and supplier portals, and AI is often a chat window bolted onto a website.</p>
+          <p>FlightOne is an <strong>AI travel operating system</strong> built around Ava, a travel consultant who turns a request like "Lahore to Karachi on 10 Oct" into live options, a checkout and support after the trip is booked. The hard part was making that work against real suppliers, where prices change and bookings can fail.</p>
         </section>
 
         <section class="cs-section">
-          <h2>Technical Approach &amp; Architecture</h2>
-          <p>FlightOne is engineered as three tightly decoupled yet unified systems:</p>
-          <ul>
-            <li><strong>Agency Web Portal:</strong> A high-performance Next.js web application built with responsive SCSS modules, Lenis smooth scrolling, and dynamic destination visualizers.</li>
-            <li><strong>Conversational Assistant Client:</strong> A lightweight React application where travelers converse with Ava, explore structured recommendations, refine dates, and review flight fares.</li>
-            <li><strong>Modular API Server:</strong> An Express.js backend using Prisma ORM on PostgreSQL that enforces deterministic pricing rules, manages itinerary drafts and handles token authentication.</li>
-          </ul>
+          <h2>Architecture</h2>
+          <p>One API serves every client, and every supplier sits behind the same adapter.</p>
 
           <div class="cs-flow-visual">
-            <div class="cs-card-title">FlightOne Multi-Tier System Pipeline</div>
+            <div class="cs-card-title">FlightOne Request Path</div>
             <div class="cs-flow-step">
-              <div class="cs-step-name">Traveler Web Front Door (Next.js)</div>
-              <div class="cs-step-desc">Explores destinations, comfort tiers (3★/4★/5★), and launches travel consultation</div>
+              <div class="cs-step-name">Web app and mobile app</div>
+              <div class="cs-step-desc">Travellers ask Ava, compare options and book</div>
             </div>
             <div class="cs-flow-arrow">&darr;</div>
             <div class="cs-flow-step">
-              <div class="cs-step-name">Conversational AI Client (Ava Interface)</div>
-              <div class="cs-step-desc">Collects origin, dates, pax, and travel preferences via guided conversational turns</div>
+              <div class="cs-step-name">Express API</div>
+              <div class="cs-step-desc">Ava, pricing, bookings, payments and servicing, across 29 server modules</div>
             </div>
             <div class="cs-flow-arrow">&darr;</div>
             <div class="cs-flow-step">
-              <div class="cs-step-name">FlightOne API Gateway (Express + Prisma)</div>
-              <div class="cs-step-desc">Validates trip schema, coordinates fare cache, manages booking state machines</div>
+              <div class="cs-step-name">Supplier layer</div>
+              <div class="cs-step-desc">A global airline booking system and an international hotel supplier, behind one adapter with a circuit breaker and search cache</div>
             </div>
             <div class="cs-flow-arrow">&darr;</div>
             <div class="cs-flow-step">
-              <div class="cs-step-name">PostgreSQL Database</div>
-              <div class="cs-step-desc">Stores user profiles, itinerary drafts, bookings and transaction records</div>
+              <div class="cs-step-name">PostgreSQL through Prisma</div>
+              <div class="cs-step-desc">Bookings, supplier quote snapshots and payment records</div>
             </div>
           </div>
         </section>
 
         <section class="cs-section">
-          <h2>Engineering Challenges &amp; Solutions</h2>
-          <h3>1. Deterministic Pricing vs. Generative LLM Variance</h3>
-          <p>Language models are probabilistic and can produce wrong numbers when calculating flight fares, currency conversions, and seasonal surcharges. A price invented by the model would be a real financial error.</p>
-          <p><strong>Solution:</strong> We separated semantic understanding from business calculations. Ava handles natural language intent extraction and structures parameters into typed JSON payloads. The Express/Prisma server applies the pricing rules and tiered markups and returns every fare to the client, so the model never calculates or invents a price.</p>
+          <h2>Key Decisions</h2>
+          <h3>1. The browser never sets the price</h3>
+          <p>When a traveller picks a fare, the server runs the supplier search again, matches that exact offer and writes the quote itself. If the fare is gone, the booking stops with a clear message instead of swapping in another flight.</p>
 
-          <h3>2. Cross-Device Consultation Continuity</h3>
-          <p>Travelers frequently initiate trip consultations on mobile devices but complete itinerary reviews on desktop computers. Maintaining active session state without requiring mandatory upfront registration was essential for user retention.</p>
-          <p><strong>Solution:</strong> Implemented guest UUID tokens stored in encrypted client cookies that bind conversation threads to ephemeral PostgreSQL session records. When travelers choose to register or authenticate via JWT, the server merges the guest consultation history into their permanent profile seamlessly.</p>
+          <h3>2. Margin stays internal</h3>
+          <p>FlightOne's supplier cost and margin are stripped, at any depth, from every customer and company response. Staff reporting reads them through its own endpoints.</p>
+
+          <h3>3. Money as integers</h3>
+          <p>Every amount is a whole number in the currency's smallest unit, with an explicit currency code. There are no floats in the pricing path.</p>
+
+          <h3>4. One Ava for web and mobile</h3>
+          <p>Ava moved from the website into the API, so the website and the mobile app share the same assistant. Each Gemini attempt is capped at 15 seconds, and after an overload Ava skips Gemini for 60 seconds instead of failing in front of a traveller.</p>
         </section>
 
         <section class="cs-section">
-          <h2>Key Features &amp; Capabilities</h2>
-          <ul>
-            <li><strong>Bespoke 24-Hour Itinerary Pipeline:</strong> Automated day-by-day travel plan generation tailored to honeymooners, families, and corporate groups.</li>
-            <li><strong>3-Tier Accommodation Benchmarks:</strong> Instant comparison matrices between 3-star budget, 4-star boutique, and 5-star luxury options.</li>
-            <li><strong>Multi-Repo Architecture:</strong> Clean domain isolation across agency storefront, client chat UI, and server backend.</li>
-            <li><strong>Human Escalation Fail-Safe:</strong> Seamless handoff from AI consultant to human travel agents for visa-sensitive approvals.</li>
-          </ul>
+          <h2>Supplier Integration</h2>
+          <p><strong>Flights:</strong> search, a live price re-check and seat holds, tested in the supplier's pre-production environment.</p>
+          <p><strong>Hotels:</strong> search, booking and cancellation. All 7 certification test cases are complete, and certification is in progress.</p>
+        </section>
+
+        <section class="cs-section">
+          <h2>Beyond Booking</h2>
+          <p>The API also covers corporate travel (approvals, expenses, invoices and carbon reporting), group travel and MICE, visa, rewards, refunds and changes, journey tracking and escalation to human staff.</p>
+        </section>
+
+        <section class="cs-section">
+          <h2>Status</h2>
+          <p>The mobile app is live. Supplier booking launches after certification.</p>
         </section>
       </div>
 
@@ -208,9 +213,8 @@
           <div class="cs-card-box">
             <h3 class="cs-card-title">Project Details</h3>
             <div class="cs-tech-list">
-              <div class="cs-tech-item"><span class="cs-tech-name">Context:</span><span>Product Engineering Platform</span></div>
-              <div class="cs-tech-item"><span class="cs-tech-name">Status:</span><span>Built &amp; Tested</span></div>
-              <div class="cs-tech-item"><span class="cs-tech-name">Release:</span><span>2026</span></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">Type:</span><span>AI travel platform (client project)</span></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">Status:</span><span>Mobile app live · Supplier certification in progress</span></div>
               <div class="cs-tech-item"><span class="cs-tech-name">Slides:</span><a href="../../assets/case-studies/flightone-case-study.pdf" target="_blank" style="color:var(--brown-light); text-decoration:none">Case study PDF ↗</a></div>
             </div>
           </div>
@@ -218,12 +222,11 @@
           <div class="cs-card-box">
             <h3 class="cs-card-title">Detailed Architecture</h3>
             <div class="cs-tech-list">
-              <div class="cs-tech-item"><span class="cs-tech-name">Web Agency:</span><span>Next.js 15 · SCSS · GSAP</span></div>
-              <div class="cs-tech-item"><span class="cs-tech-name">Client Assistant:</span><span>React 19 · TypeScript · Tailwind</span></div>
-              <div class="cs-tech-item"><span class="cs-tech-name">Server Runtime:</span><span>Node.js · Express.js</span></div>
-              <div class="cs-tech-item"><span class="cs-tech-name">Database ORM:</span><span>Prisma ORM · PostgreSQL 16</span></div>
-              <div class="cs-tech-item"><span class="cs-tech-name">AI Agent:</span><span>Ava Consultant LLM Pipeline</span></div>
-              <div class="cs-tech-item"><span class="cs-tech-name">State &amp; Auth:</span><span>JWT · Cookie-based Guest UUID</span></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">Backend:</span><span>Express · Node.js · Prisma</span></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">Database:</span><span>PostgreSQL</span></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">Web client:</span><span>Next.js 16 · React 19 · Tailwind CSS</span></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">Mobile:</span><span>FlightOne mobile app</span></div>
+              <div class="cs-tech-item"><span class="cs-tech-name">AI:</span><span>Gemini (Ava) with fallback path</span></div>
             </div>
           </div>
         </div>
